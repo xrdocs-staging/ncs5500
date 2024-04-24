@@ -49,6 +49,7 @@ Cisco has also validated solutions to deliver Teleprotection in collaboration wi
 _**NCS540 + VCL-2711 C37.94 Line Differential solution over SR-MPLS**_
 ![VCL-2711-solution.png]({{site.baseurl}}/images/VCL-2711-solution.png)
 
+
 _**NCS540 + VCL-TP Distance Protection solution over SR-MPLS**_
 ![VCL-TP-solution.png]({{site.baseurl}}/images/VCL-TP-solution.png)
 
