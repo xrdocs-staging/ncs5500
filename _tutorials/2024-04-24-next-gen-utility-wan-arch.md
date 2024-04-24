@@ -3,7 +3,7 @@ published: false
 date: '2024-04-24 18:23 +0530'
 title: next-gen-utility-WAN-arch
 ---
-## Next Generation Utility WAN Architecture
+## Overview
 
 In an era where digital transformation is paramount, utilities are actively modernizing their network infrastructure to harness the evolving advantages of substation automation, with a focus on operational simplicity and scalability. At the forefront of this modernization effort is the next-generation utility wide area network (WAN) architecture, leveraging the new-age transport and services. The simplification provided by this new-age networking paradigm incorporating Cisco's state-of-the-art technologies is tailored to fulfill the growing demands of substation automation. By undertaking this journey, utilities not only enhance their operational efficiency through improved connectivity and performance but also achieve cost savings, thereby establishing a new benchmark for resilient and robust networking within the industry.
 
@@ -18,4 +18,20 @@ Broadly, utilities’ services are classified into three categories ([Next gener
 - Layer 2 Substation to Substation for Ethernet based Teleprotection: Layer 2 multicast protocols (IEC61850 GOOSE & SV), Virtual machine migrations (for virtualized applications) and third-party SCADA traffic
 
 - Layer 2 Substation to Substation for Traditional Teleprotection: Power Protection point-to-point services using specific utility protocols over non-Ethernet connections
+
+As the first phase of network transformation, L3 services are now delivered over SR-MPLS based transport, connecting the substation to the Datacenter. eBGP peering is implemented between Cisco’s IR8340 router as CE and Cisco’s NCS540 router as PE at either site. Considering that the core capacity requirement of utilities is not expected to surpass 50G in the near future, the low-density compact NCS540 from the Cisco NCS portfolio is the transport platform of choice for the core infrastructure. For utilities demanding sub-50ms convergence for any Layer 3 service, SR's Topology-Independent Loop-Free Alternate Fast Reroute (TI-LFA FRR) capabilities can be activated. 
+
+## Layer 2 Teleprotection
+
+A key requirement of utility WAN transport networks is path predictability for latency sensitive applications such as Teleprotection. To this end, utilities require the ability to co-route traffic over a bidirectional and defined path in the network, minimizing the asymmetry delay for both the active and protection paths. This requirement mirrors the behavior of traditional synchronous optical network (SONET) and synchronous digital hierarchy (SDH) networks that operated with unidirectional path switched ring (UPSR) and subnetwork connection protection (SNC-P). 
+
+In traditional IP MPLS based networks, Flex LSP is leveraged to meet utilities’ Teleprotection requirements. Flex LSP facilitates the establishment of bidirectional label-switched paths (LSPs) dynamically through the Resource Reservation Protocol–Traffic Engineering (RSVP-TE). Call Admission Control (CAC) ensures that the LSP has sufficient bandwidth to accommodate the Layer 2 circuit.
+
+With the evolution in transport, SR now offers path predictability required for utility WAN Layer 2 Teleprotection services by leveraging the latest Circuit-style Segment Routing Traffic Engineering (CS SR-TE) capabilities. CS SR-TE offers bidirectional co-routed path behavior, end-to-end path protection + restoration and strict bandwidth guarantees. CS SR-TE therefore provides deterministic path behavior aligning with utility WAN network requirements.
+
+Latest CS SR-TE enhancements guarantee sub-50 ms switching times in the event of failures, a crucial requirement for utility WAN Teleprotection. Segment Routing Performance Measurement (SR-PM) offers the functionality of path protection via liveness detection for the working and protect paths. Recent innovations in SR-PM enables offload of this path liveness-check functionality from software to hardware, thereby enforcing the strict convergence times, as required for utilities’ Teleprotection applications. 
+
+L2 Teleprotection use cases are delivered over EVPN VPWS point-to-point service between the substation PEs stitched to the underlying CS SR-TE policy, thereby offering circuit-like performance. Herein CE IE9300 is single homed to PE NCS540 at each substation end. Path predictability is therefore guaranteed with a deterministic next hop PE at the remote end, underpinned by CS SR-TE’s co-routed bidirectional path behavior.
+
+
 
