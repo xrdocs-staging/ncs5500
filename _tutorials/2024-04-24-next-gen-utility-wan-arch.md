@@ -60,4 +60,8 @@ _**NCS540 + VCL-TP Distance Protection solution over SR-MPLS**_
 
 SEL/Valiant’s expertise in utilities’ protection and automation equipment, combined with Cisco’s technology leadership in transport offers a comprehensive solution to address non-Ethernet based Teleprotection.
 
+## References
 
+- [Next generation digital substation WAN](https://blogs.cisco.com/industrial-iot/next-generation-digital-substation-wan?ccid=cc002185&oid=pstit032047)
+- [https://www.cisco.com/c/dam/en/us/td/docs/solutions/Verticals/Utilities/SA/3-1/SA-3-1-DG.pdf?dtid=odicdc000509](https://www.cisco.com/c/dam/en/us/td/docs/solutions/Verticals/Utilities/SA/3-1/SA-3-1-DG.pdf?dtid=odicdc000509 "Design Guide")
+- [https://www.cisco.com/c/dam/en/us/td/docs/solutions/Verticals/Utilities/WAN/WAN-Utility-SA.pdf?dtid=odicdc000509](https://www.cisco.com/c/dam/en/us/td/docs/solutions/Verticals/Utilities/WAN/WAN-Utility-SA.pdf?dtid=odicdc000509 "Solution Guide")
