@@ -38,6 +38,7 @@ L2 Teleprotection use cases are delivered over EVPN VPWS point-to-point service 
 _**Layer 2 Teleprotection service with Circuit-style SR-TE**_
 ![L2 Teleprotection with CS SR-TE - 2.png]({{site.baseurl}}/images/L2 Teleprotection with CS SR-TE - 2.png)
 
+
 Cisco is partnering with Schweitzer Engineering Laboratories and Valiant Communications to deliver traditional Teleprotection services between substations involving non-Ethernet interfaces. 
 SEL’s ICON platform provides support for non-Ethernet interfaces e.g. T1/E1, C37.94, RS-232 Async, E&M signalling, etc., required for utilities’ specific substation protection components to deliver Teleprotection services. ICON simultaneously provides Ethernet uplink interfacing to Cisco’s transport platform NCS540. NCS540 PEs form a ring interconnecting substations across the core, with an EVPN-VPWS services steered to an SR-TE policy between back-to-back PEs. The ring architecture ensures network resilience with fast convergence provided by a proprietary mechanism on SEL ICON.
 
