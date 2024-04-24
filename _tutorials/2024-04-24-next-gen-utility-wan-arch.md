@@ -13,7 +13,7 @@ The transition from IP MPLS transport to Segment Routing (SR), based on the sour
 
 In the realm of services, a significant shift is underway from traditional L2VPN services, which rely on LDP data plane based signaling, to EVPN that leverages MP-BGP control plane signaling. The adoption of EVPN by today's utilities eliminates the redundancy of a separate LDP data plane for layer 2 services and reinforces the move towards simplification. EVPN offers substantial benefits to operators, including a wide range of multihoming and load balancing capabilities, superior scalability, and robust loop avoidance mechanisms. 
 
-Broadly, utilities’ services are classified into three categories ([Next generation digital substation WAN](https://blogs.cisco.com/industrial-iot/next-generation-digital-substation-wan?ccid=cc002185&oid=pstit032047)):
+Broadly, utilities’ services are classified into three categories:
 
 - Layer 3 Substation to Datacenter: IP based supervisory control and data acquisition (SCADA) data, IP based CCTV, enterprise data and IP telephony
 
