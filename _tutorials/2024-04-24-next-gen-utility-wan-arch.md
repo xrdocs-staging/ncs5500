@@ -1,7 +1,7 @@
 ---
 published: true
 date: '2024-04-24 18:23 +0530'
-title: next-gen-utility-WAN-arch
+title: Next Generation Utility WAN Architecture
 author: Ananya Bose
 position: hidden
 ---
