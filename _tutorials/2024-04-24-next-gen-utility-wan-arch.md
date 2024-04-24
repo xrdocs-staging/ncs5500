@@ -39,11 +39,13 @@ _**Layer 2 Teleprotection service with Circuit-style SR-TE**_
 ![L2 Teleprotection with CS SR-TE - 2.png]({{site.baseurl}}/images/L2 Teleprotection with CS SR-TE - 2.png)
 
 
+
 Cisco is partnering with Schweitzer Engineering Laboratories and Valiant Communications to deliver traditional Teleprotection services between substations involving non-Ethernet interfaces. 
 SEL’s ICON platform provides support for non-Ethernet interfaces e.g. T1/E1, C37.94, RS-232 Async, E&M signalling, etc., required for utilities’ specific substation protection components to deliver Teleprotection services. ICON simultaneously provides Ethernet uplink interfacing to Cisco’s transport platform NCS540. NCS540 PEs form a ring interconnecting substations across the core, with an EVPN-VPWS services steered to an SR-TE policy between back-to-back PEs. The ring architecture ensures network resilience with fast convergence provided by a proprietary mechanism on SEL ICON.
 
 _**NCS540 + SEL ICON solution for non-Ethernet based Teleprotection**_
 ![NCS540 + SEL - 2.png]({{site.baseurl}}/images/NCS540 + SEL - 2.png)
+
 
 
 Cisco has also validated solutions to deliver Teleprotection in collaboration with Valiant Communications, specifically IEEE C37.94 Line Differential Protection and Distance Protection solutions over SR-MPLS Transport. Here again, the vendor device supports non-Ethernet connections within the substation and interfaces to NCS540 over Ethernet. VCL-2711 is the IEEE C37.94 over IP/MPLS transmission equipment that provides Line Differential Protection, and VCL-TP is the Distance Protection over IP/MPLS transmission equipment that provides support for 8 Binary Commands. The architecture relies on the fast convergence offered by the underlying SR Transport. For example, CS SR-TE can be implemented to enforce bidirectional co-routed path behaviour, with an EVPN-VPWS service stitched to the SR-TE policy. 
