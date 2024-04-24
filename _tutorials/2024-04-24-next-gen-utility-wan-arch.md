@@ -35,6 +35,9 @@ Latest CS SR-TE enhancements guarantee sub-50 ms switching times in the event of
 
 L2 Teleprotection use cases are delivered over EVPN VPWS point-to-point service between the substation PEs stitched to the underlying CS SR-TE policy, thereby offering circuit-like performance. Herein CE IE9300 is single homed to PE NCS540 at each substation end. Path predictability is therefore guaranteed with a deterministic next hop PE at the remote end, underpinned by CS SR-TE’s co-routed bidirectional path behavior.
 
+## Layer 2 Teleprotection service with Circuit-style SR-TE
+
+![L2 Teleprotection with CS SR-TE.png]({{site.baseurl}}/images/L2 Teleprotection with CS SR-TE.png)
 
 
 
