@@ -2,6 +2,8 @@
 published: false
 date: '2024-04-24 18:23 +0530'
 title: next-gen-utility-WAN-arch
+author: Ananya Bose
+position: hidden
 ---
 ## Overview
 
@@ -32,6 +34,8 @@ With the evolution in transport, SR now offers path predictability required for 
 Latest CS SR-TE enhancements guarantee sub-50 ms switching times in the event of failures, a crucial requirement for utility WAN Teleprotection. Segment Routing Performance Measurement (SR-PM) offers the functionality of path protection via liveness detection for the working and protect paths. Recent innovations in SR-PM enables offload of this path liveness-check functionality from software to hardware, thereby enforcing the strict convergence times, as required for utilities’ Teleprotection applications. 
 
 L2 Teleprotection use cases are delivered over EVPN VPWS point-to-point service between the substation PEs stitched to the underlying CS SR-TE policy, thereby offering circuit-like performance. Herein CE IE9300 is single homed to PE NCS540 at each substation end. Path predictability is therefore guaranteed with a deterministic next hop PE at the remote end, underpinned by CS SR-TE’s co-routed bidirectional path behavior.
+
+
 
 
 
