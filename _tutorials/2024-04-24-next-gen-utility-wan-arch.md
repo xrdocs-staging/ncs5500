@@ -44,5 +44,14 @@ SEL’s ICON platform provides support for non-Ethernet interfaces e.g. T1/E1, C
 _**NCS540 + SEL ICON solution for non-Ethernet based Teleprotection**_
 ![NCS540+SEL ICON.png]({{site.baseurl}}/images/NCS540+SEL ICON.png)
 
+Cisco has also validated solutions to deliver Teleprotection in collaboration with Valiant Communications, specifically IEEE C37.94 Line Differential Protection and Distance Protection solutions over SR-MPLS Transport. Here again, the vendor device supports non-Ethernet connections within the substation and interfaces to NCS540 over Ethernet. VCL-2711 is the IEEE C37.94 over IP/MPLS transmission equipment that provides Line Differential Protection, and VCL-TP is the Distance Protection over IP/MPLS transmission equipment that provides support for 8 Binary Commands. The architecture relies on the fast convergence offered by the underlying SR Transport. For example, CS SR-TE can be implemented to enforce bidirectional co-routed path behaviour, with an EVPN-VPWS service stitched to the SR-TE policy. 
+
+_**NCS540 + VCL-2711 C37.94 Line Differential solution over SR-MPLS**_
+![VCL-2711-solution.png]({{site.baseurl}}/images/VCL-2711-solution.png)
+
+_**NCS540 + VCL-TP Distance Protection solution over SR-MPLS**_
+![VCL-TP-solution.png]({{site.baseurl}}/images/VCL-TP-solution.png)
+
+SEL/Valiant’s expertise in utilities’ protection and automation equipment, combined with Cisco’s technology leadership in transport offers a comprehensive solution to address non-Ethernet based Teleprotection.
 
 
