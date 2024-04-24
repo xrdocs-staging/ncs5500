@@ -62,6 +62,6 @@ SEL/Valiant’s expertise in utilities’ protection and automation equipment, c
 
 ## References
 
-- [Next generation digital substation WAN](https://blogs.cisco.com/industrial-iot/next-generation-digital-substation-wan?ccid=cc002185&oid=pstit032047)
+- [Next generation digital substation WAN blog](https://blogs.cisco.com/industrial-iot/next-generation-digital-substation-wan?ccid=cc002185&oid=pstit032047)
 - [Design Guide](https://www.cisco.com/c/dam/en/us/td/docs/solutions/Verticals/Utilities/SA/3-1/SA-3-1-DG.pdf?dtid=odicdc000509)
 - [Solution Brief](https://www.cisco.com/c/dam/en/us/td/docs/solutions/Verticals/Utilities/WAN/WAN-Utility-SA.pdf?dtid=odicdc000509)
