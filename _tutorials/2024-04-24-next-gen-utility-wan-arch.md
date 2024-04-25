@@ -15,11 +15,11 @@ In the realm of services, a significant shift is underway from traditional L2VPN
 
 Broadly, utilities’ services are classified into three categories:
 
-- Layer 3 Substation to Datacenter: IP based supervisory control and data acquisition (SCADA) data, IP based CCTV, enterprise data and IP telephony
+- **Layer 3 Substation to Datacenter**: IP based supervisory control and data acquisition (SCADA) data, IP based CCTV, enterprise data and IP telephony
 
-- Layer 2 Substation to Substation for Ethernet based Teleprotection: Layer 2 multicast protocols (IEC61850 GOOSE & SV), Virtual machine migrations (for virtualized applications) and third-party SCADA traffic
+- **Layer 2 Substation to Substation for Ethernet based Teleprotection**: Layer 2 multicast protocols (IEC61850 GOOSE & SV), Virtual machine migrations (for virtualized applications) and third-party SCADA traffic
 
-- Layer 2 Substation to Substation for Traditional Teleprotection: Power Protection point-to-point services using specific utility protocols over non-Ethernet connections
+- **Layer 2 Substation to Substation for Traditional Teleprotection**: Power Protection point-to-point services using specific utility protocols over non-Ethernet connections
 
 As the first phase of network transformation, L3 services are now delivered over SR-MPLS based transport, connecting the substation to the Datacenter. eBGP peering is implemented between Cisco’s IR8340 router as CE and Cisco’s NCS540 router as PE at either site. Considering that the core capacity requirement of utilities is not expected to surpass 50G in the near future, the low-density compact NCS540 from the Cisco NCS portfolio is the transport platform of choice for the core infrastructure. For utilities demanding sub-50ms convergence for any Layer 3 service, SR's Topology-Independent Loop-Free Alternate Fast Reroute (TI-LFA FRR) capabilities can be activated. 
 
