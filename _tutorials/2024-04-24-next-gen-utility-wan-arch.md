@@ -62,6 +62,15 @@ SEL/Valiant’s expertise in utilities’ protection and automation equipment, c
 
 ## References
 
-- [Next generation digital substation WAN blog](https://blogs.cisco.com/industrial-iot/next-generation-digital-substation-wan?ccid=cc002185&oid=pstit032047)
 - [Design Guide](https://www.cisco.com/c/dam/en/us/td/docs/solutions/Verticals/Utilities/SA/3-1/SA-3-1-DG.pdf?dtid=odicdc000509)
+- [Next generation digital substation WAN blog](https://blogs.cisco.com/industrial-iot/next-generation-digital-substation-wan?ccid=cc002185&oid=pstit032047)
 - [Solution Brief](https://www.cisco.com/c/dam/en/us/td/docs/solutions/Verticals/Utilities/WAN/WAN-Utility-SA.pdf?dtid=odicdc000509)
+
+## Product Details
+
+- [Cisco Network Convergence System (NCS) 540 Series](https://www.cisco.com/c/en/us/products/routers/network-convergence-system-540-series-routers/index.html?dtid=oblgblg001259)
+- [Cisco Catalyst IR8300 Rugged Series Router](https://www.cisco.com/c/en/us/products/collateral/routers/catalyst-ir8300-rugged-series-router/nb-06-cat-ir8340-rugged-ser-rout-ds-cte-en.html?dtid=oblgblg001259)
+- [Cisco Catalyst IE9300 Rugged Series Switches](https://www.cisco.com/c/en/us/products/collateral/switches/catalyst-ie9300-rugged-series/catalyst-ie9300-rugged-series-ds.html?dtid=oblgblg001259)
+- [SEL ICON Integrated Communications Optical Network Platform](https://selinc.com/products/ICON/)
+- [Valiant Comm. IEEE C37.94 over IP/MPLS Platform](https://www.valiantcom.com/teleprotection/ieee-c37.94-ip-mpls/ieee-c37.94-ip-mpls.html)
+- [Valiant Comm. Teleprotection over IP/MPLS Platform](https://www.valiantcom.com/teleprotection/teleprotection-over-ip-mpls/teleprotection-over-ip-mpls.html)
