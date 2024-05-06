@@ -4,6 +4,9 @@ date: '2024-04-24 18:23 +0530'
 title: Next Generation Utility WAN Architecture
 author: Ananya Bose
 position: top
+excerpt: >-
+  Brief on the next gen utility WAN transport & specific services including
+  Layer 2 Teleprotection using Cisco's NCS portfolio
 ---
 ## Overview
 
