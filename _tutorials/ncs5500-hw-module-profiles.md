@@ -61,6 +61,7 @@ Many thanks to:
 - Bala Murali Krishna Sanka
 - Deepak Balasubramanian
 - Gaddam Ravindher Reddy
+- Avinash Prabhu
 
 ## Hardware Module CLI hierarchy
 
