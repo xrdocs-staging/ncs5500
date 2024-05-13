@@ -17,6 +17,8 @@ position: hidden
 | 2021-Sept-9  | Add: hw-mod profiles till 7.4.1, updated the support for J2 based platforms for exisiting profiles | 
 | 2022-Jan-20  | Add: hw-mod profiles till 7.5.1  | 
 | 2023-May-16  | Add: Updated the support for J2 based platforms for existing profiles  |
+| 2024-May-13  | Add: Modified the loadbalancing algo |
+
 
 
 
@@ -674,58 +676,66 @@ _External documentation_:
 <pre class="highlight">
 <code>RP/0/RP0/CPU0:NCS5500-702(config)#hw-module profile load-balance algorithm ?
   L3-only                        L3 Header only Hash.
+  PPPoE                          PPPoE session based optimized hash. Reload is required for this option
   gtp                            GTP optimized.
   gtp-mpls                       GTP over MPLS optimized hash.
+  inner-l2-field                 Inner MAC based optimised hashing.
   ip-tunnel                      IP tunnel optimized.
   layer2                         Layer 2 optimized.
+  mpls-lsr-ler                   MPLS lsr ler LB profile.
+  mpls-lsr-ler-optimized         MPLS lsr ler LB profile optimized
   mpls-safe-speculative-parsing  MPLS safe Speculative parsing.
 RP/0/RP0/CPU0:NCS5500-702(config)#</code>
 </pre>
 </div>
 
-![load-balance algorithm{L3 only|gtp|layer2|gtp-mpls|ip-tunnel | mpls-safe-speculative-parsing}.png]({{site.baseurl}}/images/load-balance algorithm{L3 only|gtp|layer2|gtp-mpls|ip-tunnel | mpls-safe-speculative-parsing}.png)
+- The headers which make the forwarding decision in a packet are called the forwarding headers. Further the forwarding header along with other headers can be used for the Hashing Decision.For example, in a packet format of ETHoIP: 
+	- In a L3 Network: content from the IP header is used and hence called the forwarding header.
+	- In a L2 Network: content from the ETH header is used and hence called the forwarding header
+- The header following the forwarding header have been indicated as Fwd+1, Fwd+2 and so on in the document below.
+- In Cisco IOSXR Jericho routers by default 
+	- For ECMP: FWD and FWD+1 headers are taken into consideration. 
+	- For LAG: FWD, FWD+1 and FWD+2 headers are taken into consideration.
+- In J+ routers for both ECMP hash and LAG hash takes 3 headers i.e. Fwd, Fwd+1 and Fwd+2 for hash calculation.
+- Certain parameters for hash calculation are not dependent on the incoming packet but on the router.
+	- For example, Input pp_port which represents the port on which packet is entering the router and Router_id which is the configured IPv4 loopback address of the router (If no IPv4 loopback is configured i.e. no loopback interface or only IPv6 loopback interfaces then chassis ID is used as a Router_id)
+- J/J+ provides the flexibility to choose from multiple profiles to satisfy the requirement of different deployment scenario. While on J2 no additional load balancing hw-module config is required
 
+| Index | Profile Name                  | Use Case                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   |   |
+|-------|-------------------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|---|
+| 0     | Default                       | Performs default hashing operation as explained above. No h/w module knob needed to enable this.                                                                                                                                                                                                                                                                                                                                                                                           |   |
+| 1     | layer2                        | Optimized for Ethernet (Layer 2) based forwarding deployments.  The profile also allows the hashing algorithm to be able to use the inner IP header information when doing layer 2 forwarding with inner payload is MPLS.                                                                                                                                                                                                                                                                  |   |
+| 2     | ip-tunnel                     | Suitable for deployment of IP tunnel such as GRE and GUE. It allows the hashing algorithm to use the outer IPv4 GRE header even when doing an IP tunnel decapsulation. For GUE load balancing happens only on outer IP and Outer UDP header. The profile needs the router to be reloaded to enable this profile.                                                                                                                                                                           |   |
+| 3     | mpls-safe-speculative-parsing | Recommended for P (core) nodes as it can look one header inside the forwarding MPLS.  But in this case, if the first nibble of the MAC DA address is a 4 or 6, the rest of the packet could be interpreted incorrectly as IPv4 or IPv6 header. The profile was introduced in 6.5.3                                                                                                                                                                                                         |   |
+| 4     | gtp                           | Optimized for GTP deployments as it allows hashing based upon the tunnel endpoint id in GTP-U packets.  Hashing decision is based on IPv4/IPv6, UDP and Tunnel Endpoint (TE ID) The profile was introduced in 6.5.1                                                                                                                                                                                                                                                                        |   |
+| 5     | L3-Only                       | L3 header only hash i.e. fields from IPv4 and IPv6 will be used.  This profile will not make use of any L4 header for hashing.  Recommended when majority of traffic is fragmented to guarantee the fragmented packets will take the same path. The profile was introduced in 7.4.1                                                                                                                                                                                                        |   |
+| 6     | gtp-mpls                      | Like GTP this profile is optimized for GTP deployments with MPLS backbone.  TE ID is taken into consideration instead of L4. The profile was introduced in 7.2.1                                                                                                                                                                                                                                                                                                                           |   |
+| 7     | mpls-lsr-ler                  | Recommended for Load balancing at Label Edge Router (LER) and Label Switched Routers (LSRs) with MPLS traffic and where there could be partial MPLS label termination that could lead to Errata flow (pop of the topmost label and lookup on the label underneath it). Recommended for below cases: 1) MPLS pop and lookup flows (EthoMPLS2/3oIPv4oL4) with L4 as TCP or UDP 2) MPLS pop and lookup flows (EthoMPLS2/3oIPv6oL4) with L4 as TCP or UDP The profile was introduced in 7.8.1. |   |
+| 8     | mpls-lsr-ler-optimized        | Added optimizations above mpls-lsr-ler profile. Allows for optimized hashing in LER and LSR with MPLS IPv6 traffic Recommended for below cases: 1) MPLS pop and lookup flows (EthoMPLS2/3oIPv4) but no L4. 2) MPLS pop and lookup flows (EthoMPLS2/3oIPv4) but no L4. 3) EthoMPLS4+ labels packets for topmost label swap/pop. The profile was introduced in 7.10.1                                                                                                                        |   |
+| 9     | pppoe                         | Profile designed for head and tail node under ECMP and LAG based hashing scenario in J/J+ where inner IPv4/IPv6 header immediately after PPPoE header is taken consideration. A unique FAT label is allocated for this load-balancing to happen. The profile needs the router to be reloaded to enable this profile.The profile was introduced in 7.4.1                                                                                                                                    |   |
+| 9.1   | pppoe decap-fatbased-hashing  | Sub-profile under pppoe similar with fat-based hash profile for pppoe packets which has been specifically recommended for tail node which would enable the use of FAT label and VC label which are terminating and hence not taken into hash tuple to be considered for hash calculation. The profile needs the router to be reloaded to enable this profile.                                                                                                                              |   |
+| 10    | inner-L2-Field                | Allows the hashing algorithm to use the inner ethernet fields like source MAC (SMAC) and destination MAC (DMAC) addresses for an EthoMPLSoEth kind of packets into consideration for hashing. By default, these fields are not taken. This knob is applicable to J2 as well. The profile was introduced in 7.7.1 on J2 and for J/J+ introduced in 24.1.2                                                                                                                                   |   |
+| 11    | fat-based-hash                | Profile recommended for L2VPN deployment with FAT configured on the disposition node. Enabling this profile ensures that FAT label is also included for hash computation. The profile needs the router to be reloaded to enable this profile. The profile was introduced in 24.3.1                                                                                                                                                                                                         |   |
 
+CLI’s that can affect the behaviour of load balancing are : 
+- **hw-module profile bundle-hash ignore-ingress-port**: 
+- Enabling this command removes ingress traffic port from the hash-key computation. This results in different hash-key value generation. This alters the traffic distribution across the bundle members. This is a global CLI and applies to all Line cards and all bundles on the chassis. This profile doesn’t require a chassis, or a LC reload.
+- **hw-module profile bundle-hash hash-index** 
+Command supports the following hash-indices:
+	- 1 Use Polynomial value 0x8011
+	- 10 Use LB-Key-Pkt-Data directly
+	- 11 Use counter incremented every packet
+	- 12 Use counter incremented every two clocks
+	- 2 Use Polynomial value 0x8423
+	- 3 Use Polynomial value 0x8101
+	- 4 Use Polynomial value 0x84A1
+	- 5 Use Polynomial value 0x9019
 
-There are 6 modes which can be configured. The default (i.e. with no configuration) selects the algorithm which has been running in previous releases.
-- ip-tunnel allows the hashing algorithm to use the outer IPv4 GRE header even when doing an IP tunnel decapsulation. 
-- layer2 allows the hashing algorithm to be able to use the inner IP header information when doing layer 2 forwarding and the inner payload is MPLS.
-- gtp allows hashing based upon the tunnel id in GTP-U (UDP DST 2152) packets. (6.5.1 release or later). When this option is selected, the hashing is based on ip[v4/v6] (src, dest, protocol) + udp (src, dest) + tunnel endpoint id).
-- gtp-mpls allows hashing based upon the tunnel id in GTP-U (UDP DST 2152) packets. (7.2.1 release or later). When this option is selected, the hashing is based on tunnel endpoint id.
-- mpls-safe-speculative-parsing mode was introduced (6.5.3 release or later) for cases where the network has MPLS carrying L2VPN packets without control words. In this case, if the first nibble of the MAC DA address is a 4 or 6, the rest of the packet could be interpreted incorrectly as IPv4 or IPv6 header. In this mode, the algorithm uses a subset of the IPv4 and IPv6 header for load balancing. It does this for MPLS 1-6 labels for IPv6 and MPLS 4-6 labels for IPv4. For MPLS 1-3 labels and IPv4, the hardware can correctly determine whether it’s an IPv4 header or not (uses the checksum).
-- L3-only will not use any L4 headers for the hashing. Only IPv4 and IPv6 will be used. It could be useful in certain corner-cases, particularly to guarantee the fragmented packets will take the same path than the first packet of the fragment.
- 
-These profiles can be activated without requiring a reload of the system or the line card.
-{: .notice--info}
+This command is applicable only to the location or line card specified while configuring this command.
+	
+- **hw-module profile bundle-hash per-packet-round-robin**
+- Enabling this profile, bundles will start egressing traffic in a per-packet round robin manner across all members. This suppresses any internal load balancing algorithm, and it becomes purely round robin. This is a global CLI and applies to all bundles across all locations/LCs.
 
-**_hw-module profile load-balance algorithm PPPoE_**
-
-<div class="highlighter-rouge">
-<pre class="highlight">
-<code>
-RP/0/RP1/CPU0:5508-1-741C(config)#hw-module profile load-balance algorithm ?
-  L3-only                        L3 Header only Hash.
-  PPPoE                          PPPoE session based optimized hash. Reload is required for this option
-  gtp                            GTP optimized.
-  gtp-mpls                       GTP over MPLS optimized hash.
-  ip-tunnel                      IP tunnel optimized.
-  layer2                         Layer 2 optimized.
-  mpls-safe-speculative-parsing  MPLS safe Speculative parsing.
-RP/0/RP1/CPU0:5508-1-741C(config)#hw-module profile load-balance algorithm PPPoE
-Thu Aug 26 11:12:31.971 PDT
-reload of all chassis/all line cards is required only for PPPoE option configuration/removal
-</code>
-</pre>
-</div>
-
-![J-Jp-only-Global.png]({{site.baseurl}}/images/J-Jp-only-Global.png)
-
-This new load balancing algorthim is introduced in IOS XR 7.4.1 and currently applicable to only J and J+ based NCS 5500 PIDs. When this hw-module profile is enabled it allows ECMP and LAG hashing based on inner header (IPv4/IPv6) soon after PPPoE header for Layer 2  P2P and P2MP bridging cases. A unique FAT label is allocated for this load-balancing to happen. 
-
-`NOTE: Unlike the other load-balancing profiles, the router needs to be reloaded to enable this mode`
-
-_External documentation_:  
-- [https://www.cisco.com/c/en/us/td/docs/iosxr/ncs5500/interfaces/b-ncs5500-interfaces-cli-reference/b-ncs5500-interfaces-cli-reference_chapter_011.html#wp2176473466](https://www.cisco.com/c/en/us/td/docs/iosxr/ncs5500/interfaces/b-ncs5500-interfaces-cli-reference/b-ncs5500-interfaces-cli-reference_chapter_011.html#wp2176473466)
 
 ### netflow ipfix315-enable
 
