@@ -68,6 +68,8 @@ The following table shows the packet size for Y.1564 SADT on the NCS platforms.
 |----	|-----	|-----	|-----	|------	|------	|------	|-----	|--------------	|
 | 64 	| 128 	| 256 	| 512 	| 1024 	| 1280 	| 1518 	| MTU 	| user defined 	|
 
+`Note: 'h' in EMIX pattern refers to MTU size. In current XR releases this refers to max NPU MTU size which is 9646 bytes. Starting XR 24.2.x EMIX pattern 'h' will generate packets acoording to interface MTU size`
+
 ### Measurement Statistics 
 Y.1564 defines various parameters that can be measured on the DUT, which in turn related to the performance indicators of the service like throughput and latency. These parameters help in validating the committed SLA for the provisioned service. Cisco NCS 500 and NCS 5500 routers support the measurement of the following statistical parameters:
 - Frame Loss 
@@ -124,6 +126,7 @@ This section illustrates the different components of a Y.1564 test profile. As e
 |    <br>2      	|    <br>ethernet service-activation-test<br>   <br> profile profile_#_2<br>   <br>  outer-cos5<br>   <br>  duration 5 minutes<br>   <br>  packet-size 1024<br>   <br>  information-rate 1   gbps                                                                 	|    <br>Color blind   profile with fixed frame size of 1024 Bytes at 1Gbps IR for duration of 5   minutes                    	|
 |    <br>3      	|    <br>ethernet service-activation-test<br>   <br> profile profile_#3<br>   <br>  outer-cos4<br>   <br>  duration 5 minutes<br>   <br>  color-aware cir 1500   mbps eir-color COS 3<br>   <br>  packet-size 1500<br>   <br>  information-rate 2   gbps          	|    <br>Color aware   profile at CIR 1500 Mbps and EIR 500 Mbps. CIR COS is 4 and EIR COS is 3. DEI   for EIR is not set.    	|
 |    <br>4      	|    <br>ethernet service-activation-test<br>   <br> profile profile_#4<br>   <br>  outer-cos1<br>   <br>  duration 5 minutes<br>   <br>  color-aware cir 700   mbps eir-color set-dei COS 0<br>   <br>  packet-size 512<br>   <br>  information-rate 1   gbps    	|    <br>Color aware   profile at CIR 700 Mbps and EIR 300 Mbps. CIR COS is 1 and EIR COS is 0. DEI   for EIR is set.         	|
+|    <br>5      	|    <br>ethernet service-activation-test<br>   <br> profile profile_#_5<br>   <br>  outer-cos 5<br>   <br>  duration 10 minutes<br>   <br>  packet-size emix sequence bchu u-value 800<br>   <br>  information-rate 750 mbps                                                               	|    <br>Color blind   profile with EMIX (equal number of 128,256, MTU and 800 bytes) at 750 Mbps  IR for duration of 10 minutes                                	|
 
 
 
