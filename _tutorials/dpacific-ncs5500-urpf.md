@@ -22,12 +22,10 @@ You can find more content related to NCS5500 including routing memory management
 | Date  | Change |
 |--|--|
 | August 2018 | note added on the lack of support of S-RTBH, and to fix an error pointed by Muffadal Presswala (thanks :) related to the behavior with eTCAM systems |
-| November 2020 |  |
+| November 2020 | S-RTBH support has been added in IOSXR 7.2.1 but only for line cards and platforms powered by Jericho2 and eTCAM (NC57-18DD-SE for example) |
 | November 2020 | Change of configuration in 7.x |
 | December 2020 |  |
 | June 2024 |  |
-
-S-RTBH support has been added in IOSXR 7.2.1 but only for line cards and platforms powered by Jericho2 and eTCAM (NC57-18DD-SE for example).
 
 decommission the "internet-optimized" mode, please check this article: [https://xrdocs.io/ncs5500/tutorials/decommissioning-internet-optimized-mode/](https://xrdocs.io/ncs5500/tutorials/decommissioning-internet-optimized-mode/) 
 
