@@ -19,7 +19,7 @@ tags:
 You can find more content related to NCS5500 including routing memory management, VRF, ACLs, Netflow following this [link](https://xrdocs.io/ncs5500/tutorials/).
 
 ### Change Log
-|Date  | Change |
+| Date  | Change |
 |--|--|
 | August 2018 | note added on the lack of support of S-RTBH, and to fix an error pointed by Muffadal Presswala (thanks :) related to the behavior with eTCAM systems. {: .notice--info} |
 | November 2020 | S-RTBH support has been added in IOSXR 7.2.1 but only for line cards and platforms powered by Jericho2 and eTCAM (NC57-18DD-SE for example). {: .notice--info} |
@@ -100,6 +100,7 @@ But... S-RTBH is not supported currently on most of the NCS5500 platforms (even 
 
 ### S-RTBH support on NCS5500
 the table below clarifies the support of S-RTBH in different deployment scenario while using NCS5500
+
 | Release | Platform | Details |
 |--|--|--|
 | 7.2.1 | J2 based platform (with eTCAM) | Support for S-RTBH have been introduced and enabled by default (can't be disabled) |

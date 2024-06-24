@@ -11,7 +11,7 @@ position: hidden
 ---
 {% include toc icon="table" title="NCS5500 Hw Profiles" %} 
 
-|   |   |
+| Date | Change |
 |:-----|:-----|
 | 2020-Feb-14 | Document Creation |
 | 2020-Mar-12 | Correction of the max-classmap-size description |
