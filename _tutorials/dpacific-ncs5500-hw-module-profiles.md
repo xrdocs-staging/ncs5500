@@ -1,5 +1,5 @@
 ---
-published: false
+published: true
 date: '2020-02-14 16:39 +0100'
 title: NCS5500 Hw-module Profiles
 author: Nicolas Fevrier
@@ -7,7 +7,7 @@ excerpt: WIP document describing the various options behind the NCS5500 hw-modul
 tags:
   - iosxr
   - dnx
-position: top
+position: hidden
 ---
 {% include toc icon="table" title="NCS5500 Hw Profiles" %} 
 

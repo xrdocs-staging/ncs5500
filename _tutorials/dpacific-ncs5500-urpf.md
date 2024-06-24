@@ -1,12 +1,12 @@
 ---
-published: false
+published: true
 date: '2018-03-31 01:44 +0200'
 title: 'NCS5500 URPF: Configuration and Impact on Scale'
 author: Nicolas Fevrier
 excerpt: >-
   In this article, we analyse the configuration and impact of URPF on NCS5500
   systems
-position: top
+position: hidden
 tags:
   - iosxr
   - ncs5500
