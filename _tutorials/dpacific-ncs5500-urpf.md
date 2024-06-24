@@ -21,11 +21,11 @@ You can find more content related to NCS5500 including routing memory management
 ### Change Log
 | Date  | Change |
 |--|--|
-| August 2018 | note added on the lack of support of S-RTBH, and to fix an error pointed by Muffadal Presswala (thanks :) related to the behavior with eTCAM systems. {: .notice--info} |
-| November 2020 | S-RTBH support has been added in IOSXR 7.2.1 but only for line cards and platforms powered by Jericho2 and eTCAM (NC57-18DD-SE for example). {: .notice--info} |
-| November 2020 | Change of configuration in 7.x {: .notice--info} |
-| December 2020 | decommission the "internet-optimized" mode, please check this article: [https://xrdocs.io/ncs5500/tutorials/decommissioning-internet-optimized-mode/](https://xrdocs.io/ncs5500/tutorials/decommissioning-internet-optimized-mode/) {: .notice--danger} |
-| June 2024 | Added section about S-RTBH support {: .notice--info} |
+| August 2018 | note added on the lack of support of S-RTBH, and to fix an error pointed by Muffadal Presswala (thanks :) related to the behavior with eTCAM systems. |
+| November 2020 | S-RTBH support has been added in IOSXR 7.2.1 but only for line cards and platforms powered by Jericho2 and eTCAM (NC57-18DD-SE for example). |
+| November 2020 | Change of configuration in 7.x |
+| December 2020 | decommission the "internet-optimized" mode, please check this article: [https://xrdocs.io/ncs5500/tutorials/decommissioning-internet-optimized-mode/](https://xrdocs.io/ncs5500/tutorials/decommissioning-internet-optimized-mode/) |
+| June 2024 | Added section about S-RTBH support |
 
 ## S01E07 NCS5500 URPF Configuration and Impact on Scale
 
