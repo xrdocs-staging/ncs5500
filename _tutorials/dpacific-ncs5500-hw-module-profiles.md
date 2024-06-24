@@ -162,9 +162,9 @@ RP/0/RP0/CPU0:NCS5500-702(config)#</code>
 
 ![Screenshot 2021-04-03 at 12.57.20 PM.png]({{site.baseurl}}/images/Screenshot 2021-04-03 at 12.57.20 PM.png)
 
-| Jericho | Jericho w/eTCAM | Jericho+ | Jericho+ w/eTCAM | Jericho2 Native | Jericho2 Native w/eTCAM | Jericho2 Comp | Jericho2 Comp w/eTCAM | Global/Per LC |
+| Jericho | Jericho w/eTCAM | Jericho+ | Jericho+ w/eTCAM | J2 Native | J2 Native w/eTCAM | J2 Comp | J2 Comp w/eTCAM | Global/Per LC |
 |--|--|--|--|--|--|--|--|--|
-| <style>span[class="checked"]{color: green;}</style> | :heavy_check_mark: | :green_check_mark: | &check; | :x: | :x: | :x: | :x: | GLOBAL |
+| :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | :x: | :x: | :x: | :x: | **GLOBAL** |
 
 "Destination-based Load balancing" has been introduced in 6.6.2 and is completed in 7.1.1.  
 It's another solution to address the 4K ECMP FEC limitation with software based pre-selection of the path. In this approach, one path out of available multipaths is selected based on software hash on destination IP before prefix is programmed in hardware. Data plane is programmed with selected single path. So traffic is virtually distributed on available paths by pre-selection of path based on per-prefix hash.  
