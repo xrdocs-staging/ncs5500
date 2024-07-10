@@ -34,10 +34,27 @@ This Mode is available from IOS XR 24.2.x
 ## Configurations on NCS 5500/500 Systems
 Configurations on NCS 5500/500 system as discussed in our previous articles are done via hw-module profiles. 
 ### Default Mode
- 
+
+```
+hw-module profile segment-routing srv6 mode micro-segment format f3216
+```
+
 ### Propagation Mode
+```
+hw-module profile segment-routing srv6 mode micro-segment format f3216 encapsulation traffic-class propagate
+```
 
 ### Ingress Policy Map for IPv6 precedence
+```
+hw-module profile segment-routing srv6 mode micro-segment format f3216
+ encapsulation
+  l2-traffic
+   traffic-class propagate
+  !
+  l3-traffic
+   traffic-class policy-map
+  !
+```
 
 ### Ingress Policy Map for IPv6 DSCP
 
