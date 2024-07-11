@@ -1,9 +1,18 @@
 ---
-published: false
+published: true
 date: '2024-05-19 22:39 +0530'
 title: 'SRv6 on NCS 500/5500: SRv6 QoS'
 author: Paban Sarma
 position: hidden
+excerpt: >-
+  QoS Modes for SRv6 Transport on the NCS 5500/500 & 5700 Platforms. Detailed
+  review and configuration examples various configuration options across
+  releases.
+tags:
+  - iosxr
+  - SRv6
+  - NCS 5500
+  - NCS 5700
 ---
 ## Overview
 In our previous tutorials in this series, we covered various aspects on SRv6 transport implementaion on the NCS 500/5500/5700 series platforms. In this tutorial, we will cover another important aspects, i.e. QoS propagation for SRv6 transport on the NCS 500 and NCS 5500 series platforms. The following figure shows a typical SRv6 encapsulated traffic and from the same it is evident that managing core quality of service for an SRv6 transport network is as simple as managing IPv6 QoS. The simplest way would be to manage the same, by use of the IPv6 DSCP or Precedence field in the SRv6 encapsulation field. 
@@ -12,12 +21,21 @@ In our previous tutorials in this series, we covered various aspects on SRv6 tra
 
 ## SRv6 QoS Options/Modes
 
-### Default
+The following table summerizes the qos modes available. 
+
+| Mode # | Ingress Policy-map | L2VPN | VPNv4 | VPNv6 |
+|:-----: | :-----------------:|:-----:|:-----:|:------:|
+|1: Deafult | NA				| TC ==0 | TC == 0| TC ==0 |
+|2: Propagation| NA	| IPv6 Prec == PCP | IPv6 DSCP = IPv4 DSCP | IPv6 TC == IPv6 TC |
+|3: Precedence| _set qos-group_ **X** | IPv6 Prec == **X** |IPv6 Prec == **X** |IPv6 Prec == **X** |
+|4: DSCP| _set ip encapsulation class-of-service_ **X** | IPv6 DSCP == **X** |IPv6 DSCP == **X** |IPv6 DSCP == **X** |
+
+###  1: Default
 Coming to platform implemenation on the NCS 500/5500 and 5700 series routers, by default the QoS fields in the SRv6 header are not set. 
 
 < placeholder for image >
   
-### Propagation Mode
+### 2: Propagation Mode
 In this mode QoS bits from the actual payload is propagated to the imposed SRv6 header QoS field in the following manner:
 
 - L2VPN : PCP bits of the l2 vlan header are copied to IPv6 Prec filed of the SRv6 header
@@ -26,7 +44,7 @@ In this mode QoS bits from the actual payload is propagated to the imposed SRv6 
 
 < placeholder for image >
 
-### Ingress Policy Map for IPv6 precedence
+### 3: Ingress Policy Map for IPv6 precedence
 In this mode we can apply an ingress policy-maps on the UNI  i.e the interface where customer traffic is entering the ingress PE. The use of `set qos-group <0-7>` within the classes of the policy-map sets the IPv6 Precedence corresponding to the qos-group value.
 
 This Mode is available from IOS XR 7.7.x. The below policy-map for example will set IPv6 precedence values as 7, 5 and 1 respectively for the traffic matching PRIO, DATA and default classes while egressing out of the Core interface. 
@@ -48,7 +66,7 @@ end
 ```
 < placeholder for image >
 
-### Ingress Policy Map for IPv6 DSCP
+### 4: Ingress Policy Map for IPv6 DSCP
 In this mode we can apply an ingress policy-maps on the UNI  i.e the interface where customer traffic is entering the ingress PE. There is a new modular qos CLI (MQC) introduced to use The use of `set ip encapsulation class-of-service <0-63>` within the classes of the policy-map sets the IPv6 DSCP values corresponding to the policy-map. This modes bring in more granularity to the QoS options within the SRv6 Core.
 
 This Mode is available from IOS XR 24.2.x . The below policy-map for example will set IPv6 DSCP values as 56 (cs7), 40 (cs5) and 8(cs1) respectively for the traffic matching PRIO, DATA and default classes while egressing out of the Core interface. 
@@ -171,3 +189,4 @@ interface TenG 0/0/0/1
  . . .
 ```
 ## Conclusion
+In this article we discussed the different qos modes available for SRv6 transport  on the NCS 5500/5700 platform  as of the latest IOS XR 24.2.1 release .
