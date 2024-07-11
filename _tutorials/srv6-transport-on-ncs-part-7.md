@@ -26,7 +26,7 @@ The following table summerizes the qos modes available.
 
 | Mode # | Ingress Policy-map | L2VPN | VPNv4 | VPNv6 |
 |:-----: | :-----------------:|:-----:|:-----:|:------:|
-|1: Deafult | NA				| TC ==0 | TC == 0| TC ==0 |
+|1: Deafult | NA				| TC ==**0** | TC == **0**| TC ==**0** |
 |2: Propagation| NA	| IPv6 Prec == PCP | IPv6 DSCP = IPv4 DSCP | IPv6 TC == IPv6 TC |
 |3: Precedence| _set qos-group_ **X** | IPv6 Prec == **X** |IPv6 Prec == **X** |IPv6 Prec == **X** |
 |4: DSCP| _set ip encapsulation class-of-service_ **X** | IPv6 DSCP == **X** |IPv6 DSCP == **X** |IPv6 DSCP == **X** |
