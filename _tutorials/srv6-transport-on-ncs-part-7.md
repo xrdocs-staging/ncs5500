@@ -15,7 +15,7 @@ tags:
   - NCS 5700
 ---
 ## Overview
-In our previous tutorials in this series, we covered various aspects on SRv6 transport implementaion on the NCS 500/5500/5700 series platforms. In this tutorial, we will cover another important aspects, i.e. QoS propagation for SRv6 transport on the NCS 500 and NCS 5500 series platforms. The following figure shows a typical SRv6 encapsulated traffic and from the same it is evident that managing core quality of service for an SRv6 transport network is as simple as managing IPv6 QoS. The simplest way would be to manage the same, by use of the IPv6 DSCP or Precedence field in the SRv6 encapsulation field. 
+In our previous tutorials in this series, we covered various aspects on SRv6 transport implementation on the NCS 500/5500/5700 series platforms. In this tutorial, we will cover another important aspect, i.e. QoS propagation for SRv6 transport on the NCS 500 and NCS 5500 series platforms. The following figure shows a typical SRv6 encapsulated traffic and from the same it is evident that managing core quality of service for an SRv6 transport network is as simple as managing IPv6 QoS. The simplest way would be to manage the same, by use of the IPv6 DSCP or Precedence field in the SRv6 encapsulation field. 
 
 _Figure 1: Explaining QoS Bits in the SRv6 (IPv6) Header_
 ![QoS-Filed-SRv6-Header]({{site.baseurl}}/images/srv6-qos-filed.png)
@@ -27,13 +27,13 @@ The following table summerizes the qos modes available.
 
 | Mode # | Ingress Policy-map | L2VPN | VPNv4 | VPNv6 |
 |:-----: | :-----------------:|:-----:|:-----:|:------:|
-|1: Deafult | NA				| TC ==**0** | TC == **0**| TC ==**0** |
+|1: Default | NA				| TC ==**0** | TC == **0**| TC ==**0** |
 |2: Propagation| NA	| IPv6 Prec == PCP | IPv6 DSCP = IPv4 DSCP | IPv6 TC == IPv6 TC |
 |3: Precedence| _set qos-group_ **X** | IPv6 Prec == **X** |IPv6 Prec == **X** |IPv6 Prec == **X** |
 |4: DSCP| _set ip encapsulation class-of-service_ **X** | IPv6 DSCP == **X** |IPv6 DSCP == **X** |IPv6 DSCP == **X** |
 
 ###  1: Default
-Coming to platform implemenation on the NCS 500/5500 and 5700 series routers, by default the QoS fields in the SRv6 header are not set. 
+Coming to platform implementation on the NCS 500/5500 and 5700 series routers, by default the QoS fields in the SRv6 header are not set. 
 
 _Figure 2: Explaining QoS Default Mode_
 ![default-qos-mode]({{site.baseurl}}/images/default.png)
@@ -42,16 +42,16 @@ _Figure 2: Explaining QoS Default Mode_
 ### 2: Propagation Mode
 In this mode QoS bits from the actual payload is propagated to the imposed SRv6 header QoS field in the following manner:
 
-- L2VPN : PCP bits of the l2 vlan header are copied to IPv6 Prec filed of the SRv6 header
-- VPNv4 : DSCP bits of the IPv4 header are copied to IPv6 DSCP filed of SRv6 header
-- VPNv6 : DSCP (TC) bits of the IPv6 header copied to IPv6 DSCP (TC) filed of SRv6 header
+- L2VPN : PCP bits of the l2 vlan header are copied to IPv6 Precedence field of the SRv6 header
+- VPNv4 : DSCP bits of the IPv4 header are copied to IPv6 DSCP field of SRv6 header
+- VPNv6 : DSCP (TC) bits of the IPv6 header copied to IPv6 DSCP (TC) field of SRv6 header
 
 _Figure 3: Explaining QoS propagation Mode_
 ![propagate-mode]({{site.baseurl}}/images/propagate.png)
 
 
 ### 3: Ingress Policy Map for IPv6 precedence
-In this mode we can apply an ingress policy-maps on the UNI  i.e the interface where customer traffic is entering the ingress PE. The use of `set qos-group <0-7>` within the classes of the policy-map sets the IPv6 Precedence corresponding to the qos-group value.
+In this mode we can apply an ingress policy-map on the UNI  i.e. the interface where customer traffic is entering the ingress PE. The use of `set qos-group <0-7>` within the classes of the policy-map sets the IPv6 Precedence corresponding to the qos-group value.
 
 This Mode is available from IOS XR 7.7.x. The below policy-map for example will set IPv6 precedence values as 7, 5 and 1 respectively for the traffic matching PRIO, DATA and default classes while egressing out of the Core interface. 
 
@@ -77,7 +77,7 @@ _Figure 4: Explaining Policy-Map based DSCP with qos-group_
 
 
 ### 4: Ingress Policy Map for IPv6 DSCP
-In this mode we can apply an ingress policy-maps on the UNI  i.e the interface where customer traffic is entering the ingress PE. There is a new modular qos CLI (MQC) introduced to use The use of `set ip encapsulation class-of-service <0-63>` within the classes of the policy-map sets the IPv6 DSCP values corresponding to the policy-map. This modes bring in more granularity to the QoS options within the SRv6 Core.
+In this mode we can apply an ingress policy-map on the UNI  i.e the interface where customer traffic is entering the ingress PE. There is a new modular qos CLI (MQC) introduced to use  `set ip encapsulation class-of-service <0-63>` within the classes of the policy-map. This marking action sets the IPv6 DSCP values corresponding to the _class-of-service_ value. This mode brings in more granularity to the QoS options within the SRv6 Core.
 
 This Mode is available from IOS XR 24.2.x . The below policy-map for example will set IPv6 DSCP values as 56 (cs7), 40 (cs5) and 8(cs1) respectively for the traffic matching PRIO, DATA and default classes while egressing out of the Core interface. 
 
@@ -105,7 +105,7 @@ _Figure 5: Explaining Policy-Map based DSCP with ip encapsulation class-of-servi
 ## Configurations on NCS 5500/500 Systems
 Configurations on NCS 5500/500 system as discussed in our previous articles are done via hw-module profiles. 
 ### Default Mode
-By daefult, there is no traffic-class related configuration needed. Only the basic hw-module profile to enable SRv6 needs to configured.
+By default, there is no traffic-class related configuration needed. Only the basic hw-module profile to enable SRv6 needs to configured.
 
 ```
 hw-module profile segment-routing srv6 mode micro-segment format f3216
@@ -128,7 +128,7 @@ hw-module profile segment-routing srv6 mode micro-segment format f3216
    traffic-class policy-map
   !
 ```
-Along with the hardware module prfile an ingress policy-map marking _qos-group_ values must be applied to the UNI interface. In this article we will refer to the sample policy-map documented in previous section. 
+Along with the hardware module profile an ingress policy-map marking _qos-group_ values must be applied to the UNI interface. In this article we will refer to the sample policy-map documented in previous section. 
 
 ```
 interface TenG 0/0/0/1
@@ -143,7 +143,7 @@ hw-module profile segment-routing srv6 mode micro-segment format f3216
  encapsulation
    traffic-class policy-map-extend    
 ```
-Along with the hardware module prfile an ingress policy-map marking _qos-group_ values must be applied to the UNI interface. In this article we will refer to the sample policy-map documented in previous section. 
+Along with the hardware module profile an ingress policy-map marking _qos-group_ values must be applied to the UNI interface. In this article we will refer to the sample policy-map documented in previous section. 
 
 ```
 interface TenG 0/0/0/1
@@ -154,7 +154,7 @@ interface TenG 0/0/0/1
 
 ## Configurations for NCS 5700 Systems
 
-NCS 5700 platforms don't need hw-mdoule profile. QoS encapsulations options are configured under global "segment-routing srv6" configurations. NCS 5700 also gives more flexibility in terms of opting for policy-map based mode and propagation modes on services selectively. 
+NCS 5700 platforms don't need hw-module profile. QoS encapsulations options are configured under global "segment-routing srv6" configurations. NCS 5700 also gives more flexibility in terms of opting for policy-map based mode and propagation modes on services selectively. 
 ### Default Mode
 No additional config is needed. 
  
