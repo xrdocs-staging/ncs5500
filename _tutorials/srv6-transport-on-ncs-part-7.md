@@ -17,6 +17,7 @@ tags:
 ## Overview
 In our previous tutorials in this series, we covered various aspects on SRv6 transport implementaion on the NCS 500/5500/5700 series platforms. In this tutorial, we will cover another important aspects, i.e. QoS propagation for SRv6 transport on the NCS 500 and NCS 5500 series platforms. The following figure shows a typical SRv6 encapsulated traffic and from the same it is evident that managing core quality of service for an SRv6 transport network is as simple as managing IPv6 QoS. The simplest way would be to manage the same, by use of the IPv6 DSCP or Precedence field in the SRv6 encapsulation field. 
 
+_Figure 1: Explaining QoS Bits in the SRv6 (IPv6) Header_
 ![QoS-Filed-SRv6-Header]({{site.baseurl}}/images/srv6-qos-filed.png)
 
 
@@ -34,6 +35,7 @@ The following table summerizes the qos modes available.
 ###  1: Default
 Coming to platform implemenation on the NCS 500/5500 and 5700 series routers, by default the QoS fields in the SRv6 header are not set. 
 
+_Figure 2: Explaining QoS Default Mode_
 ![default-qos-mode]({{site.baseurl}}/images/default.png)
 
   
@@ -44,6 +46,7 @@ In this mode QoS bits from the actual payload is propagated to the imposed SRv6 
 - VPNv4 : DSCP bits of the IPv4 header are copied to IPv6 DSCP filed of SRv6 header
 - VPNv6 : DSCP (TC) bits of the IPv6 header copied to IPv6 DSCP (TC) filed of SRv6 header
 
+_Figure 3: Explaining QoS propagation Mode_
 ![propagate-mode]({{site.baseurl}}/images/propagate.png)
 
 
@@ -68,8 +71,8 @@ policy-map srv6-qos-group
 end
 ```
 
-
-![]({{site.baseurl}}images/pmap.png)
+_Figure 4: Explaining Policy-Map based DSCP with qos-group_
+![Precedence]({{site.baseurl}}images/pmap.png)
 
 ### 4: Ingress Policy Map for IPv6 DSCP
 In this mode we can apply an ingress policy-maps on the UNI  i.e the interface where customer traffic is entering the ingress PE. There is a new modular qos CLI (MQC) introduced to use The use of `set ip encapsulation class-of-service <0-63>` within the classes of the policy-map sets the IPv6 DSCP values corresponding to the policy-map. This modes bring in more granularity to the QoS options within the SRv6 Core.
@@ -91,7 +94,7 @@ policy-map srv6-ip-encap
  end-policy-map
 ```
 
-
+_Figure 5: Explaining Policy-Map based DSCP with ip encapsulation class-of-service_
 ![dscp-via-ip-encap]({{site.baseurl}}images/pmap-extend.png)
 
 
