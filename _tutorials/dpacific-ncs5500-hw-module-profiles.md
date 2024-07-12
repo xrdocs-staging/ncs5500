@@ -160,8 +160,6 @@ RP/0/RP0/CPU0:NCS5500-702(config)#</code>
 </pre>
 </div>
 
-![Screenshot 2021-04-03 at 12.57.20 PM.png]({{site.baseurl}}/images/Screenshot 2021-04-03 at 12.57.20 PM.png)
-
 | Jericho | Jericho <br>w/eTCAM | Jericho+ | Jericho+ <br>w/eTCAM | J2 Native | J2 Native <br>w/eTCAM | J2 Comp | J2 Comp <br>w/eTCAM | Global or <br>Per LC |
 |--|--|--|--|--|--|--|--|--|
 | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | :x: | :x: | :x: | :x: | **GLOBAL** |
@@ -201,7 +199,9 @@ RP/0/RP0/CPU0:NCS5500-663(config)#</code>
 </pre>
 </div>
 
-![01.png]({{site.baseurl}}/images/01.png){: .align-center}
+| Jericho | Jericho <br>w/eTCAM | Jericho+ | Jericho+ <br>w/eTCAM | J2 Native | J2 Native <br>w/eTCAM | J2 Comp | J2 Comp <br>w/eTCAM | Global or <br>Per LC |
+|--|--|--|--|--|--|--|--|--|
+| :heavy_check_mark: | :x: | :heavy_check_mark: | :x: | :x: | :x: | :x: | :x: | **GLOBAL** |
 
 These profiles will dictate how we distribute IPv4 and IPv6 prefixes in the different databases (LPM or LEM) depending on their prefix length. Not effective when using external TCAM.  
 They are mandatory if we need to store large routing tables (ie full internet view) and/or if want to configure URPF.  
@@ -243,8 +243,9 @@ RP/0/RP0/CPU0:NCS5500-663(config)#</code>
 </div>
 
 
-![mpls ldp lsr-optimized.png]({{site.baseurl}}/images/mpls ldp lsr-optimized.png)
-
+| Jericho | Jericho <br>w/eTCAM | Jericho+ | Jericho+ <br>w/eTCAM | J2 Native | J2 Native <br>w/eTCAM | J2 Comp | J2 Comp <br>w/eTCAM | Global or <br>Per LC |
+|--|--|--|--|--|--|--|--|--|
+| :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | :x: | :x: | :heavy_check_mark: | :heavy_check_mark: | **GLOBAL** |
 
 When using an MPLS network, you bind specific prefixes to labels for the IP-to-MPLS case, and also you bind  ingress labels to egress labels for the LSR role (MPLS-to-MPLS case).  
 In the NCS5500, several resources are used to store this information. Among them, the FEC database is solicited. LEM and EEDB are also important in this discussion but we will try to simplify it to focus only on the FEC part.  
@@ -284,8 +285,9 @@ RP/0/RP0/CPU0:NCS5500-663(config)#</code>
 </div>
 
 
-![mpls label lsr-optimized 2.png]({{site.baseurl}}/images/mpls label lsr-optimized 2.png)
-
+| Jericho | Jericho <br>w/eTCAM | Jericho+ | Jericho+ <br>w/eTCAM | J2 Native | J2 Native <br>w/eTCAM | J2 Comp | J2 Comp <br>w/eTCAM | Global or <br>Per LC |
+|--|--|--|--|--|--|--|--|--|
+| :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | :x: | :x: | :heavy_check_mark: | :heavy_check_mark: | **GLOBAL** |
 
 ECMP optimization for /32 prefixes - when all paths have same label, the common label stored in the LEM so we don't have to consume EMCP FEC entries.
 In 6.5.x: no services could work with this profile (no L2VPN/L3VPN as the "transport" label won't be pushed on the traffic). Starting from 7.1.1, L3VPN supported but no L2.
@@ -321,7 +323,9 @@ RP/0/RP1/CPU0:5508-1-731(config)#
 </pre>
 </div>
 
-![Screenshot 2021-04-03 at 11.58.02 AM.png]({{site.baseurl}}/images/Screenshot 2021-04-03 at 11.58.02 AM.png)
+| Jericho | Jericho <br>w/eTCAM | Jericho+ | Jericho+ <br>w/eTCAM | J2 Native | J2 Native <br>w/eTCAM | J2 Comp | J2 Comp <br>w/eTCAM | Global or <br>Per LC |
+|--|--|--|--|--|--|--|--|--|
+| :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | :x: | :x: | :heavy_check_mark: | :heavy_check_mark: | **GLOBAL** |
 
 To enable L3 BGP services over NCS5500/5700 use hw-module profile hw-module fib recycle service-over-rsvpte”. Prior to this feature, BGP services (6PE, VPNv4) were not supported over LDPoRSVPTE on NCS5500. With introduction of this feature, in IOS-XR 7.3.1 on systems with J/J+ and IOS-XR 7.4.1 on J2-comp-mode this use cases is possible. The is achieved via recycle approach.  In first pass,  IGP local label and BGP label is added and then packet is recycled. Recycled packet is treated as regular IGP MPLSoRSVPTE packet in second pass. In second pass, IGP local label is swapped with IGP out label and then pushed RSVP TE label and packet is sent out. In order to activate/deactivate recycling traffic for BGP services going over RSVP TE, you must manually reload the chassis/all line cards
 
@@ -348,7 +352,9 @@ RP/0/RP1/CPU0:5508-1-731(config)#
 </pre>
 </div>
 
-![Screenshot 2021-04-03 at 11.59.58 AM.png]({{site.baseurl}}/images/Screenshot 2021-04-03 at 11.59.58 AM.png)
+| Jericho | Jericho <br>w/eTCAM | Jericho+ | Jericho+ <br>w/eTCAM | J2 Native | J2 Native <br>w/eTCAM | J2 Comp | J2 Comp <br>w/eTCAM | Global or <br>Per LC |
+|--|--|--|--|--|--|--|--|--|
+| :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | :x: | :x: | :x: | :x: | **GLOBAL** |
 
 To avoid BGP prefix dependent convergence, when multiple ECMP paths are available via IGP, use the hw-module profile fib multipath-core enable. This helps in achieving sub second convergence. The BGP protocol will select more than 1 primary path as primary path set and 1 backup path for primary path set. It will install the primary and backup path pair in the RIB. FIB will replicate same backup path for all primary paths and program all path as a protected path. To disable the feature, need to use below CLI. After disabling the CLI router reload is recommended.“no hw-module fib bgp-pic multipath-core enable”. 
 
@@ -374,8 +380,9 @@ RP/0/RP0/CPU0:NCS5500-702(config)#hw-module oversubscription prioritize untagged
 </pre>
 </div>
 
-![Screenshot 2021-04-03 at 12.39.43 PM.png]({{site.baseurl}}/images/Screenshot 2021-04-03 at 12.39.43 PM.png)
-  
+| Jericho | Jericho <br>w/eTCAM | Jericho+ | Jericho+ <br>w/eTCAM | J2 Native | J2 Native <br>w/eTCAM | J2 Comp | J2 Comp <br>w/eTCAM | Global or <br>Per LC |
+|--|--|--|--|--|--|--|--|--|
+| :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | **GLOBAL** |  
 
 ## port-range
 
@@ -442,7 +449,9 @@ RP/0/RP0/CPU0:NCS5500-663(config)#</code>
 </pre>
 </div>
 
-![Screenshot 2021-04-03 at 12.39.43 PM.png]({{site.baseurl}}/images/Screenshot 2021-04-03 at 12.39.43 PM.png)
+| Jericho | Jericho <br>w/eTCAM | Jericho+ | Jericho+ <br>w/eTCAM | J2 Native | J2 Native <br>w/eTCAM | J2 Comp | J2 Comp <br>w/eTCAM | Global or <br>Per LC |
+|--|--|--|--|--|--|--|--|--|
+| :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | **GLOBAL** |  
 
 Introduced in IOS XR 6.1.4, this profile is specifically designed to enable L3 egress ACL over BVI.  
 
@@ -470,7 +479,9 @@ RP/0/RP0/CPU0:NCS5500-702(config)#</code>
 </pre>
 </div>
 
-![acl ingress compress enable.png]({{site.baseurl}}/images/acl ingress compress enable.png)
+| Jericho | Jericho <br>w/eTCAM | Jericho+ | Jericho+ <br>w/eTCAM | J2 Native | J2 Native <br>w/eTCAM | J2 Comp | J2 Comp <br>w/eTCAM | Global or <br>Per LC |
+|--|--|--|--|--|--|--|--|--|
+| :x: | :heavy_check_mark: | :x: | :heavy_check_mark: | :x: | :heavy_check_mark: | :x: | :heavy_check_mark: | **GLOBAL** |  
 
 
 
@@ -497,7 +508,9 @@ RP/0/RP0/CPU0:NCS5500-702(config)#</code>
 </div>
 
 
-![acl ipv6 ext-header permit.png]({{site.baseurl}}/images/acl ipv6 ext-header permit.png)
+| Jericho | Jericho <br>w/eTCAM | Jericho+ | Jericho+ <br>w/eTCAM | J2 Native | J2 Native <br>w/eTCAM | J2 Comp | J2 Comp <br>w/eTCAM | Global or <br>Per LC |
+|--|--|--|--|--|--|--|--|--|
+| :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | **GLOBAL** |  
 
 
 Feature available on 6.6.3 and 7.0.1.  
@@ -525,7 +538,9 @@ RP/0/RP0/CPU0:NCS5500-702(config)#</code>
 </pre>
 </div>
 
-![Screenshot 2021-04-03 at 12.39.43 PM.png]({{site.baseurl}}/images/Screenshot 2021-04-03 at 12.39.43 PM.png)
+| Jericho | Jericho <br>w/eTCAM | Jericho+ | Jericho+ <br>w/eTCAM | J2 Native | J2 Native <br>w/eTCAM | J2 Comp | J2 Comp <br>w/eTCAM | Global or <br>Per LC |
+|--|--|--|--|--|--|--|--|--|
+| :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | **GLOBAL** |  
 
 In IOS XR 6.5.1, we introduced this hardware profile to offer more flexibility in the distribution "number of bundles vs numbers of bundle members". Some customers wanted more bundle interfaces with few ports or vice versa fewer bundle interfaces with more port members.
 
@@ -557,7 +572,9 @@ RP/0/RP1/CPU0:5508-1-731(config)#hw-module profile bundle-hash ignore-ingress-po
 </pre>
 </div>
 
-![Screenshot 2021-04-03 at 11.37.35 AM.png]({{site.baseurl}}/images/Screenshot 2021-04-03 at 11.37.35 AM.png)
+| Jericho | Jericho <br>w/eTCAM | Jericho+ | Jericho+ <br>w/eTCAM | J2 Native | J2 Native <br>w/eTCAM | J2 Comp | J2 Comp <br>w/eTCAM | Global or <br>Per LC |
+|--|--|--|--|--|--|--|--|--|
+| :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | :x: | :x: | :x: | :x: | **GLOBAL** |  
 
 This profile was introduced in IOS-XR 7.1.2. After enabling this profile ingress traffic port is removed from the hash-key computation. This results in different hash-key value gets computation. This alters the traffic distribution across the bundle members. This is a global CLI and applies to all Line cards and all bundles on the chassis. This profile doesn’t require a chassis or a LC reload.
 
@@ -578,7 +595,9 @@ RP/0/RP1/CPU0:5508-1-731(config)#hw-module profile bundle-hash per-packet-round-
 </pre>
 </div>
 
-![Screenshot 2021-04-03 at 11.40.07 AM.png]({{site.baseurl}}/images/Screenshot 2021-04-03 at 11.40.07 AM.png)
+| Jericho | Jericho <br>w/eTCAM | Jericho+ | Jericho+ <br>w/eTCAM | J2 Native | J2 Native <br>w/eTCAM | J2 Comp | J2 Comp <br>w/eTCAM | Global or <br>Per LC |
+|--|--|--|--|--|--|--|--|--|
+| :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | :x: | :x: | :x: | :x: | **GLOBAL** | 
 
 This profile is introduced in IOS XR 7.3.1. Enabling this profile, bundles will start egressing traffic in a per-packet round robin manner across all members. This suppresses any internal load balancing algorithm and it becomes purely round robin. This is a global CLI and applies to all bundles across all locations/LCs. 
 
@@ -613,7 +632,9 @@ RP/0/RP1/CPU0:5508-1-731(config)#hw-module profile bundle-hash hash-index 10 loc
 </pre>
 </div>
 
-![Screenshot 2021-04-03 at 11.41.57 AM.png]({{site.baseurl}}/images/Screenshot 2021-04-03 at 11.41.57 AM.png)
+| Jericho | Jericho <br>w/eTCAM | Jericho+ | Jericho+ <br>w/eTCAM | J2 Native | J2 Native <br>w/eTCAM | J2 Comp | J2 Comp <br>w/eTCAM | Global or <br>Per LC |
+|--|--|--|--|--|--|--|--|--|
+| :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | :x: | :x: | :x: | :x: | **Per LC** | 
 
 This is the config to adjust the LAG load balancing algorithm by changing the hash polynomial used by ASIC. The router continues to use the existing 7-Tuples algorithm, but user can change the polynomial value used internally. This results in different load-balancing which may be better in some cases. This profile is per location or LC based. So the change is applicable only for traffic streams ingressing on that particular Line Card. Hash-key is calculated based on ingress LC. Hash-key value decides which bundle member will be selected for egress, irrespective of whichever LC bundle member belongs to. User can configure same hash-index on all LCs if desired.
 
@@ -637,7 +658,9 @@ RP/0/RP0/CPU0:5508-2-702(config)</code>
 </pre>
 </div>
 
-![02.png]({{site.baseurl}}/images/02.png){: .align-center}
+| Jericho | Jericho <br>w/eTCAM | Jericho+ | Jericho+ <br>w/eTCAM | J2 Native | J2 Native <br>w/eTCAM | J2 Comp | J2 Comp <br>w/eTCAM | Global or <br>Per LC |
+|--|--|--|--|--|--|--|--|--|
+| :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | :x: | :x: | :x: | :x: | **GLOBAL** | 
 
 This feature allows the NPU to monitor of the number of fabric interfaces "up".  
 When the fabric bandwidth falls below the configured bandwidth threshold on any one ASIC, the front panel interfaces on the line card are forced down, triggering a network re-convergence (through routing protocols). If we cross the threshold in the other direction, the front panel interfaces are brought back up again.  
@@ -664,7 +687,9 @@ RP/0/RP0/CPU0:NCS5500-702(config)#</code>
 </pre>
 </div>
 
-![Screenshot 2021-04-03 at 2.31.43 PM.png]({{site.baseurl}}/images/Screenshot 2021-04-03 at 2.31.43 PM.png)
+| Jericho | Jericho <br>w/eTCAM | Jericho+ | Jericho+ <br>w/eTCAM | J2 Native | J2 Native <br>w/eTCAM | J2 Comp | J2 Comp <br>w/eTCAM | Global or <br>Per LC |
+|--|--|--|--|--|--|--|--|--|
+| :x: | :x: | :x: | :heavy_check_mark: | :x: | :heavy_check_mark: | :x: | :heavy_check_mark: | **Per LC** | 
 
 
 NCS 5500 supports BGP FlowSpec starting from IOS XR 6.5.1. Only the J+ platforms with eTCAM (-A-SE) are supporting this feature.
@@ -678,7 +703,7 @@ _External documentation_:
 - [https://community.cisco.com/t5/service-providers-blogs/bgp-flowspec-implementation-on-ncs5500-platforms/ba-p/3387443](https://community.cisco.com/t5/service-providers-blogs/bgp-flowspec-implementation-on-ncs5500-platforms/ba-p/3387443)
 - [https://xrdocs.io/ncs5500/tutorials/bgp-flowspec-on-ncs5500/](https://xrdocs.io/ncs5500/tutorials/bgp-flowspec-on-ncs5500/)
 
-### load-balance algo
+### load-balance algorithm
 
 <div class="highlighter-rouge">
 <pre class="highlight">
@@ -758,7 +783,9 @@ RP/0/RP0/CPU0:NCS5500-702(config)#</code>
 </pre>
 </div>
 
-![Screenshot 2021-04-03 at 12.39.43 PM.png]({{site.baseurl}}/images/Screenshot 2021-04-03 at 12.39.43 PM.png)
+| Jericho | Jericho <br>w/eTCAM | Jericho+ | Jericho+ <br>w/eTCAM | J2 Native | J2 Native <br>w/eTCAM | J2 Comp | J2 Comp <br>w/eTCAM | Global or <br>Per LC |
+|--|--|--|--|--|--|--|--|--|
+| :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | **GLOBAL** | 
 
 This hardware profile must be enabled prior to configure an exporter-map with version ipfix option 315 on a specific line card.
 
@@ -779,7 +806,9 @@ RP/0/RP0/CPU0:NCS5500-702(config)#</code>
 </pre>
 </div>
 
-![Screenshot 2021-04-03 at 12.39.43 PM.png]({{site.baseurl}}/images/Screenshot 2021-04-03 at 12.39.43 PM.png)
+| Jericho | Jericho <br>w/eTCAM | Jericho+ | Jericho+ <br>w/eTCAM | J2 Native | J2 Native <br>w/eTCAM | J2 Comp | J2 Comp <br>w/eTCAM | Global or <br>Per LC |
+|--|--|--|--|--|--|--|--|--|
+| :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | **GLOBAL** | 
 
 This feature introduced in 7.0.1 enables the full packet capture mode, and is documented externally on [https://www.cisco.com/c/en/us/td/docs/iosxr/ncs5500/netflow/b-ncs5500-netflow-cli-reference/b-ncs5500-netflow-cli-reference_chapter_01.html#wp4044800456](https://www.cisco.com/c/en/us/td/docs/iosxr/ncs5500/netflow/b-ncs5500-netflow-cli-reference/b-ncs5500-netflow-cli-reference_chapter_01.html#wp4044800456)  
 
@@ -802,7 +831,9 @@ RP/0/RP0/CPU0:NCS5500-702(config)#
 </pre>
 </div>
 
-![02.png]({{site.baseurl}}/images/02.png){: .align-center}
+| Jericho | Jericho <br>w/eTCAM | Jericho+ | Jericho+ <br>w/eTCAM | J2 Native | J2 Native <br>w/eTCAM | J2 Comp | J2 Comp <br>w/eTCAM | Global or <br>Per LC |
+|--|--|--|--|--|--|--|--|--|
+| :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | :x: | :x: | :x: | :x: | **GLOBAL** | 
 
 This profile, introduced in 6.6.1, enables the hardware offload of the IPv6 BFD for NCS5501-SE. 
 Bsync here refers to the PTP (timing feature) capability.
@@ -837,7 +868,9 @@ In order to make the oam profile take effect, the router must be manually reload
 </pre>
 </div>
 
-![Screenshot 2022-01-20 at 3.40.30 PM.png]({{site.baseurl}}/images/Screenshot 2022-01-20 at 3.40.30 PM.png)
+| Jericho | Jericho <br>w/eTCAM | Jericho+ | Jericho+ <br>w/eTCAM | J2 Native | J2 Native <br>w/eTCAM | J2 Comp | J2 Comp <br>w/eTCAM | Global or <br>Per LC |
+|--|--|--|--|--|--|--|--|--|
+| :x: | :x: | :x: | :x: | :heavy_check_mark: | :heavy_check_mark: | :x: | :x: | **GLOBAL** | 
 
 The NCS 5500 and NCS 5700 system has limited format support for MAID/MDID formats for hw-offloaded CFM session (<1 minutes). With introduction to this new hw-module profile, NCS 5700 fixed systems and modular boxes running in J2 native mode will support flexible format MDID/MAIDs for hardware offloaded MEPs. Activation of this mode needs the router to be reloated. 
 
@@ -848,7 +881,9 @@ Many options behind the qos profiles...
 
 **_hw-module profile qos hqos-enable_**
 
-![Screenshot 2021-04-03 at 12.39.43 PM.png]({{site.baseurl}}/images/Screenshot 2021-04-03 at 12.39.43 PM.png)
+| Jericho | Jericho <br>w/eTCAM | Jericho+ | Jericho+ <br>w/eTCAM | J2 Native | J2 Native <br>w/eTCAM | J2 Comp | J2 Comp <br>w/eTCAM | Global or <br>Per LC |
+|--|--|--|--|--|--|--|--|--|
+| :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | **GLOBAL** | 
 
 <div class="highlighter-rouge">
 <pre class="highlight">
@@ -896,7 +931,9 @@ RP/0/RP0/CPU0:NCS5500-663(config)#</code>
 </pre>
 </div>
 
-![Screenshot 2021-04-03 at 12.39.43 PM.png]({{site.baseurl}}/images/Screenshot 2021-04-03 at 12.39.43 PM.png)
+| Jericho | Jericho <br>w/eTCAM | Jericho+ | Jericho+ <br>w/eTCAM | J2 Native | J2 Native <br>w/eTCAM | J2 Comp | J2 Comp <br>w/eTCAM | Global or <br>Per LC |
+|--|--|--|--|--|--|--|--|--|
+| :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | **GLOBAL** | 
 
 The max-classmap-size represents the maximum number of class-map we can use in policy-map. It has a direct impact on the  number of L2 interfaces where you can apply QoS.
 
@@ -916,7 +953,9 @@ _External documentation_:
 
 **_hw-module profile qos ingress-model peering_**
 
-![06.png]({{site.baseurl}}/images/06.png){: .align-center}
+| Jericho | Jericho <br>w/eTCAM | Jericho+ | Jericho+ <br>w/eTCAM | J2 Native | J2 Native <br>w/eTCAM | J2 Comp | J2 Comp <br>w/eTCAM | Global or <br>Per LC |
+|--|--|--|--|--|--|--|--|--|
+| :heavy_check_mark: | :x: | :heavy_check_mark: | :x: | :x: | :x: | :x: | :x: | **GLOBAL** | 
 
 <div class="highlighter-rouge">
 <pre class="highlight">
@@ -971,7 +1010,9 @@ RP/0/RP0/CPU0:NCS5500-702(config)#</code>
 </pre>
 </div>
 
-![Screenshot 2021-04-03 at 12.39.43 PM.png]({{site.baseurl}}/images/Screenshot 2021-04-03 at 12.39.43 PM.png)
+| Jericho | Jericho <br>w/eTCAM | Jericho+ | Jericho+ <br>w/eTCAM | J2 Native | J2 Native <br>w/eTCAM | J2 Comp | J2 Comp <br>w/eTCAM | Global or <br>Per LC |
+|--|--|--|--|--|--|--|--|--|
+| :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | **GLOBAL** | 
 
 Introduced in IOS XR 6.5.1 for the support of the QPPB feature.  
 Only mandatory to apply it (and reload the line card) for IPv6, it's not needed for IPv4 QPPB activation.
@@ -997,7 +1038,9 @@ RP/0/RP0/CPU0:NCS5500-702(config)#</code>
 </pre>
 </div>
 
-![]({{site.baseurl}}/images/Screenshot%202021-04-03%20at%2011.05.27%20AM.png)
+| Jericho | Jericho <br>w/eTCAM | Jericho+ | Jericho+ <br>w/eTCAM | J2 Native | J2 Native <br>w/eTCAM | J2 Comp | J2 Comp <br>w/eTCAM | Global or <br>Per LC |
+|--|--|--|--|--|--|--|--|--|
+| :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | :x: | :x: | **GLOBAL** | 
 
 From CCO: "To enable classification of IPv6 packets based on (CoS, DEI) on L3 sub-interfaces, run the hw-module profile qos ipv6 short-l2qos-enable command in the XR Config mode."  
 This profile, introduced in 7.1.1, replaces the "short" one and extends the support of the classification to the COS/DEI fields in the IPv6 headers, reducing the destination address to 96bits.
@@ -1027,7 +1070,9 @@ RP/0/RP0/CPU0:IOS(config)#hw-module profile qos conform-aware-policer
 </pre>
 </div>
 
-![Screenshot 2021-04-03 at 11.05.27 AM.png]({{site.baseurl}}/images/Screenshot 2021-04-03 at 11.05.27 AM.png)
+| Jericho | Jericho <br>w/eTCAM | Jericho+ | Jericho+ <br>w/eTCAM | J2 Native | J2 Native <br>w/eTCAM | J2 Comp | J2 Comp <br>w/eTCAM | Global or <br>Per LC |
+|--|--|--|--|--|--|--|--|--|
+| :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | :x: | :x: | **GLOBAL** | 
 
 To enable the conform-aware hierarchical policy feature use the _hw-module profile qos conform-aware-policer_ command. It was introduced in release IOS-XR 7.2.1. Implementing the profile conform aware hierarchical policy, allows conform traffic from the child level policy to get priority over Exceed or Violate traffic at parent level policy. Prior to this profile, there was no way that conform traffic belonging to child policy was getting priority over the parent level policy.  When this profile is enabled the entire system is put in color aware mode as compared to color blind mode by default. There is no effect on other features or resources.
 
@@ -1061,7 +1106,9 @@ RP/0/RP0/CPU0:IOS(config)#hw-module profile qos shared-policer-per-class-stats
 </pre>
 </div>
 
-![]({{site.baseurl}}/images/Screenshot%202021-04-03%20at%2011.05.27%20AM.png)
+| Jericho | Jericho <br>w/eTCAM | Jericho+ | Jericho+ <br>w/eTCAM | J2 Native | J2 Native <br>w/eTCAM | J2 Comp | J2 Comp <br>w/eTCAM | Global or <br>Per LC |
+|--|--|--|--|--|--|--|--|--|
+| :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | :x: | :x: | **GLOBAL** | 
 
 This profile was introduced in IOS-XR 7.2.1. Implementing this profile, will provide an option for token bucket sharing among two or more classes. Prior to this, there was no way to share a policer token bucket among two or more class. This token sharing depends on the incoming traffic rate, so there is no guarantee that both c1 and c2 will get equal share. However, if c2 doesn’t have any traffic, then all the bandwidth will be used by c1. This CLI will need system reload to enable the feature. The stats for each class will be available separately. In Shared Policer feature Per-Class Mode, policer bucket will be shared among two or more classes. It will also allow individual class statistics rather than aggregated statistics. Without enabling this feature as well the shared policer will work with respect to token bucket sharing, however the stats will be available only as aggregate stats, and not per individual class stats.
 
@@ -1086,7 +1133,9 @@ RP/0/RP0/CPU0:IOS(config)#hw-module profile qos shared-policer-per-class-stats
 </pre>
 </div>
 
-![Screenshot 2021-04-03 at 11.18.57 AM.png]({{site.baseurl}}/images/Screenshot 2021-04-03 at 11.18.57 AM.png)
+| Jericho | Jericho <br>w/eTCAM | Jericho+ | Jericho+ <br>w/eTCAM | J2 Native | J2 Native <br>w/eTCAM | J2 Comp | J2 Comp <br>w/eTCAM | Global or <br>Per LC |
+|--|--|--|--|--|--|--|--|--|
+| :x: | :x: | :x: | :x: | :x: | :heavy_check_mark: | :x: | :x: | **GLOBAL** | 
 
 
 WRED-stats accounting feature on NCS5700 platform will be introduced from IOS-XR 7.4.1. WRED stats will be supported on systems based on J2 with OP2 TCAM only in native mode. Statistics like WRED FWD, WRED Drop count will be available for all the discard-class 0,1,2. WRED stats can be used as an indication of network congestion bottleneck and network planning can be done accordingly.
@@ -1119,7 +1168,9 @@ RP/0/RP0/CPU0:IOS(config)#hw-module profile qos qosg-dscp-mark-enable 10
 </pre>
 </div>
 
-![Screenshot 2021-04-03 at 11.22.42 AM.png]({{site.baseurl}}/images/Screenshot 2021-04-03 at 11.22.42 AM.png)
+| Jericho | Jericho <br>w/eTCAM | Jericho+ | Jericho+ <br>w/eTCAM | J2 Native | J2 Native <br>w/eTCAM | J2 Comp | J2 Comp <br>w/eTCAM | Global or <br>Per LC |
+|--|--|--|--|--|--|--|--|--|
+| :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | :x: | :x: | :x: | :x: | **GLOBAL** | 
 
 To set the qos-group and DSCP values within the same QoS policy that is applied in the ingress direction, use the hw-module profile qos qosg-dscp-mark-enable command. This profile was introduced in IOS-XR 7.1.2. With the use of this profile, we can configure a single ingress policy with both set dscp/precedence and set qos-group at the same time. We can configure set dscp or prec and set qos-group under the same policy-map but not inside the same class map in a policy map. In order to activate this new npu profile, you must manually reload the chassis
 
@@ -1151,7 +1202,9 @@ In order to activate this profile, you must manually reload the chassis/all line
 </pre>
 </div>
 
-![Screenshot 2021-04-03 at 11.24.40 AM.png]({{site.baseurl}}/images/Screenshot 2021-04-03 at 11.24.40 AM.png)
+| Jericho | Jericho <br>w/eTCAM | Jericho+ | Jericho+ <br>w/eTCAM | J2 Native | J2 Native <br>w/eTCAM | J2 Comp | J2 Comp <br>w/eTCAM | Global or <br>Per LC |
+|--|--|--|--|--|--|--|--|--|
+| :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | :x: | :x: | :x: | :x: | **GLOBAL** | 
 
 This profile helps to enable the counters for ECN marked packets when the packet is going out of the node. It was introduced in release IOS-XR 7.3.2. 
 ECN feature is enabled by default in the system. But counters for ECN marked packets is not enabled due to stats resource limitation. When this hw-module is enabled, we enable rules in hardware to count ECN marked packets during congestion in the system.
@@ -1190,7 +1243,9 @@ In order to activate this profile, you must manually reload the chassis/all line
 </pre>
 </div>
 
-![Screenshot 2022-01-20 at 3.30.57 PM.png]({{site.baseurl}}/images/Screenshot 2022-01-20 at 3.30.57 PM.png)
+| Jericho | Jericho <br>w/eTCAM | Jericho+ | Jericho+ <br>w/eTCAM | J2 Native | J2 Native <br>w/eTCAM | J2 Comp | J2 Comp <br>w/eTCAM | Global or <br>Per LC |
+|--|--|--|--|--|--|--|--|--|
+| :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | **GLOBAL** | 
 
 Prior to 7.5.1 there is no option to match IPv4/v6 destination addresses for QoS classification on l2transport interface. With introduction to this profile , QoS classification can be done based on destination address even on l2transport interface/sub interface. activation of this profile needs the router to be reloaded. A new match criterion  “match destination-address” is also introduced along with the hw-module profile. 
 
@@ -1250,7 +1305,9 @@ In order to activate this profile, you must manually reload the chassis/all line
 </pre>
 </div>
   
-![Screenshot 2022-01-20 at 3.30.57 PM.png]({{site.baseurl}}/images/Screenshot 2022-01-20 at 3.30.57 PM.png)
+| Jericho | Jericho <br>w/eTCAM | Jericho+ | Jericho+ <br>w/eTCAM | J2 Native | J2 Native <br>w/eTCAM | J2 Comp | J2 Comp <br>w/eTCAM | Global or <br>Per LC |
+|--|--|--|--|--|--|--|--|--|
+| :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | **GLOBAL** | 
 
 This feature gives an option to assign the highest priority (TC7) to Integrated Intermediate System-to-Intermediate System (IS-IS) and Address Resolution Protocol (ARP) packets in transit. This feature is disabled by default.
 The feature provides more flexibility in transit traffic management on a per-hop basis and also fine-tunes the traffic profile management for transit traffic.
@@ -1276,10 +1333,9 @@ RP/0/RP0/CPU0:ios(config)
 </pre>
 </div>
 
-![native.png]({{site.baseurl}}/images/native.png)
-
-
-
+| Jericho | Jericho <br>w/eTCAM | Jericho+ | Jericho+ <br>w/eTCAM | J2 Native | J2 Native <br>w/eTCAM | J2 Comp | J2 Comp <br>w/eTCAM | Global or <br>Per LC |
+|--|--|--|--|--|--|--|--|--|
+| :x: | :x: | :x: | :x: | :heavy_check_mark: | :heavy_check_mark: | :x: | :x: | **GLOBAL** | 
 
 J2 based systems can operate in 2 modes: 
 Compatible Mode—Used when the chassis contains combination of Cisco NC57 and older generation line cards. This is the default mode.
@@ -1311,8 +1367,9 @@ RP/0/RP0/CPU0:NCS5500-702(config)#</code>
 </pre>
 </div>
 
-![SRV6.png]({{site.baseurl}}/images/SRV6.png)
-
+| Jericho | Jericho <br>w/eTCAM | Jericho+ | Jericho+ <br>w/eTCAM | J2 Native | J2 Native <br>w/eTCAM | J2 Comp | J2 Comp <br>w/eTCAM | Global or <br>Per LC |
+|--|--|--|--|--|--|--|--|--|
+| :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | **N/A** | **N/A** | :x: | :x: | **GLOBAL** | 
 
 This profile is required to enable Segment Routing v6. We can define a static TC value or copy it from the payload.
 
@@ -1340,7 +1397,9 @@ In order to activate/deactivate this srv6 profile, you must manually reload the 
 </pre>
 </div>
  
-  ![J-Jp-only-Global.png]({{site.baseurl}}/images/J-Jp-only-Global.png) 
+| Jericho | Jericho <br>w/eTCAM | Jericho+ | Jericho+ <br>w/eTCAM | J2 Native | J2 Native <br>w/eTCAM | J2 Comp | J2 Comp <br>w/eTCAM | Global or <br>Per LC |
+|--|--|--|--|--|--|--|--|--|
+| :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | :x: | :x: | :x: | :x: | **GLOBAL** | 
   
  This hw-module mode enables Segment Routing v6 (SRv6) on the node using base SRH format. 
  
@@ -1375,8 +1434,9 @@ RP/0/RP1/CPU0:5508-1-741C(config)#hw-module profile segment-routing srv6 mode ba
 </pre>
 </div>
    
- ![J-Jp-only-Global.png]({{site.baseurl}}/images/J-Jp-only-Global.png) 
-
+| Jericho | Jericho <br>w/eTCAM | Jericho+ | Jericho+ <br>w/eTCAM | J2 Native | J2 Native <br>w/eTCAM | J2 Comp | J2 Comp <br>w/eTCAM | Global or <br>Per LC |
+|--|--|--|--|--|--|--|--|--|
+| :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | :x: | :x: | :x: | :x: | **GLOBAL** | 
 
 The encapsulation option followed by the base SRH format decides the QoS bits for the SRv6 header. The TC value on the IPv6 header can be either set explicitly to any value in the range of 0x00-0xff . This value is global for all the SRv6 services that starts on the box. When configured with propagate, QoS marking of the incoming payload is propagated to the SRv6 TC marking. For L3VPN IP Precedence is copied to the SRv6 header IPv6 precedence. For L2VPN the Layer 2 PCP markings are copied to the SRv6 Precedence. 
 
@@ -1401,7 +1461,9 @@ In order to activate/deactivate this srv6 profile, you must manually reload the 
 </pre>
 </div>
   
-   ![J-Jp-only-Global.png]({{site.baseurl}}/images/J-Jp-only-Global.png) 
+| Jericho | Jericho <br>w/eTCAM | Jericho+ | Jericho+ <br>w/eTCAM | J2 Native | J2 Native <br>w/eTCAM | J2 Comp | J2 Comp <br>w/eTCAM | Global or <br>Per LC |
+|--|--|--|--|--|--|--|--|--|
+| :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | :x: | :x: | :x: | :x: | **GLOBAL** | 
   
 Introdcued in IOS XR 7.3.1/7.4.1. with this hw-module profile enables SRv6 uSID instead of base SRH format on the node. 
 `A reload of the chassis is needed to configure/change any SRv6 related hw-module profile.`
@@ -1435,7 +1497,9 @@ In order to activate/deactivate this srv6 profile, you must manually reload the 
 </pre>
 </div>
 
-   ![J-Jp-only-Global.png]({{site.baseurl}}/images/J-Jp-only-Global.png) 
+| Jericho | Jericho <br>w/eTCAM | Jericho+ | Jericho+ <br>w/eTCAM | J2 Native | J2 Native <br>w/eTCAM | J2 Comp | J2 Comp <br>w/eTCAM | Global or <br>Per LC |
+|--|--|--|--|--|--|--|--|--|
+| :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | :x: | :x: | :x: | :x: | **GLOBAL** | 
    
    The encapsulation option followed by the micro-segment mode decides the QoS bits for the SRv6 header. The TC value on the IPv6 header can be either set explicitly to any value in the range of 0x00-0xff . This value is global for all the SRv6 services on the box. When configured with propagate, QoS marking of the incoming payload is propagated to the SRv6 TC marking. For L3VPN IP Precedence is copied to the SRv6 header IPv6 precedence. For L2VPN the Layer 2 PCP markings are copied to the SRv6 Precedence.
 `A reload of the chassis is needed to configure/change any SRv6 related hw-module profile.`
@@ -1456,8 +1520,10 @@ RP/0/RP0/CPU0:NCS5500-702(config)#</code>
 </pre>
 </div>
 
-![02.png]({{site.baseurl}}/images/02.png){: .align-center}
-
+| Jericho | Jericho <br>w/eTCAM | Jericho+ | Jericho+ <br>w/eTCAM | J2 Native | J2 Native <br>w/eTCAM | J2 Comp | J2 Comp <br>w/eTCAM | Global or <br>Per LC |
+|--|--|--|--|--|--|--|--|--|
+| :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | :x: | :x: | :x: | :x: | **GLOBAL** | 
+  
 This profiles enables the V6 null label autopush over SR-policy. DSCP preserve would be disabled.  
 This profile is not supported with 6VPE (v6 null label would be pushed rather than 6vpe label).  
 With this feature, we can use up to 12 labels for v6 too.
@@ -1494,7 +1560,9 @@ RP/0/RP0/CPU0:NCS5500-702(config)#</code>
 </pre>
 </div>
 
-![stats acl permit .png]({{site.baseurl}}/images/stats acl permit .png)
+| Jericho | Jericho <br>w/eTCAM | Jericho+ | Jericho+ <br>w/eTCAM | J2 Native | J2 Native <br>w/eTCAM | J2 Comp | J2 Comp <br>w/eTCAM | Global or <br>Per LC |
+|--|--|--|--|--|--|--|--|--|
+| :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | **N/A** | **N/A** | :heavy_check_mark: | :heavy_check_mark: | **GLOBAL** | 
 
 
 By default, access-lists don't count permit ACE hits but only the deny ones.  
@@ -1527,9 +1595,9 @@ RP/0/RP0/CPU0:NCS5500-702(config)#</code>
 </pre>
 </div>
 
-![stats ingress-sr.png]({{site.baseurl}}/images/stats ingress-sr.png)
-
-
+| Jericho | Jericho <br>w/eTCAM | Jericho+ | Jericho+ <br>w/eTCAM | J2 Native | J2 Native <br>w/eTCAM | J2 Comp | J2 Comp <br>w/eTCAM | Global or <br>Per LC |
+|--|--|--|--|--|--|--|--|--|
+| :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | **N/A** | **N/A** | :heavy_check_mark: | :heavy_check_mark: | **GLOBAL** |
 
 Profile enabling per-label statistics at "ingress" for Segment Routing labels (only for the labels within configured SRGB and SRLB).
 Once activated, QoS Stats will not work for the same labeled packets.
@@ -1551,7 +1619,9 @@ RP/0/RP0/CPU0:NCS5500-663(config)#</code>
 </pre>
 </div>
 
-![Screenshot 2021-04-03 at 12.57.20 PM.png]({{site.baseurl}}/images/Screenshot 2021-04-03 at 12.57.20 PM.png)
+| Jericho | Jericho <br>w/eTCAM | Jericho+ | Jericho+ <br>w/eTCAM | J2 Native | J2 Native <br>w/eTCAM | J2 Comp | J2 Comp <br>w/eTCAM | Global or <br>Per LC |
+|--|--|--|--|--|--|--|--|--|
+| :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | :x: | :x: | :x: | :x: | **GLOBAL** | 
 
 Profile increasing the counters available in the egress pipeline from 16K (default) to 24K. These counters are taken from the ingress pipeline, impacting the scale for ACL/QOS/LPTS/etc.   
 This command also enables ingress SR counters. QoS stats are disabled while enabling this particular stats profile. 
@@ -1573,8 +1643,9 @@ RP/0/RP0/CPU0:NCS5500-702(config)#</code>
 </pre>
 </div>
 
-![Screenshot 2021-04-03 at 1.40.07 PM.png]({{site.baseurl}}/images/Screenshot 2021-04-03 at 1.40.07 PM.png)
-
+| Jericho | Jericho <br>w/eTCAM | Jericho+ | Jericho+ <br>w/eTCAM | J2 Native | J2 Native <br>w/eTCAM | J2 Comp | J2 Comp <br>w/eTCAM | Global or <br>Per LC |
+|--|--|--|--|--|--|--|--|--|
+| :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | :x: | :heavy_check_mark: | :x: | :heavy_check_mark: | **GLOBAL** | 
 
 By default, we only use two counters for policers.  
 This profile enables the 4-counter mode:
@@ -1633,7 +1704,9 @@ RP/0/RP0/CPU0:NCS5500-702(config)#</code>
 </pre>
 </div>
 
-![Screenshot 2021-04-03 at 1.41.49 PM.png]({{site.baseurl}}/images/Screenshot 2021-04-03 at 1.41.49 PM.png)
+| Jericho | Jericho <br>w/eTCAM | Jericho+ | Jericho+ <br>w/eTCAM | J2 Native | J2 Native <br>w/eTCAM | J2 Comp | J2 Comp <br>w/eTCAM | Global or <br>Per LC |
+|--|--|--|--|--|--|--|--|--|
+| :heavy_check_mark: | :heavy_check_mark: | :x: | :x: | :x: | :x: | :x: | :x: | **GLOBAL** | 
 
 
 This profile changes the "stats" EEDB bank to use "half" entries and thereby increases the EEDB scale available. It has been specifically created for large TE deployments, extending the head-end scale from 4k to 14k. Only on J+ systems.
@@ -1657,8 +1730,9 @@ RP/0/RP0/CPU0:NCS5500-663(config)#</code>
 </pre>
 </div>
 
-![stats egress-stats-scale.png]({{site.baseurl}}/images/stats egress-stats-scale.png)
-
+| Jericho | Jericho <br>w/eTCAM | Jericho+ | Jericho+ <br>w/eTCAM | J2 Native | J2 Native <br>w/eTCAM | J2 Comp | J2 Comp <br>w/eTCAM | Global or <br>Per LC |
+|--|--|--|--|--|--|--|--|--|
+| :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | **N/A** | **N/A** | :heavy_check_mark: | :heavy_check_mark: | **GLOBAL** |
 
 Very similar the enh profile, extending the MPLS scale from 8k to 20k counters (4k for ARP/ND) and at the expense of the L2 counters (no L2 with this one).
 
@@ -1681,9 +1755,9 @@ RP/0/RP0/CPU0:NCS5500-702(config)#</code>
 </pre>
 </div>
 
-
-![tcam acl-prefix percent.png]({{site.baseurl}}/images/tcam acl-prefix percent.png)
-
+| Jericho | Jericho <br>w/eTCAM | Jericho+ | Jericho+ <br>w/eTCAM | J2 Native | J2 Native <br>w/eTCAM | J2 Comp | J2 Comp <br>w/eTCAM | Global or <br>Per LC |
+|--|--|--|--|--|--|--|--|--|
+| :x: | :heavy_check_mark: | :x: | :x: | **N/A** | **N/A** | :x: | :heavy_check_mark: | **GLOBAL** |
 
 Hybrid (or Scaled) ACLs are stored in two places: iTCAM and eTCAM. But by default in 6.3.2 (onwards), the eTCAM is not carved to receive ACL information.  
 This hardware profiles helps with this carving.  
@@ -1730,8 +1804,9 @@ RP/0/RP0/CPU0:NCS5500-702(config)#</code>
 </pre>
 </div>
 
-![Screenshot 2021-04-03 at 2.27.25 PM.png]({{site.baseurl}}/images/Screenshot 2021-04-03 at 2.27.25 PM.png)
-
+| Jericho | Jericho <br>w/eTCAM | Jericho+ | Jericho+ <br>w/eTCAM | J2 Native | J2 Native <br>w/eTCAM | J2 Comp | J2 Comp <br>w/eTCAM | Global or <br>Per LC |
+|--|--|--|--|--|--|--|--|--|
+| :x: | :heavy_check_mark: | :x: | :x: | :x: | :x: | :x: | :x: | **GLOBAL** |
 
 Only valid on the first generation of eTCAM (with Jericho ASIC). These hardware profile CLI permits the allocation / carving of the memory for specific route type. It does influence the way routes are stored in the different databases too.  
 It's not operational on J+ eTCAM since the allocation is dynamic and all routes are stored in external TCAM by default.
@@ -1782,8 +1857,9 @@ RP/0/RP0/CPU0:NCS5500-702(config)#</code>
 </pre>
 </div>
 
-![Screenshot 2021-04-03 at 12.54.11 PM.png]({{site.baseurl}}/images/Screenshot 2021-04-03 at 12.54.11 PM.png)
-
+| Jericho | Jericho <br>w/eTCAM | Jericho+ | Jericho+ <br>w/eTCAM | J2 Native | J2 Native <br>w/eTCAM | J2 Comp | J2 Comp <br>w/eTCAM | Global or <br>Per LC |
+|--|--|--|--|--|--|--|--|--|
+| :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | **GLOBAL** |
 
 These hardware profiles are necessary to enable the UDK/UDF (User-Defined TCAM Key and Field) used with ingress ACL.  
 - They permit the definition of the TCAM key.
@@ -1837,7 +1913,9 @@ In order to activate this new mdb profile, you must manually reload the chassis
 </pre>
 </div>
 
-![J2-Native-Only-Global.png]({{site.baseurl}}/images/J2-Native-Only-Global.png)
+| Jericho | Jericho <br>w/eTCAM | Jericho+ | Jericho+ <br>w/eTCAM | J2 Native | J2 Native <br>w/eTCAM | J2 Comp | J2 Comp <br>w/eTCAM | Global or <br>Per LC |
+|--|--|--|--|--|--|--|--|--|
+| :x: | :x: | :x: | :x: | :heavy_check_mark: | :heavy_check_mark: | :x: | :x: | **GLOBAL** |
 
 
 introduced in IOS XR 7.4.1, This is applicable to J2 based PIDs (NCS 5700) without any e-TCAM (as well as eTCAM based cards when used in mixed mode). This carves out the NPU modular database to maximize the scale from L3 Heavy deployment. This profile should be applied to all Line Cards in a modular system . l3-max profile is the default MDB profile in a J2 fixed box  or NCS 5500 modular chassis operating in J2 Native mode. 
@@ -1857,7 +1935,9 @@ In order to activate this new mdb profile, you must manually reload the chassis
 </pre>
 </div>
 
-![J2-Nat-SE-only-global.png]({{site.baseurl}}/images/J2-Nat-SE-only-global.png)
+| Jericho | Jericho <br>w/eTCAM | Jericho+ | Jericho+ <br>w/eTCAM | J2 Native | J2 Native <br>w/eTCAM | J2 Comp | J2 Comp <br>w/eTCAM | Global or <br>Per LC |
+|--|--|--|--|--|--|--|--|--|
+| :x: | :x: | :x: | :x: | :x: | :heavy_check_mark: | :x: | :x: | **GLOBAL** |
 
 introduced in IOS XR 7.4.1, This is applicable to J2 based PIDs with external TCAM. This carves out the NPU modular database to maximize the scale from L3 Heavy deployment. For a modular system , all the LCs must be the Scale variant (i.e with eTCAM) for this profile to be applicable. If there is mix of scale and non scale LC, then the system falls back to  l3max profile.
 
@@ -1906,7 +1986,9 @@ RP/0/RP0/CPU0:NCS5500-702(config)#</code>
 </pre>
 </div>
 
-![05.png]({{site.baseurl}}/images/05.png){: .align-center}
+| Jericho | Jericho <br>w/eTCAM | Jericho+ | Jericho+ <br>w/eTCAM | J2 Native | J2 Native <br>w/eTCAM | J2 Comp | J2 Comp <br>w/eTCAM | Global or <br>Per LC |
+|--|--|--|--|--|--|--|--|--|
+| :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | :x: | :x: | :x: | :x: | **Per LC** |
 
 Meant to put a line card offline, but according to the following release notes:  
 "The offline diagnostics functionality is not supported in NCS 5500 platform. Therefore, the hw-module service offline location command will not work. However, you can use the (sysadmin)# hw-module shutdown location command to bring down the LC."  
@@ -1930,7 +2012,9 @@ RP/0/RP0/CPU0:NCS5500-702(config)#</code>
 </pre>
 </div>
 
-![]({{site.baseurl}}/images/Screenshot%202021-04-03%20at%202.27.25%20PM.png)
+| Jericho | Jericho <br>w/eTCAM | Jericho+ | Jericho+ <br>w/eTCAM | J2 Native | J2 Native <br>w/eTCAM | J2 Comp | J2 Comp <br>w/eTCAM | Global or <br>Per LC |
+|--|--|--|--|--|--|--|--|--|
+| :x: | :heavy_check_mark: | :x: | :x: | :x: | :x: | :x: | :x: | **GLOBAL** |
 
 This profile exists specifically for the application of URPF on a Jericho-based eTCAM system or line card.  
 It will disable a mechanism named "double capacity" that allowed to double the size of the 80b key memory, extending the route count from 1M to 2M entries.  
@@ -1997,8 +2081,9 @@ RP/0/RP0/CPU0:NCS5500-663(config)#</code>
 </pre>
 </div>
 
-![Route_stats.png]({{site.baseurl}}/images/Route_stats.png)
-
+| Jericho | Jericho <br>w/eTCAM | Jericho+ | Jericho+ <br>w/eTCAM | J2 Native | J2 Native <br>w/eTCAM | J2 Comp | J2 Comp <br>w/eTCAM | Global or <br>Per LC |
+|--|--|--|--|--|--|--|--|--|
+| :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | **GLOBAL** |
 
 Where mcast-counter is an access-list defined in the configuration
 
@@ -2042,7 +2127,9 @@ RP/0/RP0/CPU0:NCS5500-663(config)#</code>
 </pre>
 </div>
 
-![VrrpScale.png]({{site.baseurl}}/images/VrrpScale.png)
+| Jericho | Jericho <br>w/eTCAM | Jericho+ | Jericho+ <br>w/eTCAM | J2 Native | J2 Native <br>w/eTCAM | J2 Comp | J2 Comp <br>w/eTCAM | Global or <br>Per LC |
+|--|--|--|--|--|--|--|--|--|
+| :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | **N/A** | **N/A** | :heavy_check_mark: | :heavy_check_mark: | **GLOBAL** |
 
 
 Extends the scale from 16 (or even 13 with BFD) to 255.  
@@ -2069,7 +2156,9 @@ In order to activate this storm-control-combine-policer-bw, you must manually re
 </pre>
 </div>
 
-![J2-Nat-SE-only-global.png]({{site.baseurl}}/images/J2-Nat-SE-only-global.png)
+| Jericho | Jericho <br>w/eTCAM | Jericho+ | Jericho+ <br>w/eTCAM | J2 Native | J2 Native <br>w/eTCAM | J2 Comp | J2 Comp <br>w/eTCAM | Global or <br>Per LC |
+|--|--|--|--|--|--|--|--|--|
+| :x: | :x: | :x: | :x: | :x: | :heavy_check_mark: | :x: | :x: | **GLOBAL** |
 
 This mode is enabled from IOS XR 7.4.1 and is applicable to J2 based PIDs with external TCAM. For L2 storm control by default the three policer (broadcast, multicast and unknown unicast) are different. This hw-module allows to combine all of them and achieve a combined control late for all BUM traffic. For example, if broadcast storm-control is set to 100 PPS then in default mode, broadcast is limited to 100 PPS and Unknown unicast and Multicast are not subjected to any rate limit. IN the combined mode, the same configuration of a broadcast storm-control policer of 100 pps will rate limit all BUM traffic to 100 PPS. Note that in compbined mode the policer units used must be same for all three policer. If all three policers are configured , then the combined storm control rate is the sum of all three policer.
 
