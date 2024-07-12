@@ -221,6 +221,27 @@ Note1: Please pay attention to the form of the command since it could lead to co
 Note2: This profiles are not applicable for J2 based systems.
 {: .notice--info}
 
+### urpf disable
+
+<div class="highlighter-rouge">
+<pre class="highlight">
+<code>RP/0/RP0/CPU0:NCS5500(config)#hw-module fib urpf ?
+  disable  Disable uRPF
+RP/0/RP0/CPU0:NCS5500(config)#hw-module fib urpf disable ?
+  -cr-
+RP/0/RP0/CPU0:NCS5500(config)#</code>
+</pre>
+</div>
+
+This command disable Jericho2 capability of doing Source IPv4/IPv6 lookup (which is enabled by default) and make HW resources available for increased destination IPv4/IPv6 lookup.
+
+| Jericho | Jericho <br>w/eTCAM | Jericho+ | Jericho+ <br>w/eTCAM | J2 Native | J2 Native <br>w/eTCAM | J2 Comp | J2 Comp <br>w/eTCAM | Global or <br>Per LC |
+|--|--|--|--|--|--|--|--|--|
+| :x: | :x: | :x: | :x: | :heavy_check_mark: | :heavy_check_mark: | :x: | :x: | **GLOBAL** |
+
+_External documentation_:  
+- [https://xrdocs.io/ncs5500/tutorials/ncs5500-urpf/](https://xrdocs.io/ncs5500/tutorials/ncs5500-urpf/)
+
 ### mpls
 
 <div class="highlighter-rouge">
