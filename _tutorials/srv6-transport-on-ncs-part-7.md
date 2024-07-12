@@ -114,7 +114,9 @@ hw-module profile segment-routing srv6 mode micro-segment format f3216
 ### Propagation Mode
 The hardware module profile is appended with traffic-class propagate option. 
 ```
-hw-module profile segment-routing srv6 mode micro-segment format f3216 encapsulation traffic-class propagate
+hw-module profile segment-routing srv6 mode micro-segment format f3216 
+ encapsulation
+  traffic-class propagate
 ```
 
 ### Ingress Policy Map for IPv6 precedence
