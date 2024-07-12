@@ -68,7 +68,7 @@ policy-map srv6-qos-group
 end
 ```
 
-![precedence-via-qg]({{site.baseurl}}images/pmap.png)
+![]({{site.baseurl}}images/pmap.png)
 
 ### 4: Ingress Policy Map for IPv6 DSCP
 In this mode we can apply an ingress policy-maps on the UNI  i.e the interface where customer traffic is entering the ingress PE. There is a new modular qos CLI (MQC) introduced to use The use of `set ip encapsulation class-of-service <0-63>` within the classes of the policy-map sets the IPv6 DSCP values corresponding to the policy-map. This modes bring in more granularity to the QoS options within the SRv6 Core.
