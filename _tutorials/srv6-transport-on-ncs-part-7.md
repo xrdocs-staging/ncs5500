@@ -68,6 +68,7 @@ policy-map srv6-qos-group
 end
 ```
 
+
 ![]({{site.baseurl}}images/pmap.png)
 
 ### 4: Ingress Policy Map for IPv6 DSCP
@@ -90,7 +91,8 @@ policy-map srv6-ip-encap
  end-policy-map
 ```
 
-![dscp-via-ip-encap]({{site.baseurl}}images/pmap-extend.png)![pmap.png]({{site.baseurl}}/images/pmap.png)
+
+![dscp-via-ip-encap]({{site.baseurl}}images/pmap-extend.png)
 
 
 ## Configurations on NCS 5500/500 Systems
