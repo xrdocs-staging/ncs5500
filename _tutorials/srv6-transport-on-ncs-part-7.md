@@ -73,7 +73,7 @@ end
 
 _Figure 4: Explaining Policy-Map based DSCP with qos-group_
 
-![pmap.png]({{site.baseurl}}/images/pmap.png)
+![pmap]({{site.baseurl}}/images/pmap-1.png)
 
 
 ### 4: Ingress Policy Map for IPv6 DSCP
@@ -98,7 +98,7 @@ policy-map srv6-ip-encap
 
 _Figure 5: Explaining Policy-Map based DSCP with ip encapsulation class-of-service_
 
-![pmap-extend.png]({{site.baseurl}}/images/pmap-extend.png)
+![pmap-extend]({{site.baseurl}}/images/pmap-extend-1.png)
 
 
 
