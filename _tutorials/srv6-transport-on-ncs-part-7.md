@@ -3,7 +3,7 @@ published: true
 date: '2024-05-19 22:39 +0530'
 title: 'SRv6 on NCS 500/5500: SRv6 QoS'
 author: Paban Sarma
-position: hidden
+position: top
 excerpt: >-
   QoS Modes for SRv6 Transport on the NCS 5500/500 & 5700 Platforms. Detailed
   review and configuration examples various configuration options across
