@@ -74,7 +74,7 @@ Latest addition to the power module supported in the modular NCS5500 chassis. It
 ![PSUs.png]({{site.baseurl}}/images/PSUs.png){: .align-center}
 
 This level of power (4400W) is a significant improvement compared to the former generations (3000W in DC and 3300W in HVDC), something mandatory to support both N+1 and N+N redundancy with the new generations of line cards based on J2.  
-Introduced with IOS XR 7.3.1, we don't support the mix with previous PSU generations.
+Introduced with IOS XR 7.3.1, we support the mix with previous generation 3KW DC PSU.
 
 These new PSU has 6 lugs connectors for 3 DC inputs:
 
