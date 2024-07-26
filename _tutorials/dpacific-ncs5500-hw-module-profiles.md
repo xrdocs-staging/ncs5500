@@ -102,6 +102,18 @@ RP/0/RP0/CPU0:NCS5500-663(config)</code>
 </pre>
 </div>
 
+{% plantuml %}
+[First] - [Second]
+{% endplantuml %}
+
+@startmindmap
+*[#Orange] root node
+ *[#lightgreen] some first level node
+  *[#FFBBCC] second level node
+  *[#lightblue] another second level node
+ *[#lightgreen] another first level node
+@endmindmap
+
 ![hw-module-663.png]({{site.baseurl}}/images/hw-module-663.png){: .align-center}
 
 ### Graphical view of the 7.0.2 structure
