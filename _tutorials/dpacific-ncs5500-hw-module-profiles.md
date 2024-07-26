@@ -102,17 +102,7 @@ RP/0/RP0/CPU0:NCS5500-663(config)</code>
 </pre>
 </div>
 
-{% plantuml %}
-[First] - [Second]
-{% endplantuml %}
-
-@startmindmap
-*[#Orange] root node
- *[#lightgreen] some first level node
-  *[#FFBBCC] second level node
-  *[#lightblue] another second level node
- *[#lightgreen] another first level node
-@endmindmap
+![test.svg](//www.plantuml.com/plantuml/png/PSun3i8m30NGlQUmnCOfgbRgoW5GXq0-QQJ4HexX_8GgcrVxwVy_DmjgDNEiuJrTxvUR1axOIKMCM28cwjUIqs590TwfIGMziZQZWY_AK7-sRSkohftWAHpT-qnvb4-F3onsG9tqTKFwnXaSn_0V){: .align-center}
 
 ![hw-module-663.png]({{site.baseurl}}/images/hw-module-663.png){: .align-center}
 
