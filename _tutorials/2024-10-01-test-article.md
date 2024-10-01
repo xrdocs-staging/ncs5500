@@ -19,6 +19,7 @@ position: hidden
 <code>
 
 Your code here
+<mark style="background: #FFF176; margin: 0 -0.15em; padding: 0.1em 0.15em; border-radius: 0.2em; -webkit-box-decoration-break: clone; box-decoration-break: clone;">Test test test</mark>
 
 </code>
 </pre>
