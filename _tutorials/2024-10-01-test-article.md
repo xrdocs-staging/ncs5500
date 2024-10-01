@@ -19,12 +19,8 @@ position: hidden
 <code>
 
 Your code here
-<mark style="background: #FFF176; margin: 0 -0.15em; padding: 0.1em 0.15em; border-radius: 0.2em; -webkit-box-decoration-break: clone; box-decoration-break: clone;">Test test test</mark>
+<mark style="background: #FFF176; margin: 0 -0.15em; padding: 0.1em 0.15em; border-radius: 0.2em; -webkit-box-decoration-break: clone; box-decoration-break: clone;">Test <b>test</b> test</mark>
 
 </code>
 </pre>
 </div>
-
-<pre style="line-height: 1.4em !important; background-color: #f6f6f6 !important; color: #323232 !important; border-color: #D8D8D8 !important; display: table;"><code>Test test test
-<mark style="background: #FFF176; margin: 0 -0.15em; padding: 0.1em 0.15em; border-radius: 0.2em; -webkit-box-decoration-break: clone; box-decoration-break: clone;">Test test test</mark>
-Test test test</code></pre>
