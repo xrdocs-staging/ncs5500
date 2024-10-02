@@ -74,7 +74,7 @@ And in this first article, I'll show you a less known technique for collecting c
 # Tcpdump
 Tcpdump is a common Unix utility for capturing network traffic, which can also be used internally on IOS-XR devices. The tcpdump is available on the 64-bit IOS-XR Software or eXR, running on Cisco platforms such as the ASR9000 or NCS5500.  
 
-Before we dive in, let me first clarify a few keywords we're gonna be using going forward.
+Before diving in, let me first clarify a few keywords we'll be using going forward.
 
 ## Control plane vocabulary
 
