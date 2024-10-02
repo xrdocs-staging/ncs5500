@@ -43,7 +43,7 @@ For example, the debug output from a Border Gateway Protocol process for an inco
 {: .text-left}
   
   
-If debugs fail to show traces of our packets, it would prompt several questions:  
+If debugs _fail_ to show traces of our packets, it would prompt several questions:    
   
   
 ![BGP-3.png]({{site.baseurl}}/images/eXR-tcpdump/BGP-3.png)  
@@ -53,7 +53,7 @@ If debugs fail to show traces of our packets, it would prompt several questions:
 - If not, where and why were they dropped ?
 {: .text-left}
 ![BGP-5.png]({{site.baseurl}}/images/eXR-tcpdump/BGP-5.png)  
-- Most importantly, did these drops occurred inside the device, or before reaching our network interface ?
+- Most importantly, did these drops occurred _inside_ the device, or _before_ reaching our network interface ?
 {: .text-left}
 
 # Interface packet capture
@@ -86,4 +86,5 @@ Before diving in, let me first clarify a few keywords we'll be using going forwa
 
 ## Control plane vocabulary
 
-To start with, any packet handled by the device local CPU is click called **"for us"**. Next, let’s take a look at how these "for us" packets reach our process level. The incoming network interface traffic is always a combination of transit packets and some locally destined control plane packets.
+To start with, any packet handled by the device local CPU is click called _"for us"_. Next, let’s take a look at how these _"for us"_ packets reach our process level. The incoming network interface traffic is always a combination of transit packets and some locally destined control plane packets.
+![Punt-diagram.png]({{site.baseurl}}/images/eXR-tcpdump/Punt-diagram.png)
