@@ -35,24 +35,23 @@ In a nutshell, debugs are simply a series of messages that a process may display
 
 ## Interpreting process debugs
 For example, the debug output from a Border Gateway Protocol process for an incoming BGP packet suggests two things: 
-![BGP-1.png]({{site.baseurl}}/images/eXR-tcpdump/BGP-1.png)
+![BGP-1.png]({{site.baseurl}}/images/eXR-tcpdump/BGP-1.png){: width="800"}
 - First, the packet has been successfully received by our network interface.
 {: .text-left}
-![BGP-2.png]({{site.baseurl}}/images/eXR-tcpdump/BGP-2.png)  
-- Second, the packet has reached the BGP process level.
+![BGP-2.png]({{site.baseurl}}/images/eXR-tcpdump/BGP-2.png){: width="800"}
+- Second, the packet has reached the BGP process level.  
 {: .text-left}
   
   
-If debugs _fail_ to show traces of our packets, it would prompt several questions:    
   
-  
-![BGP-3.png]({{site.baseurl}}/images/eXR-tcpdump/BGP-3.png)  
+If debugs _fail_ to show traces of our packets, it would prompt several questions:  
+![BGP-3.png]({{site.baseurl}}/images/eXR-tcpdump/BGP-3.png){: width="800"}
 - Did the BGP packets reach our process level ?
 {: .text-left}
-![BGP-4.png]({{site.baseurl}}/images/eXR-tcpdump/BGP-4.png)  
+![BGP-4.png]({{site.baseurl}}/images/eXR-tcpdump/BGP-4.png){: width="800"}
 - If not, where and why were they dropped ?
 {: .text-left}
-![BGP-5.png]({{site.baseurl}}/images/eXR-tcpdump/BGP-5.png)  
+![BGP-5.png]({{site.baseurl}}/images/eXR-tcpdump/BGP-5.png){: width="800"}
 - Most importantly, did these drops occurred _inside_ the device, or _before_ reaching our network interface ?
 {: .text-left}
 
@@ -87,7 +86,7 @@ Before diving in, let me first clarify a few keywords we'll be using going forwa
 ## Control plane vocabulary
 
 To start with, any packet handled by the device local CPU is click called _"for us"_. Next, let’s take a look at how these _"for us"_ packets reach our process level. The incoming network interface traffic is always a combination of transit packets and some locally destined control plane packets.
-![]({{site.baseurl}}/images/eXR-tcpdump/Punt-diagram.png){: width="400" .align-left}
+![Punt-diagram.png]({{site.baseurl}}/images/eXR-tcpdump/Punt-diagram.png){: width="385" .align-left}
 1. Incoming packets on the linecard or LC network interface will reach a _Network Processor Unit_ or NPU, where _"for us"_ packets are redirected towards the local CPU, an action called _PUNT_.
 
 2. To reach the linecard CPU, punted packets will follow a green pathway via a _Control Ethernet Switch_, acting as a bridge between CPU and NPU.
