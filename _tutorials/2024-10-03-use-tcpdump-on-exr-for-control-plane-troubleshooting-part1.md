@@ -34,20 +34,19 @@ In a nutshell, debugs are simply a series of messages that a process may display
 </div>
 
 ## Interpreting process debugs
-For example, the debug output from a Border Gateway Protocol process for an incoming BGP packet suggests two things:  
+For example, the debug output from a Border Gateway Protocol process for an incoming BGP packet suggests two things: 
+![BGP-1.png]({{site.baseurl}}/images/eXR-tcpdump/BGP-1.png)  
+- First, the packet has been successfully received by our network interface.
+![BGP-2.png]({{site.baseurl}}/images/eXR-tcpdump/BGP-2.png)  
+- Second, the packet has reached the BGP process level.  
 
-1. First, the packet has been successfully received by our network interface.
-![BGP-1.png]({{site.baseurl}}/images/eXR-tcpdump/BGP-1.png)
-2. Second, the packet has reached the BGP process level.
-![BGP-2.png]({{site.baseurl}}/images/eXR-tcpdump/BGP-2.png)
-If debugs fail to show traces of our packets, it would prompt several questions:  
+If debugs fail to show traces of our packets, it would prompt several questions: 
+![BGP-3.png]({{site.baseurl}}/images/eXR-tcpdump/BGP-3.png)  
 1. Did the BGP packets reach our process level ?
-![BGP-3.png]({{site.baseurl}}/images/eXR-tcpdump/BGP-3.png)
+![BGP-4.png]({{site.baseurl}}/images/eXR-tcpdump/BGP-4.png)  
 2. If not, where and why were they dropped ?
-![BGP-4.png]({{site.baseurl}}/images/eXR-tcpdump/BGP-4.png)
-3. Most importantly, did these drops occurred inside the device, or before reaching our network interface ?
-![BGP-5.png]({{site.baseurl}}/images/eXR-tcpdump/BGP-5.png)
-
+![BGP-5.png]({{site.baseurl}}/images/eXR-tcpdump/BGP-5.png)  
+3. Most importantly, did these drops occurred inside the device, or before reaching our network interface ?  
 
 # Interface packet capture
 To answer that last question, we can try capturing traffic directly from the network interface, to get the evidence of what is happening on a wire. Unfortunately, this approach isn't always feasible due to a potentially high interface traffic volume or other factors such as the availability of a packet capturing equipment.
