@@ -87,7 +87,7 @@ Before diving in, let me first clarify a few keywords we'll be using going forwa
 ## Control plane vocabulary
 
 To start with, any packet handled by the device local CPU is click called _"for us"_. Next, let’s take a look at how these _"for us"_ packets reach our process level. The incoming network interface traffic is always a combination of transit packets and some locally destined control plane packets.
-![]({{site.baseurl}}/images/eXR-tcpdump/Punt-diagram.png){: .align-left}
+![]({{site.baseurl}}/images/eXR-tcpdump/Punt-diagram.png){: width="400" .align-left}
 1. Incoming packets on the linecard or LC network interface will reach a _Network Processor Unit_ or NPU, where _"for us"_ packets are redirected towards the local CPU, an action called _PUNT_.
 
 2. To reach the linecard CPU, punted packets will follow a green pathway via a _Control Ethernet Switch_, acting as a bridge between CPU and NPU.
