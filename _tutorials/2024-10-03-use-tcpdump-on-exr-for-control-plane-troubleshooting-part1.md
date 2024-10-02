@@ -35,6 +35,5 @@ In a nutshell, debugs are simply a series of messages that a process may display
 
 ## Interpreting process debugs
 For example, the debug output from a Border Gateway Protocol process for an incoming BGP packet suggests two things:
-![full](/images/eXR-tcpdump/BGP-1.png){: .full}
+![BGP-1.png]({{site.baseurl}}/images/eXR-tcpdump/BGP-1.png)
 1. First, the packet has been successfully received by our network interface.
-
