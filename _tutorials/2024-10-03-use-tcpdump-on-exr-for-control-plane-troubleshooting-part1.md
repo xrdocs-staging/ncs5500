@@ -58,8 +58,8 @@ To answer that last question, we can try capturing traffic directly from the net
     <li>Acts as evidence of what is happening on a wire.</li>
     <li>May be challenging due to:
     <ul>
-      <li>Display data, very specific to a given process.</li>
-      <li>Require a valid trigger to display a debug message.</li>
+      <li>High interface traffic.</li>
+      <li>Availability or hardware capability of a packet capturing equipment.</li>
     </ul>
   </ol>
 </div>
