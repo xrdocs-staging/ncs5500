@@ -35,18 +35,24 @@ In a nutshell, debugs are simply a series of messages that a process may display
 
 ## Interpreting process debugs
 For example, the debug output from a Border Gateway Protocol process for an incoming BGP packet suggests two things: 
-![BGP-1.png](/images/eXR-tcpdump/BGP-1.png){: .align-center}
-- First, the packet has been successfully received by our network interface.{: .text-left}
+![BGP-1.png](/images/eXR-tcpdump/BGP-1.png)
+{: .full}
+- First, the packet has been successfully received by our network interface.
+{: .text-left}
 ![BGP-2.png]({{site.baseurl}}/images/eXR-tcpdump/BGP-2.png)  
-- Second, the packet has reached the BGP process level.{: .text-left}
+- Second, the packet has reached the BGP process level.
+{: .text-left}
 
 If debugs fail to show traces of our packets, it would prompt several questions: 
 ![BGP-3.png]({{site.baseurl}}/images/eXR-tcpdump/BGP-3.png)  
-1. Did the BGP packets reach our process level ?{: .text-left}
+1. Did the BGP packets reach our process level ?
+{: .text-left}
 ![BGP-4.png]({{site.baseurl}}/images/eXR-tcpdump/BGP-4.png)  
-2. If not, where and why were they dropped ?{: .text-left}
+2. If not, where and why were they dropped ?
+{: .text-left}
 ![BGP-5.png]({{site.baseurl}}/images/eXR-tcpdump/BGP-5.png)  
-3. Most importantly, did these drops occurred inside the device, or before reaching our network interface ?{: .text-left}
+3. Most importantly, did these drops occurred inside the device, or before reaching our network interface ?
+{: .text-left}
 
 # Interface packet capture
 To answer that last question, we can try capturing traffic directly from the network interface, to get the evidence of what is happening on a wire. Unfortunately, this approach isn't always feasible due to a potentially high interface traffic volume or other factors such as the availability of a packet capturing equipment.
@@ -56,7 +62,7 @@ To answer that last question, we can try capturing traffic directly from the net
   <ol>
     <li>Collects packets from the device network interface.</li>
     <li>Acts as evidence of what is happening on a wire.</li>
-    <li>May be challenging due to:
+    <li>May be challenging due to:</li>
     <ul>
       <li>High interface traffic.</li>
       <li>Availability or hardware capability of a packet capturing equipment.</li>
