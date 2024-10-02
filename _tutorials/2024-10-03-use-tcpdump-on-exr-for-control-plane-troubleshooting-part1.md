@@ -1,7 +1,7 @@
 ---
 published: true
 date: '2024-10-03 00:20 +0200'
-title: Use-tcpdump-on-eXR-for-control-plane-troubleshooting-part1
+title: Use tcpdump on eXR for control plane troubleshooting - part 1
 author: Dimitri Mikhailov
 tags:
   - iosxr
@@ -23,7 +23,7 @@ The most common tools are the process debugs, so let's start by looking at how t
 # Process debugs
 In a nutshell, debugs are simply a series of messages that a process may display as a response to certain events. Debugs are user-friendly but can consume CPU and despite being quite verbose, often it is required to run several debugs at once to get all the relevant data. Last but not least, to print debugs, a process would always require some kind of trigger, such as the reception of a control plane packet on process level.
 <div class="notice--info">
-  <h2>Key takeaways</h2>
+  <b>Key takeaways</b>
   <ol>
     <li>Run by a CPU process at application level.</li>
     <li>Easy to use with a similar syntax across different platforms.</li>
@@ -35,4 +35,3 @@ In a nutshell, debugs are simply a series of messages that a process may display
 
 ## Interpreting process debugs
 For example, the debug output from a Border Gateway Protocol process for an incoming BGP packet suggests two things:
-
