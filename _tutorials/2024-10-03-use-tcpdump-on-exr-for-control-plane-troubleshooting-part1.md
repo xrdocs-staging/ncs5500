@@ -58,11 +58,12 @@ To answer that last question, we can try capturing traffic directly from the net
     <li>Acts as evidence of what is happening on a wire.</li>
     <li>May be challenging due to:
     <ul>
-       <li>Display data, very specific to a given process.</li>
-       <li>Require a valid trigger to display a debug message.</li>
+      <li>Display data, very specific to a given process.</li>
+      <li>Require a valid trigger to display a debug message.</li>
     </ul>
   </ol>
 </div>
+
 
 So, what other options do we have when both process debugs and interface capture tools can't provide us with the answers we're looking for ?
 
