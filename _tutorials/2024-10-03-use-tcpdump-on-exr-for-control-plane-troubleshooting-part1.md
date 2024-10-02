@@ -35,23 +35,25 @@ In a nutshell, debugs are simply a series of messages that a process may display
 
 ## Interpreting process debugs
 For example, the debug output from a Border Gateway Protocol process for an incoming BGP packet suggests two things: 
-![BGP-1.png](/images/eXR-tcpdump/BGP-1.png)
-{: .full}
+![BGP-1.png]({{site.baseurl}}/images/eXR-tcpdump/BGP-1.png)
 - First, the packet has been successfully received by our network interface.
 {: .text-left}
 ![BGP-2.png]({{site.baseurl}}/images/eXR-tcpdump/BGP-2.png)  
 - Second, the packet has reached the BGP process level.
 {: .text-left}
-
-If debugs fail to show traces of our packets, it would prompt several questions: 
+  
+  
+If debugs fail to show traces of our packets, it would prompt several questions:  
+  
+  
 ![BGP-3.png]({{site.baseurl}}/images/eXR-tcpdump/BGP-3.png)  
-1. Did the BGP packets reach our process level ?
+- Did the BGP packets reach our process level ?
 {: .text-left}
 ![BGP-4.png]({{site.baseurl}}/images/eXR-tcpdump/BGP-4.png)  
-2. If not, where and why were they dropped ?
+- If not, where and why were they dropped ?
 {: .text-left}
 ![BGP-5.png]({{site.baseurl}}/images/eXR-tcpdump/BGP-5.png)  
-3. Most importantly, did these drops occurred inside the device, or before reaching our network interface ?
+- Most importantly, did these drops occurred inside the device, or before reaching our network interface ?
 {: .text-left}
 
 # Interface packet capture
