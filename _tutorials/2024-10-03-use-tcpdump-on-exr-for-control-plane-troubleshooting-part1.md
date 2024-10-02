@@ -34,6 +34,48 @@ In a nutshell, debugs are simply a series of messages that a process may display
 </div>
 
 ## Interpreting process debugs
-For example, the debug output from a Border Gateway Protocol process for an incoming BGP packet suggests two things:
-![BGP-1.png]({{site.baseurl}}/images/eXR-tcpdump/BGP-1.png)
+For example, the debug output from a Border Gateway Protocol process for an incoming BGP packet suggests two things:  
+
 1. First, the packet has been successfully received by our network interface.
+![BGP-1.png]({{site.baseurl}}/images/eXR-tcpdump/BGP-1.png)
+2. Second, the packet has reached the BGP process level.
+![BGP-2.png]({{site.baseurl}}/images/eXR-tcpdump/BGP-2.png)
+If debugs fail to show traces of our packets, it would prompt several questions:  
+1. Did the BGP packets reach our process level ?
+![BGP-3.png]({{site.baseurl}}/images/eXR-tcpdump/BGP-3.png)
+2. If not, where and why were they dropped ?
+![BGP-4.png]({{site.baseurl}}/images/eXR-tcpdump/BGP-4.png)
+3. Most importantly, did these drops occurred inside the device, or before reaching our network interface ?
+![BGP-5.png]({{site.baseurl}}/images/eXR-tcpdump/BGP-5.png)
+
+
+# Interface packet capture
+To answer that last question, we can try capturing traffic directly from the network interface, to get the evidence of what is happening on a wire. Unfortunately, this approach isn't always feasible due to a potentially high interface traffic volume or other factors such as the availability of a packet capturing equipment.
+
+<div class="notice--info">
+  <b>Key takeaways</b>
+  <ol>
+    <li>Collects packets from the device network interface.</li>
+    <li>Acts as evidence of what is happening on a wire.</li>
+    <li>May be challenging due to:
+    <ul>
+       <li>Display data, very specific to a given process.</li>
+       <li>Require a valid trigger to display a debug message.</li>
+    </ul>
+  </ol>
+</div>
+
+So, what other options do we have when both process debugs and interface capture tools can't provide us with the answers we're looking for ?
+
+I'm glad you asked!
+
+And in this first article, I'll show you a less known technique for collecting control plane packets with the built-in tcpdump tool. 
+
+# Tcpdump
+Tcpdump is a common Unix utility for capturing network traffic, which can also be used internally on IOS-XR devices. The tcpdump is available on the 64-bit IOS-XR Software or eXR, running on Cisco platforms such as the ASR9000 or NCS5500.  
+
+Before we dive in, let me first clarify a few keywords we're gonna be using going forward.
+
+## Control plane vocabulary
+
+To start with, any packet handled by the device local CPU is click called **"for us"**. Next, let’s take a look at how these "for us" packets reach our process level. The incoming network interface traffic is always a combination of transit packets and some locally destined control plane packets.
