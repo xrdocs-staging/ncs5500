@@ -94,3 +94,14 @@ To start with, any packet handled by the device local CPU is click called _"for 
 3. The transit traffic will use the orange path towards the fabric.
 
 4. Control Ethernet Switches from each linecard are interconnected as an internal ethernet control plane network to which the Route Processor or RP have access.
+
+<div class="notice--info">
+
+**This is an HTML notice solution for more markdown elements**
+
+Add following settings in `_config.yml` to defaultly turn on markdown parsing for block-level HTML tags.
+```yml
+kramdown:
+  parse_block_html: true
+``` 
+</div>
