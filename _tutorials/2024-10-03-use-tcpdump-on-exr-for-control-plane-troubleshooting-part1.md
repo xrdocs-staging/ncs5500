@@ -94,7 +94,7 @@ To start with, any packet handled by the device local CPU is click called _"for 
 
 4. Control Ethernet Switches from each linecard are interconnected as an internal ethernet control plane network to which the Route Processor or RP have access.  
 
-A punt interface is a generic term describing a control ethernet interface used to deliver control plane traffic to either RP or LC CPU.  
+A _punt interface_ is a generic term describing a control ethernet interface used to deliver control plane traffic to either RP or LC CPU.  
 
 ## Using tcpdump on RP punt interfaces
 So with all those definitions out of the way, the main idea now is to use the tcpdump on punt interfaces available from the RP or the LC shell.  
