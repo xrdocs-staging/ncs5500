@@ -104,7 +104,7 @@ The most common use case for this technique is to capture routing protocol packe
 ### Demo
 Let me show you the next steps by using our lab NCS5500 router. 
 
-<div><pre><code><mark style="color: #708090">RP/0/RP0/CPU0:FRETA3#</mark><b>show platform</b>
+<div><pre><code><mark style="color: #708090; background: #E3E6E8">RP/0/RP0/CPU0:FRETA3#</mark><b>show platform</b>
 Sun Sep 15 20:56:49.809 UTC
 Node              Type                       State             Config state
 --------------------------------------------------------------------------------
