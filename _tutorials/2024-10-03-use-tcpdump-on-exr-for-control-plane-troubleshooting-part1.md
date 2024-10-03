@@ -104,7 +104,9 @@ The most common use case for this technique is to capture routing protocol packe
 ### Demo
 Let me show you the next steps by using our lab NCS5500 router. 
 
-<div><pre><code><mark style="color: #708090; background: #E3E6E8">RP/0/RP0/CPU0:FRETA3#</mark><b>show platform</b>
+<div class="highlighter-rouge">
+<pre class="highlight">
+<code><mark style="color: #708090; background: #E3E6E8">RP/0/RP0/CPU0:FRETA3#</mark><b>show platform</b>
 Sun Sep 15 20:56:49.809 UTC
 Node              Type                       State             Config state
 --------------------------------------------------------------------------------
@@ -138,7 +140,9 @@ Label : 7.10.2
 
 For this simple test, we'll use locally generated traffic, such as ICMP requests sourced from the RP, towards our own interface IP address `192.168.99.1`. By using the `loopback internal` configuration on that interface, we can loop packets in such a way that they will appear to the NP as incoming from the physical interface itself.
 
-<div><pre><code><mark style="color: #708090">RP/0/RP0/CPU0:FRETA3#</mark><b>sh run int Te0/1/0/31</b>
+<div class="highlighter-rouge">
+<pre class="highlight">
+<code><mark style="color: #708090">RP/0/RP0/CPU0:FRETA3#</mark><b>sh run int Te0/1/0/31</b>
 Wed Oct  2 20:35:47.213 UTC
 interface TenGigE0/1/0/31
  ipv4 address 192.168.99.1 255.255.255.0
@@ -147,7 +151,9 @@ interface TenGigE0/1/0/31
 
 First, I’ll connect to the RP shell, using a `run` command from the XR command line.
 
-<div><pre><code><mark style="color: #708090">RP/0/RP0/CPU0:FRETA3#</mark><b>run</b>
+<div class="highlighter-rouge">
+<pre class="highlight">
+<code><mark style="color: #708090">RP/0/RP0/CPU0:FRETA3#</mark><b>run</b>
 Sun Sep 15 20:56:57.093 UTC
 <mark style="color: #708090">[xr-vm_node0_RP0_CPU0:~]$</mark>
 </code></pre></div>
@@ -164,12 +170,16 @@ Second, I’ll confirm the punt interface for our capture, that interface is pla
 
 Instead of trying to remember it, the punt interface can be found by reading the bootstrap config file named `calvados_bootstrap.cfg` and searching for the `GUEST1_PUNT_ETH` string using Unix `cat` and `grep` commands.
 
-<div><pre><code><mark style="color: #708090">[xr-vm_node0_RP0_CPU0:~]$</mark><b>cat /etc/init.d/calvados_bootstrap.cfg | grep GUEST1_PUNT_ETH</b>
+<div class="highlighter-rouge">
+<pre class="highlight">
+<code><mark style="color: #708090">[xr-vm_node0_RP0_CPU0:~]$</mark><b>cat /etc/init.d/calvados_bootstrap.cfg | grep GUEST1_PUNT_ETH</b>
 <mark style="background: #E3E6E8; margin: 0 -0.15em; padding: 0.1em 0.15em; border-radius: 0.2em; -webkit-box-decoration-break: clone; box-decoration-break: clone;">GUEST1_PUNT_ETH=<mark style="background: #A9E0FF; margin: 0 -0.15em; padding: 0.1em 0.15em; border-radius: 0.2em; -webkit-box-decoration-break: clone; box-decoration-break: clone;">ps-inb.1538</mark></mark></code></pre></div>
 
 The output shows the punt interface as `ps-inb.1538` which we will use with `-i` flag to set the tcpdump capturing source interface, as our final step:
 
-<div><pre><code><mark style="color: #708090">[xr-vm_node0_RP0_CPU0:~]$</mark><b>tcpdump <mark style="background: #E1D1FF; margin: 0 -0.15em; padding: 0.1em 0.15em; border-radius: 0.2em; -webkit-box-decoration-break: clone; box-decoration-break: clone;">-i</mark> <mark style="background: #A9E0FF; margin: 0 -0.15em; padding: 0.1em 0.15em; border-radius: 0.2em; -webkit-box-decoration-break: clone; box-decoration-break: clone;">ps-inb.1538</mark></b>
+<div class="highlighter-rouge">
+<pre class="highlight">
+<code><mark style="color: #708090">[xr-vm_node0_RP0_CPU0:~]$</mark><b>tcpdump <mark style="background: #E1D1FF; margin: 0 -0.15em; padding: 0.1em 0.15em; border-radius: 0.2em; -webkit-box-decoration-break: clone; box-decoration-break: clone;">-i</mark> <mark style="background: #A9E0FF; margin: 0 -0.15em; padding: 0.1em 0.15em; border-radius: 0.2em; -webkit-box-decoration-break: clone; box-decoration-break: clone;">ps-inb.1538</mark></b>
 tcpdump: verbose output suppressed, use -v or -vv for full protocol decode
 listening on ps-inb.1538, link-type EN10MB (Ethernet), capture size 262144 bytes
 20:58:06.243219 4e:41:50:00:10:01 (oui Unknown) > 4e:41:50:00:01:01 (oui Unknown), ethertype Unknown (0x876e), length 342: 
@@ -211,7 +221,9 @@ Unfortunately tcpdump couldn't display those punted packets in an easy-to-read f
 
 To overcome this, we will dump full packet, including all headers, in hexadecimal format, by using `-xx` flag, and then use hex patterns to search through the result. The full packet dump will include Ethernet headers, and therefore the `0x0000` address will represent the beginning of the frame.
 
-<div><pre><code><mark style="color: #708090">[xr-vm_node0_RP0_CPU0:~]$</mark><b>tcpdump <mark style="background: #E1D1FF; margin: 0 -0.15em; padding: 0.1em 0.15em; border-radius: 0.2em; -webkit-box-decoration-break: clone; box-decoration-break: clone;">-xxi</mark> <mark style="background: #A9E0FF; margin: 0 -0.15em; padding: 0.1em 0.15em; border-radius: 0.2em; -webkit-box-decoration-break: clone; box-decoration-break: clone;">ps-inb.1538</mark></b>
+<div class="highlighter-rouge">
+<pre class="highlight">
+<code><mark style="color: #708090">[xr-vm_node0_RP0_CPU0:~]$</mark><b>tcpdump <mark style="background: #E1D1FF; margin: 0 -0.15em; padding: 0.1em 0.15em; border-radius: 0.2em; -webkit-box-decoration-break: clone; box-decoration-break: clone;">-xxi</mark> <mark style="background: #A9E0FF; margin: 0 -0.15em; padding: 0.1em 0.15em; border-radius: 0.2em; -webkit-box-decoration-break: clone; box-decoration-break: clone;">ps-inb.1538</mark></b>
 tcpdump: verbose output suppressed, use -v or -vv for full protocol decode
 listening on ps-inb.1538, link-type EN10MB (Ethernet), capture size 262144 bytes
 20:58:32.248474 4e:41:50:00:10:01 (oui Unknown) > 4e:41:50:00:01:01 (oui Unknown), ethertype Unknown (0x876e), length 342: 
