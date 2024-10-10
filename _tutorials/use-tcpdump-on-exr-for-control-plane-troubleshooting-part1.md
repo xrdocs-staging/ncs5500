@@ -12,7 +12,7 @@ tags:
 excerpt: >-
   This article introduces how to use tcpdump on Cisco XR platforms running eXR,
   such as the ASR 9000 and NCS 5500.
-position: hidden
+position: top
 ---
 {% include toc icon="table" title="Use tcpdump on eXR for control plane troubleshooting - part 1" %}
 # Introduction
