@@ -104,6 +104,26 @@ RP/0/RP0/CPU0:NCS5500-663(config)</code>
 
 ![test.svg](//www.plantuml.com/plantuml/png/nLRDZjis4BxlKwZeJIXXoJy-546GJPkqXwHPvD0MAFOm9aSoqH79afIzxjDtj2e4KNITOYyvhVNzV4FEZ8Hz4oBus6cZEd1ttyGZTbWSgCVMm-Mk_EFRd_ZlOt4yYywgdl2kOEoJ1zFYO-5j7r5mGWntnPoWJISXH0Rdg7QdBKCfPbgFWUqBl2plV_WWVhd_-AuibnxyiYMllFywbK--kSlKltv-FrDdFLgDnsNq_gyUEl3QCCC_5SjJbCCgKTT3K4QHbH2rDQpvVH3a2XufFkDvQbsrg_MklUxJ9aGmyh-yrMet-cvLl5sJETBjCROUqJmMKKB7jWNwAhnkzE7LAhncxWevz79ahz910g7I0Gw4eumrhIKrJCsxPvgj4uXcK3wh7FNTOy75cPyU5V7Zx9dmX2HgnYPm2faXmoaJtrWuSHrjYCAwg3lzDoen7dgXqIQYDpZJBQhilrH5zY7QJX1ohnEYBBULs6_BSfxOEGhfVPLByoZuv30JDGuqvIRgq3eH_Asa92XIAdNUEcWXei0dYUon9ZMShI0u88di33CLq28s8A6C-ZJEF_nv6RwHpzKQJGmcA4Xsfz3qvKXXWWlw3SCfFWwp0OdY005LvfEsSsDWoamBbkLbzL-MCwnH9dsAueYWqESn3dsdOsO9V212uI04CRP6WAJCddt3KlRG6yKfyrMUI7QiT_lLhbwlwcgzlM8-YtZaoaTBwehv1FoZq6QuWKGJloygKLVLTzemA3rsZ8N2DaLTvTaDsNDmABFSqrvCZRrzrOm59Gv0O6H-LQ3MUXsFNPxwOIEieKjEF3mys7Svt4Pt5HJZwvxlgK4lQ2qQZQIky4x4dZKqKjdghtDyA2GeS2hws-pYvSrr0HeKmnnwWk7T5Gxyi7dBvXgCmyIolZPE_jznvHTlzDEcthtK7uO3lN1NRCDco9UwBjw-__6qBy2eucsuc7mzrpF5Pzj7B9GzcwjXcuNWHkgsUFWeVlvDV6gQXV8D6lNl_vx_0000)
 
+@startmindmap
+!theme bluegray
+*[#Gray] hw-module
+ *[#Orange] route-stats
+  *[#Orange] l3mcast
+   *[#Orange] ipv4
+    *[#Orange] ingress
+     *[#Orange] **ACL-NAME**
+    *[#Orange] egress
+     *[#Orange] **ACL-NAME**
+   *[#Orange] ipv6
+    *[#Orange] ingress
+     *[#Orange] **ACL-NAME**
+    *[#Orange] egress
+     *[#Orange] **ACL-NAME**
+   *[#Orange] vrf
+    *[#Orange] **VRF-NAME**
+     *[#Orange] ipv4/ipv6
+@endmindmap
+
 ![hw-module-663.png]({{site.baseurl}}/images/hw-module-663.png){: .align-center}
 
 ### Graphical view of the 7.0.2 structure
@@ -158,7 +178,7 @@ Now, let's review these profiles individually. We will define their role, the ty
 <pre class="highlight">
 <code>RP/0/RP0/CPU0:NCS5500-702(config)#hw-module fib dlb level-1 enable ?
   -cr-
-RP/0/RP0/CPU0:NCS5500-702(config)#</code>
+</code>
 </pre>
 </div>
 
@@ -2050,6 +2070,8 @@ On CCO:
 
 ## route-stats 
 
+![hw-module_route-stats.svg](//www.plantuml.com/plantuml/png/SoWkIImgoStCIybDBE1IBCb8pKrLICefJKqlIgpaqefMTWVIiGePvRgv-IcbEQbS2a0n_wB4lFJKM8MY_DAIL5sW2IN5N0h84Zd6kSc9nIL0GMJHp88o4w0GgbXUUb5gCL0xchYMbgEpZwwVew-hbXQwdbJ2MZ1jDXiOcykAqhWmL8S5kI5KOuQHFjYv3gbvAT1u0G00)
+
 In IOS XR 7.0.2:
 
 <div class="highlighter-rouge">
@@ -2068,8 +2090,6 @@ RP/0/RP0/CPU0:NCS5500-702(config)#</code>
 </pre>
 </div>
 
-
-  
 In IOS XR 6.6.3:
 
 <div class="highlighter-rouge">
