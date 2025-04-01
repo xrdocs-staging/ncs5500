@@ -1187,24 +1187,23 @@ In order to activate this profile, you must manually reload the chassis/all line
 </pre>
 </div>
 
-![Screenshot 2022-01-20 at 3.30.57 PM.png]({{site.baseurl}}/images/Screenshot 2022-01-20 at 3.30.57 PM.png)
 
-Prior to 7.5.1 there is no option to match IPv4/v6 destination addresses for QoS classification on l2transport interface. With introduction to this profile , QoS classification can be done based on destination address even on l2transport interface/sub interface. activation of this profile needs the router to be reloaded. A new match criterion  “match destination-address” is also introduced along with the hw-module profile. 
+Prior to 7.5.1 there is no option to match IPv4/v6 destination addresses for QoS classification on l2transport interface. With introduction to this profile , QoS classification can be done based on destination address even on l2transport interface/sub interface. activation of this profile needs the router to be reloaded. A new match criterion  “match destination-address” is also introduced along with the hw-module profile.  This hw-module profile is supported only on NCS 55xx and NCS 540 series routers based on J/J+ generation of ASICS. 
 
 <div class="highlighter-rouge">
 <pre class="highlight">
 <code>
-RP/0/RP0/CPU0:N57B1-1-Vega-II5-57(config)#
-RP/0/RP0/CPU0:N57B1-1-Vega-II5-57(config)#class-map l2-dest
-RP/0/RP0/CPU0:N57B1-1-Vega-II5-57(config-cmap)#match destination-address ipv4 ?
+RP/0/RP0/CPU0:N55xx(config)#
+RP/0/RP0/CPU0:N55xx(config)#class-map l2-dest
+RP/0/RP0/CPU0:N55xx(config-cmap)#match destination-address ipv4 ?
   A.B.C.D/prefix  IP prefix -network/length-
-RP/0/RP0/CPU0:N57B1-1-Vega-II5-57(config-cmap)#match destination-address ipv4 100.1.1.1/24 ?
+RP/0/RP0/CPU0:N55xx(config-cmap)#match destination-address ipv4 100.1.1.1/24 ?
   -cr-
-RP/0/RP0/CPU0:N57B1-1-Vega-II5-57(config-cmap)#match destination-address ipv4 100.1.1.1/24
-RP/0/RP0/CPU0:N57B1-1-Vega-II5-57(config-cmap)#match destination-address ipv6 ?
+RP/0/RP0/CPU0:N55xx(config-cmap)#match destination-address ipv4 100.1.1.1/24
+RP/0/RP0/CPU0:N55xx(config-cmap)#match destination-address ipv6 ?
   X:X::X/0-128  IPV6 address with prefix and mask
-RP/0/RP0/CPU0:N57B1-1-Vega-II5-57(config-cmap)#match destination-address ipv6 2001::1/128
-RP/0/RP0/CPU0:N57B1-1-Vega-II5-57(config-cmap)#show configuration
+RP/0/RP0/CPU0:N55xx(config-cmap)#match destination-address ipv6 2001::1/128
+RP/0/RP0/CPU0:N55xx(config-cmap)#show configuration
 Thu Jan 20 09:54:11.276 UTC
 Building configuration...
 !! IOS XR Configuration 7.5.1
