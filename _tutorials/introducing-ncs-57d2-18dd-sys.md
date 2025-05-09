@@ -235,9 +235,6 @@ All the 66 ports can be configured with 40G native speeds
 
 The ASIC has 2 cores. The above figure shows the port mapping to all the interfaces. The important thing to highlight from the above output is the default speed of the interfaces when the platform boots up is 100G. We can change the port speed of each port as per the requirements.
 
-## MACSEC and IPSEC support
-
-The hardware is fully capable of MACSEC and IPSEC. The features will be support post FCS. These features are not supported IOS-XR 7.8.1
 
 ## MDB Profiles
 
