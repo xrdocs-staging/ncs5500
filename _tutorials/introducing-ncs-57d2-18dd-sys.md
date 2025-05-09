@@ -235,6 +235,9 @@ All the 66 ports can be configured with 40G native speeds
 
 The ASIC has 2 cores. The above figure shows the port mapping to all the interfaces. The important thing to highlight from the above output is the default speed of the interfaces when the platform boots up is 100G. We can change the port speed of each port as per the requirements.
 
+## MACSEC support 
+
+For MACSEC support on NCS57D2 please check the following [link](https://www.cisco.com/c/en/us/td/docs/iosxr/ncs5500/security/25xx/configuration/guide/b-system-security-cg-ncs5500-25xx/implementing-macsec-encryption.html).
 
 ## MDB Profiles
 
