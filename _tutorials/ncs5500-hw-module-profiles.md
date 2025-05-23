@@ -352,6 +352,26 @@ To avoid BGP prefix dependent convergence, when multiple ECMP paths are availabl
 Note: In order to activate/deactivate bgp multipath pic core, you must manually reload the chassis/all line cards.BGP LU level 1 is not supported. L3VPN/6PE/6VPE pic core multipath is not supported over igp
 {: .notice--info}
 
+## bgp-pic level-3
+
+<div class="highlighter-rouge">
+<pre class="highlight">
+<code>RP/0/RP1/CPU0:PE1-UUT-rsp4(config)#hw-module fib bgp-pic level-3 ?    
+  evpn  evpn
+RP/0/RP1/CPU0:PE1-UUT-rsp4(config)#hw-module fib hw-module fib bgp-pic level-3
+Fri Apr 11 06:10:23.734 UTC
+In order to activate/deactivate bgp pic level-3 evpn on Jericho based routers/cards, you must manually reload the chassis/all line cards</code>
+</pre>
+</div>
+
+![Screenshot 2021-04-03 at 11.59.58 AM.png]({{site.baseurl}}/images/Screenshot 2021-04-03 at 11.59.58 AM.png)
+
+Introduced in 25.3.1. This CLI will help to improve the traffic convergence to sub seconds for node failure for Active-Active Multihoming EVPN services (ELAN and ELINE), 
+with preferred-nexthop configured in EVPN, when remote PE is in different IGP domain with reachability over BGP-LU.
+
+Note: In order to activate/deactivate hw-module fib bgp-pic level-3 you must manually reload the chassis/line cards.
+{: .notice--info}
+
 ## oversubscription
 
 <div class="highlighter-rouge">
