@@ -331,7 +331,7 @@ This feature is supported in r242x-200 and from r253x release onwards.
 
 This feature is not compatible with the below list of features, as it cannot be configured on NCS5500 due to resource constraints
 - hw-module profile segment-routing srv6 mode <>
-- hw-module profile mpls-ext-dscp-preserve <v4uc-enable | v6uc-enable>
+- hw-module profile mpls-ext-dscp-preserve (v4uc-enable | v6uc-enable)
 - hw-module fib mpls ip-ttl-propagate-disable exclude mpls-pop-penultimate-hop ttl-and-cos
 - This feature is not supported on J2 Compatible and Native mode
 
