@@ -299,6 +299,68 @@ Note2: this profile can not be used with the internet-optimized.
 Note3: This profiles are not supported for J2 based systems.
 {: .notice--info}
 
+**hw-module fib mpls php dscp-preserve**
+
+<div class="highlighter-rouge">
+<pre class="highlight">
+<code>RP/0/RP0/CPU0:ios(config)#hw-module fib mpls ?                 
+  php                       Preserve DSCP for MPLS penultimate hop node
+RP/0/RP0/CPU0:ios(config)#hw-module fib mpls php ?
+  dscp-preserve  Preserve IPv4.DSCP and IPv6.TC in MPLS PHP flow with TTL being propagated
+RP/0/RP0/CPU0:ios(config)#hw-module fib mpls php dscp-preserve ?
+  -cr-  
+RP/0/RP0/CPU0:NCS5500-663(config)#</code>
+</pre>
+</div>
+
+![Screenshot 2021-04-03 at 12.57.20 PM.png]({{site.baseurl}}/images/Screenshot 2021-04-03 at 12.57.20 PM.png)
+
+In an MPLS network, Penultimate Hop Popping (PHP) is a common technique used to improve router performance by having the penultimate hop remove the outermost MPLS label before forwarding the packet to the egress Label Edge Router (LER) (often a PE router).
+
+Here's what happens on the PHP node:
+- The MPLS label is popped (removed)
+- The resulting packet is typically an IP packet, unless there’s another MPLS label (in the case of label stacking)
+- The IP packet is then forwarded to the PE router (the egress LER) without the MPLS label
+
+Regarding "inheritance" of MPLS header properties into the IP header:
+- MPLS header properties are not inherited into the IP header. When the MPLS label is popped. This is called as Uniform Mode which will be default behavior
+- The IP TTL is typically copied from the MPLS TTL and QoS markings (EXP bits) may be mapped to IP DSCP values. This is carried out using the “mpls ip propagate-ttl propagate” configuration. This is termed as PIPE mode
+
+By configuring the above mentioned hw-module configuration the TTL will be propagated from outer MPLS header to inner header and preserve the qos by default on Penultimate Hop Popping (PHP) node.
+This feature is supported in r242x-200 and from r253x release onwards.
+
+This feature is not compatible with the below list of features, as it cannot be configured on NCS5500 due to resource constraints
+- hw-module profile segment-routing srv6 mode <>
+- hw-module profile mpls-ext-dscp-preserve <v4uc-enable | v6uc-enable>
+- hw-module fib mpls ip-ttl-propagate-disable exclude mpls-pop-penultimate-hop ttl-and-cos
+- This feature is not supported on J2 Compatible and Native mode
+
+<div class="highlighter-rouge">
+<code>
+<table>
+  <tr>
+    <th rowspan="2">New hw-module configuration</th>
+    <th colspan="2">Behavior Change of TTL/QOS at PHP node</th>
+  </tr>
+  <tr>
+    <th>Qos behavior</th>
+    <th>TTL Behavior</th>
+  </tr>
+  <tr>
+    <td>Not configured</td>
+    <td>Uniform</td>
+    <td>Uniform</td>
+  </tr>
+  <tr>
+    <td>Configured</td>
+    <td><span style="background-color:#d0d8f0">Pipe</span></td>
+    <td><span style="background-color:yellow">Uniform</span></td>
+  </tr>
+</table>
+</code>
+</div>
+
+
 ### recycle
 
 **_hw-module fib recycle service-over-rsvpte_**
