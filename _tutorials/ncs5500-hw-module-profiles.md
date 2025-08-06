@@ -335,6 +335,7 @@ This feature is not compatible with the below list of features, as it cannot be 
 - hw-module fib mpls ip-ttl-propagate-disable exclude mpls-pop-penultimate-hop ttl-and-cos
 - This feature is not supported on J2 Compatible and Native mode
 
+
 <div class="highlighter-rouge">
 <code>
 <table>
@@ -353,8 +354,8 @@ This feature is not compatible with the below list of features, as it cannot be 
   </tr>
   <tr>
     <td>Configured</td>
-    <td><span style="background-color:#d0d8f0">Pipe</span></td>
-    <td><span style="background-color:yellow">Uniform</span></td>
+    <td>Pipe</td>
+    <td>Uniform</td>
   </tr>
 </table>
 </code>
