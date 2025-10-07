@@ -415,15 +415,15 @@ To avoid BGP prefix dependent convergence, when multiple ECMP paths are availabl
 Note: In order to activate/deactivate bgp multipath pic core, you must manually reload the chassis/all line cards.BGP LU level 1 is not supported. L3VPN/6PE/6VPE pic core multipath is not supported over igp
 {: .notice--info}
 
-## bgp-pic level-3 evpn
+## bgp-pic level-3 l2services
 
 <div class="highlighter-rouge">
 <pre class="highlight">
 <code>RP/0/RP1/CPU0:PE1-UUT-rsp4(config)#hw-module fib bgp-pic level-3 ?    
-  evpn  evpn
+  l2services  Enable BGP-PIC for l2services over BGP Labelled Unicast (only EVPN is supported)
 RP/0/RP1/CPU0:PE1-UUT-rsp4(config)#hw-module fib hw-module fib bgp-pic level-3 evpn
 Fri Apr 11 06:10:23.734 UTC
-In order to activate/deactivate bgp pic level-3 evpn on Jericho based routers/cards, you must manually reload the chassis/all line cards</code>
+In order to activate/deactivate bgp pic level-3 l2services on Jericho based routers/cards, you must manually reload the chassis/all line cards</code>
 </pre>
 </div>
 
@@ -432,7 +432,7 @@ In order to activate/deactivate bgp pic level-3 evpn on Jericho based routers/ca
 Introduced in 25.3.1. This CLI will help to improve the traffic convergence to sub seconds for node failure for Active-Active Multihoming EVPN services (ELAN and ELINE), 
 with preferred-nexthop configured in EVPN, when remote PE is in different IGP domain with reachability over BGP-LU.
 
-Note: In order to activate/deactivate hw-module fib bgp-pic level-3 evpn you must manually reload the chassis/line cards.
+Note: In order to activate/deactivate bgp pic level-3 l2services on Jericho based routers/cards, you must manually reload the chassis/all line cards
 {: .notice--info}
 
 ## oversubscription
