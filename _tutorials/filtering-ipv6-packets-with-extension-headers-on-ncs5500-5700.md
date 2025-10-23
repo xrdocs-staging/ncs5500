@@ -23,7 +23,7 @@ position: hidden
 
 ## Introduction
 
-In our previous [tech-note](https://xrdocs.io/ncs5500/tutorials/user-defined-field-ncs55xx-and-ncs5xx/), we saw how User Defined Fields - UDF can provide advanced filtering capabilities on NCS5500/5700. We saw examples of how different fields can be matched and used to filter traffic. In this tech-note, we will see how IPv6 packets with Extension Header can also be filtered using UDF. 
+In our previous [tech-note]({{site.url}}/ncs5500/tutorials/user-defined-field-ncs55xx-and-ncs5xx/), we saw how User Defined Fields - UDF can provide advanced filtering capabilities on NCS5500/5700. We saw examples of how different fields can be matched and used to filter traffic. In this tech-note, we will see how IPv6 packets with Extension Header can also be filtered using UDF. 
 
 ## What is IPv6 Extension Headers ?
 

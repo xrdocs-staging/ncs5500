@@ -15,24 +15,24 @@ position: top
 
 ![NCS 5500 INTERNAL RESOURCES.png]({{site.baseurl}}/images/NCS 5500 INTERNAL RESOURCES.png){: .align-center}
 
-You can find more content related to NCS5500 including routing memory management, VRF, URPF, Netflow, QoS, EVPN, Flowspec implementation following this [link](https://xrdocs.io/ncs5500/tutorials/).
+You can find more content related to NCS5500 including routing memory management, VRF, URPF, Netflow, QoS, EVPN, Flowspec implementation following this [link]({{site.url}}/ncs5500/tutorials/).
 
-Important Update: in IOS XR 7.3.1, we will decommission the "internet-optimized" mode, please check this article: [https://xrdocs.io/ncs5500/tutorials/decommissioning-internet-optimized-mode/](https://xrdocs.io/ncs5500/tutorials/decommissioning-internet-optimized-mode/)
+Important Update: in IOS XR 7.3.1, we will decommission the "internet-optimized" mode, please check this article: [{{site.url}}/ncs5500/tutorials/decommissioning-internet-optimized-mode/]({{site.url}}/ncs5500/tutorials/decommissioning-internet-optimized-mode/)
 {: .notice--danger}
 
 ## Introduction
 
 Between September 2017 and March 2018, we published five articles to answer recurrent questions on the routing memory utilization. The NCS5500 adoption was ramping up, and users were learning about the LEM, LPM and eTCAM used to store the routing information.  
 1 - NCS5500 Resources focusing on IPv4 prefixes:  
-[https://xrdocs.io/ncs5500/tutorials/2017-08-03-understanding-ncs5500-resources-s01e02/](https://xrdocs.io/ncs5500/tutorials/2017-08-03-understanding-ncs5500-resources-s01e02/)  
+[{{site.url}}/ncs5500/tutorials/2017-08-03-understanding-ncs5500-resources-s01e02/]({{site.url}}/ncs5500/tutorials/2017-08-03-understanding-ncs5500-resources-s01e02/)  
 2 - NCS5500 Resources focusing on IPv6 prefixes:  
-[https://xrdocs.io/ncs5500/tutorials/2017-08-07-understanding-ncs5500-resources-s01e03/](https://xrdocs.io/ncs5500/tutorials/2017-08-07-understanding-ncs5500-resources-s01e03/)  
+[{{site.url}}/ncs5500/tutorials/2017-08-07-understanding-ncs5500-resources-s01e03/]({{site.url}}/ncs5500/tutorials/2017-08-07-understanding-ncs5500-resources-s01e03/)  
 3 - full internet support on non-eTCAM systems:  
-[https://xrdocs.io/ncs5500/tutorials/2017-12-30-full-internet-view-on-base-ncs-5500-systems-s01e04/](https://xrdocs.io/ncs5500/tutorials/2017-12-30-full-internet-view-on-base-ncs-5500-systems-s01e04/)   
+[{{site.url}}/ncs5500/tutorials/2017-12-30-full-internet-view-on-base-ncs-5500-systems-s01e04/]({{site.url}}/ncs5500/tutorials/2017-12-30-full-internet-view-on-base-ncs-5500-systems-s01e04/)   
 4 - very large routing table in eTCAM systems:  
-[https://xrdocs.io/ncs5500/tutorials/2018-01-25-s01e05-large-routing-tables-on-scale-ncs-5500-systems/](https://xrdocs.io/ncs5500/tutorials/2018-01-25-s01e05-large-routing-tables-on-scale-ncs-5500-systems/)  
+[{{site.url}}/ncs5500/tutorials/2018-01-25-s01e05-large-routing-tables-on-scale-ncs-5500-systems/]({{site.url}}/ncs5500/tutorials/2018-01-25-s01e05-large-routing-tables-on-scale-ncs-5500-systems/)  
 5 - NCS5500 Jericho+ Systems and their Scalability:  
-[https://xrdocs.io/ncs5500/tutorials/Understanding-ncs5500-jericho-plus-systems/](https://xrdocs.io/ncs5500/tutorials/Understanding-ncs5500-jericho-plus-systems/)  
+[{{site.url}}/ncs5500/tutorials/Understanding-ncs5500-jericho-plus-systems/]({{site.url}}/ncs5500/tutorials/Understanding-ncs5500-jericho-plus-systems/)  
 
 In the third article, we demonstrated a feature used to optimize the route distribution between LEM and LPM to internet distribution. It was updated with a disclaimer in September 2019, we don’t recommend to use non-SE systems (Jericho or Jericho+) for full internet view. It will be different with Jericho2, but we will keep it for a dedicated post.  
 

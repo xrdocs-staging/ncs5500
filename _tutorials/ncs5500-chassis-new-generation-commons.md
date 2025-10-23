@@ -10,7 +10,7 @@ position: top
 ---
 {% include toc icon="table" title="New Commons for NCS5500 Chassis" %} 
 
-You can find more content related to NCS5500 including routing memory management, VRF, URPF, Netflow, QoS, EVPN, Flowspec implementation following this [link](https://xrdocs.io/ncs5500/tutorials/).
+You can find more content related to NCS5500 including routing memory management, VRF, URPF, Netflow, QoS, EVPN, Flowspec implementation following this [link]({{site.url}}/ncs5500/tutorials/).
 
 ## Introduction
 
@@ -49,7 +49,7 @@ In IOS XR 7.2.2 and 7.3.1, we complete the offer with the v2 fabric and fans for
 - Once equipped with v2 commons, you can add J2-based line cards. If the system needs to run both J/J+ and J2 line cards, you will use the default mode called "compatibility". If the system is populated with J2-cards exclusively, it's possible to enable the "native" mode via configuration.
 
 We invite you to check the following articles and videos to get more details:  
-- [https://xrdocs.io/ncs5500/tutorials/ncs-5500-fabric-migration/](https://xrdocs.io/ncs5500/tutorials/ncs-5500-fabric-migration/)
+- [{{site.url}}/ncs5500/tutorials/ncs-5500-fabric-migration/]({{site.url}}/ncs5500/tutorials/ncs-5500-fabric-migration/)
 - [https://www.youtube.com/watch?v=XMQumuTkzmg](https://www.youtube.com/watch?v=XMQumuTkzmg)
 - Comp/Native modes: [https://www.youtube.com/watch?v=oUdIBAghjgk](https://www.youtube.com/watch?v=oUdIBAghjgk)
 

@@ -15,7 +15,7 @@ tags:
 ---
 {% include toc %}
 
-In the [last post](https://xrdocs.io/ncs5500/tutorials/bgp-evpn-configuration-ncs-5500-part-2/), we configured the BGP-EVPN based Multi-homing of host/CE using EVPN Ethernet Segment. In this post, we will provision BGP-EVPN based Layer-2 VPN service between the Leafs. The EVPN Layer-2 service will enable forwarding between host-1 and host-5 which are part of the same subnet.
+In the [last post]({{site.url}}/ncs5500/tutorials/bgp-evpn-configuration-ncs-5500-part-2/), we configured the BGP-EVPN based Multi-homing of host/CE using EVPN Ethernet Segment. In this post, we will provision BGP-EVPN based Layer-2 VPN service between the Leafs. The EVPN Layer-2 service will enable forwarding between host-1 and host-5 which are part of the same subnet.
 
 ## Reference Topology:
 ![](https://github.com/xrdocs/ncs5500/blob/gh-pages/images/evpn-config/Host-connectivity.png?raw=true)
@@ -520,4 +520,4 @@ Since only MAC address is advertised, the advertisement will only have Bridge-Do
 </div>
 
 
-In the [next post](https://xrdocs.io/ncs5500/tutorials/bgp-evpn-irb-configuration/), we are covering EVPN Integrated Routing and Bridging (IRB) configuration in detail.
+In the [next post]({{site.url}}/ncs5500/tutorials/bgp-evpn-irb-configuration/), we are covering EVPN Integrated Routing and Bridging (IRB) configuration in detail.

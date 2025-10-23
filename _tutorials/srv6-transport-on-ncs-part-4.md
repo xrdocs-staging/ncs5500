@@ -22,7 +22,7 @@ tags:
 
 <h2> Overview </h2>
 
-Cisco MIG Access & Aggregation platforms, i.e NCS 500 and NCS 5500 series have variants built with BCM J1 and J2 ASICs. In our previous articles on SRv6 transport and services, we covered platforms built with first generation of BCM ASIC. While service configuration and behaviour are same on both the generations of platforms, there are specific config knobs needed on the first generation of platforms. We discussed the same in detail in our first article on [SRv6 Transport](https://xrdocs.io/ncs5500/tutorials/srv6-transport-on-ncs-part-1/). 
+Cisco MIG Access & Aggregation platforms, i.e NCS 500 and NCS 5500 series have variants built with BCM J1 and J2 ASICs. In our previous articles on SRv6 transport and services, we covered platforms built with first generation of BCM ASIC. While service configuration and behaviour are same on both the generations of platforms, there are specific config knobs needed on the first generation of platforms. We discussed the same in detail in our first article on [SRv6 Transport]({{site.url}}/ncs5500/tutorials/srv6-transport-on-ncs-part-1/). 
 
 This tutorial will focus on various config knob differences to set up the SRv6 transport on the new generation of products i.e. the NCS 5700 and particular variants in NCS 540 series. 
 
@@ -134,7 +134,7 @@ In the example above, the highlighted two nibbles can be in the range of _00-ff_
 
 ### Service Configurations
 
-As discussed in the Overview section, any type of service creation, show comamnds related to transport and service infra are common to all the NCS 500 and NCS 5500/5700 PIDs. The basic [Layer3](https://xrdocs.io/ncs5500/tutorials/srv6-transport-on-ncs-part-2/) and [Layer2](https://xrdocs.io/ncs5500/tutorials/srv6-transport-on-ncs-part-3/) service over SRv6 transport is already covered in our previous tutorials.
+As discussed in the Overview section, any type of service creation, show comamnds related to transport and service infra are common to all the NCS 500 and NCS 5500/5700 PIDs. The basic [Layer3]({{site.url}}/ncs5500/tutorials/srv6-transport-on-ncs-part-2/) and [Layer2]({{site.url}}/ncs5500/tutorials/srv6-transport-on-ncs-part-3/) service over SRv6 transport is already covered in our previous tutorials.
 
 <h2> Summary </h2>
 In this short article, we covered the fundamental difference in configuration approach for SRv6 transport between NCS 5700 and NCS 5500 platforms. Stay tuned for more SRv6 transport related content.

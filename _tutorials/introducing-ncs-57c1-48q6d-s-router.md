@@ -226,5 +226,5 @@ Below is the power consumption of the router
 
 For other recently launched products and understanding their architecture please check the below:
 
-- [Introducing the NCS57C3 Routers](https://xrdocs.io/ncs5500/tutorials/introducing-ncs57c3-mod/)
-- [Introducing the NCS57B1 Routers](https://xrdocs.io/ncs5500/tutorials/introducing-ncs57b1-routers/)
+- [Introducing the NCS57C3 Routers]({{site.url}}/ncs5500/tutorials/introducing-ncs57c3-mod/)
+- [Introducing the NCS57B1 Routers]({{site.url}}/ncs5500/tutorials/introducing-ncs57b1-routers/)

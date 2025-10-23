@@ -19,7 +19,7 @@ tags:
 **Update 2**: Netscout simplified the ntp auto-mitigation, we ran the test with this new rule. Also, error on the Netbios ports has been fixed.
 {: .notice--info}
 
-You can find more content related to NCS5500 including routing memory management, VRF, URPF, Netflow, QoS, EVPN implementation following this [link](https://xrdocs.io/ncs5500/tutorials/).
+You can find more content related to NCS5500 including routing memory management, VRF, URPF, Netflow, QoS, EVPN implementation following this [link]({{site.url}}/ncs5500/tutorials/).
 
 ## Introduction
 

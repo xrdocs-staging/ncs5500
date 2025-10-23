@@ -442,7 +442,7 @@ The support is now extended for OSPF at the level it was for ISIS:
 
 ### NCS57B1-6D24 / NCS57B1-5DSE
 
-[https://xrdocs.io/ncs5500/tutorials/introducing-ncs57b1-routers/](https://xrdocs.io/ncs5500/tutorials/introducing-ncs57b1-routers/)
+[{{site.url}}/ncs5500/tutorials/introducing-ncs57b1-routers/]({{site.url}}/ncs5500/tutorials/introducing-ncs57b1-routers/)
 
 ### Chassis commons
 

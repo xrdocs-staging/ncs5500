@@ -17,9 +17,9 @@ position: top
 ---
 {% include toc icon="table" title="Understanding NCS5500 Resources" %} 
 
-You can find more content related to NCS5500 including routing memory management, VRF, URPF, Netflow following this [link](https://xrdocs.io/ncs5500/tutorials/).
+You can find more content related to NCS5500 including routing memory management, VRF, URPF, Netflow following this [link]({{site.url}}/ncs5500/tutorials/).
 
-In IOS XR 7.3.1, we will decommission the "internet-optimized" mode, please check this article: [https://xrdocs.io/ncs5500/tutorials/decommissioning-internet-optimized-mode/](https://xrdocs.io/ncs5500/tutorials/decommissioning-internet-optimized-mode/)
+In IOS XR 7.3.1, we will decommission the "internet-optimized" mode, please check this article: [{{site.url}}/ncs5500/tutorials/decommissioning-internet-optimized-mode/]({{site.url}}/ncs5500/tutorials/decommissioning-internet-optimized-mode/)
 {: .notice--danger}
 
 ## S01E02 IPv4 Prefixes
@@ -66,7 +66,7 @@ RP/0/RP0/CPU0:NCS5500(config)#
 Host-optimized is the default option. Committing a change in the configuration will prompt you to reload the line-cards or chassis to enable the new profile.
 {: .notice--info}
 
-Note: in IOS XR 7.3.1, we will decommission the "internet-optimized" mode, please check this article: [https://xrdocs.io/ncs5500/tutorials/decommissioning-internet-optimized-mode/](https://xrdocs.io/ncs5500/tutorials/decommissioning-internet-optimized-mode/)
+Note: in IOS XR 7.3.1, we will decommission the "internet-optimized" mode, please check this article: [{{site.url}}/ncs5500/tutorials/decommissioning-internet-optimized-mode/]({{site.url}}/ncs5500/tutorials/decommissioning-internet-optimized-mode/)
 {: .notice--danger}
 
 For a base line card (those without -SE in the product ID), we will have the following order of operation:

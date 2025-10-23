@@ -14,14 +14,14 @@ tags:
 
 ![LabSeries-banner-thin.png]({{site.baseurl}}/images/LabSeries-banner-thin.png){: .align-center}
 
-You can find more content related to NCS5500 including routing memory management, VRF, URPF, Netflow, QoS, EVPN, Flowspec implementation following this [link](https://xrdocs.io/ncs5500/tutorials/).
+You can find more content related to NCS5500 including routing memory management, VRF, URPF, Netflow, QoS, EVPN, Flowspec implementation following this [link]({{site.url}}/ncs5500/tutorials/).
 
 ## Introduction
 
 Episode 04 of the lab series, today, we will talk about NCS5500 FIB. More specifically, we will verify the number of routes we can store in systems with Jericho+ and eTCAM.  
 The goal of these blog posts and videos is to describe tests performed in lab, detail the methodology and the results.  
 They are extracted from customers POC (proof of concept). With this information, we hope it will speed up your validation process and provide additional information on the NCS5500 platforms internals.  
-All former tests are listed here: [https://xrdocs.io/ncs5500/tutorials/ncs5500-lab-series/](https://xrdocs.io/ncs5500/tutorials/ncs5500-lab-series/)
+All former tests are listed here: [{{site.url}}/ncs5500/tutorials/ncs5500-lab-series/]({{site.url}}/ncs5500/tutorials/ncs5500-lab-series/)
 
 ## Video
 
@@ -985,7 +985,7 @@ It would be an interesting study to quantify the impact of the complexity of the
 
 Let's try another feature and identify the impact on routing scale: Unicast Reverse Path Forwarding.  
 To configure it on systems with Jericho+ and eTCAM, you don't need to enable any specific hw-module profile, which is not the case for other types of NCS5500. More details in:  
-[https://xrdocs.io/ncs5500/tutorials/ncs5500-urpf/](https://xrdocs.io/ncs5500/tutorials/ncs5500-urpf/)
+[{{site.url}}/ncs5500/tutorials/ncs5500-urpf/]({{site.url}}/ncs5500/tutorials/ncs5500-urpf/)
 
 We apply URPF on two interfaces and it does not have any impact.
 

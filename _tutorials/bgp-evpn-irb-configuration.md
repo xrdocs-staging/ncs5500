@@ -16,7 +16,7 @@ position: top
 EVPN Integrated Routing and Bridging (IRB) feature allows end hosts across the overlay to communicate with each other within or across the subnets in the VPN. In this post we will cover the implementation of EVPN IRB to route between Host-1 and Host-9. Distributed Anycast Gateway will be configured on Leaf-1 and Leaf-2 for subnet 10.0.0.0/24 and on Leaf-5 for subnet 20.0.0.0/24. 
 After configuring IRB we will ping between the Host-1 and Host-9 to verify the reachability and observe the routes are learnt vie BGP EVPN. 
 
-In [last post](https://xrdocs.io/ncs5500/tutorials/bgp-evpn-configuration-ncs-5500-part-3/) we configured the Layer-2 stretch between Leaf-1, Leaf-2 and Leaf-5 using BGP EVPN EVI 10 for VLAN 10. We don’t need VLAN 10 on Leaf-5 for this post, that is why EVI 10 and related Bridge Domain is removed from Leaf-5.
+In [last post]({{site.url}}/ncs5500/tutorials/bgp-evpn-configuration-ncs-5500-part-3/) we configured the Layer-2 stretch between Leaf-1, Leaf-2 and Leaf-5 using BGP EVPN EVI 10 for VLAN 10. We don’t need VLAN 10 on Leaf-5 for this post, that is why EVI 10 and related Bridge Domain is removed from Leaf-5.
 
 ## Reference Topology:
 ![](https://github.com/xrdocs/ncs5500/blob/gh-pages/images/evpn-config/reference-topology-evpn-post-4.png?raw=true)
@@ -88,7 +88,7 @@ Now, we will configure the BVI-10 on Leaf-1 and Leaf-2 under VRF 10. The BVI wil
 </pre>
 </div>
 
-In order for the BVI interface to come up and serve as the gateway to the host connected to the Leaf, we will have to configure the host connectivity to the Leaf _(this is already configured in_ [post-2](https://xrdocs.io/ncs5500/tutorials/bgp-evpn-configuration-ncs-5500-part-2/) _and_ [post-3](https://xrdocs.io/ncs5500/tutorials/bgp-evpn-configuration-ncs-5500-part-3/)_)_. Also associate the BVI to a Bridge-Domain.
+In order for the BVI interface to come up and serve as the gateway to the host connected to the Leaf, we will have to configure the host connectivity to the Leaf _(this is already configured in_ [post-2]({{site.url}}/ncs5500/tutorials/bgp-evpn-configuration-ncs-5500-part-2/) _and_ [post-3]({{site.url}}/ncs5500/tutorials/bgp-evpn-configuration-ncs-5500-part-3/)_)_. Also associate the BVI to a Bridge-Domain.
 
 <div class="highlighter-rouge">
 <pre class="highlight">

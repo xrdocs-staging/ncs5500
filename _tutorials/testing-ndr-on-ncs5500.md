@@ -15,11 +15,11 @@ tags:
 
 ![LabSeries-banner-thin.png]({{site.baseurl}}/images/LabSeries-banner-thin.png){: .align-center}
 
-You can find more content related to NCS5500 including routing memory management, VRF, URPF, Netflow, QoS, EVPN, Flowspec implementation following this [link](https://xrdocs.io/ncs5500/tutorials/).
+You can find more content related to NCS5500 including routing memory management, VRF, URPF, Netflow, QoS, EVPN, Flowspec implementation following this [link]({{site.url}}/ncs5500/tutorials/).
 
 ## Introduction
 
-This test is the second episode of our new Lab Series. You can find a detailed explanation on the purpose and also a link to all other tests in this xrdocs.io post:  [https://xrdocs.io/ncs5500/tutorials/ncs5500-lab-series/](https://xrdocs.io/ncs5500/tutorials/ncs5500-lab-series/)
+This test is the second episode of our new Lab Series. You can find a detailed explanation on the purpose and also a link to all other tests in this xrdocs.io post:  [{{site.url}}/ncs5500/tutorials/ncs5500-lab-series/]({{site.url}}/ncs5500/tutorials/ncs5500-lab-series/)
 
 Last week, we ran multiple tests in very heavily wired systems. Among the topics covered, we measured the NDR with a very long snake.  
 The concept of Non Drop Rate deserves dedicated explanations.

@@ -17,7 +17,7 @@ position: top
 
 ## Introduction
 
-In the [previous article](https://xrdocs.io/ncs5500/tutorials/access-list-enhancements-on-ncs5500-j2-based-platforms/), we introduced the ACL enhancements on NCS5500 based on J2 chipsets. Now we will understand the ACL implementation on NCS5500 w.r.t to BVI interfaces. We will cover all the systems based on J/J+ and J2. 
+In the [previous article]({{site.url}}/ncs5500/tutorials/access-list-enhancements-on-ncs5500-j2-based-platforms/), we introduced the ACL enhancements on NCS5500 based on J2 chipsets. Now we will understand the ACL implementation on NCS5500 w.r.t to BVI interfaces. We will cover all the systems based on J/J+ and J2. 
 
 ## Quick Recap: Bridged Virtual Interface - BVI 
 
@@ -801,7 +801,7 @@ Summarizing the ACL support on BVI interfaces.
 | Egress v4 ACL  | Yes | Yes | Yes           | Yes       |
 | Egress v6 ACL  | No  | No  | No            | Yes       |
 
-We saw the support and programming of the ingress and egress ACLs on the BVI interfaces along with the TCAM resource utilization. In the [next article](https://xrdocs.io/ncs5500/tutorials/egress-ipv6-acls-on-ncs5500/) we will explore the v6 ACLs in more details and its implementation across the chipsets. So stay tuned !!! 
+We saw the support and programming of the ingress and egress ACLs on the BVI interfaces along with the TCAM resource utilization. In the [next article]({{site.url}}/ncs5500/tutorials/egress-ipv6-acls-on-ncs5500/) we will explore the v6 ACLs in more details and its implementation across the chipsets. So stay tuned !!! 
 
 ## References
 

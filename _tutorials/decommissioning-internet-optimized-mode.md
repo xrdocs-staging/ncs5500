@@ -8,7 +8,7 @@ position: top
 ---
 {% include toc icon="table" title="Remove Internet-opt Mode" %} 
 
-You can find more content related to NCS5500 including routing memory management, VRF, URPF, Netflow, QoS, EVPN implementation following this [link](https://xrdocs.io/ncs5500/tutorials/).
+You can find more content related to NCS5500 including routing memory management, VRF, URPF, Netflow, QoS, EVPN implementation following this [link]({{site.url}}/ncs5500/tutorials/).
 
 **Update**: Contrary to what was initially described, the decommissionning in 7.3.1 only covers the IPv4 CLI. The v6 CLI will be removed in 7.4.1.
 {: .notice--info}
@@ -21,7 +21,7 @@ This feature was introduced to optimize the v4/v6 prefix distribution between LE
 ## Feature description
 
 Multiple hacks have been used for this optimization, changing the lookup order of operation, spliting the /23 prefixes in two sub-sequent /24s, ...  
-During years, it was working fine for internet distribution as demonstrated in December 2017 in this blog post: [https://xrdocs.io/ncs5500/tutorials/2017-12-30-full-internet-view-on-base-ncs-5500-systems-s01e04/](https://xrdocs.io/ncs5500/tutorials/2017-12-30-full-internet-view-on-base-ncs-5500-systems-s01e04/).  
+During years, it was working fine for internet distribution as demonstrated in December 2017 in this blog post: [{{site.url}}/ncs5500/tutorials/2017-12-30-full-internet-view-on-base-ncs-5500-systems-s01e04/]({{site.url}}/ncs5500/tutorials/2017-12-30-full-internet-view-on-base-ncs-5500-systems-s01e04/).  
 
 **So why do you want to remove this feature?**
 
@@ -79,11 +79,11 @@ The remaining configuration options will be:
 
 We also added a mention in the following docs and videos to inform that internet-optimized mode will be removed and shouldn't be used anymore:
 
-- [https://xrdocs.io/ncs5500/tutorials/2017-08-03-understanding-ncs5500-resources-s01e02/](https://xrdocs.io/ncs5500/tutorials/2017-08-03-understanding-ncs5500-resources-s01e02/)
-- [https://xrdocs.io/ncs5500/tutorials/2017-08-07-understanding-ncs5500-resources-s01e03/](https://xrdocs.io/ncs5500/tutorials/2017-08-07-understanding-ncs5500-resources-s01e03/)
-- [https://xrdocs.io/ncs5500/tutorials/2017-12-30-full-internet-view-on-base-ncs-5500-systems-s01e04/](https://xrdocs.io/ncs5500/tutorials/2017-12-30-full-internet-view-on-base-ncs-5500-systems-s01e04/)
-- [https://xrdocs.io/ncs5500/tutorials/Understanding-ncs5500-jericho-plus-systems/](https://xrdocs.io/ncs5500/tutorials/Understanding-ncs5500-jericho-plus-systems/)
-- [https://xrdocs.io/ncs5500/tutorials/ncs5500-urpf/](https://xrdocs.io/ncs5500/tutorials/ncs5500-urpf/)
-- [https://xrdocs.io/ncs5500/tutorials/ncs5500-routing-resource-with-2020-internet/](https://xrdocs.io/ncs5500/tutorials/ncs5500-routing-resource-with-2020-internet/)
+- [{{site.url}}/ncs5500/tutorials/2017-08-03-understanding-ncs5500-resources-s01e02/]({{site.url}}/ncs5500/tutorials/2017-08-03-understanding-ncs5500-resources-s01e02/)
+- [{{site.url}}/ncs5500/tutorials/2017-08-07-understanding-ncs5500-resources-s01e03/]({{site.url}}/ncs5500/tutorials/2017-08-07-understanding-ncs5500-resources-s01e03/)
+- [{{site.url}}/ncs5500/tutorials/2017-12-30-full-internet-view-on-base-ncs-5500-systems-s01e04/]({{site.url}}/ncs5500/tutorials/2017-12-30-full-internet-view-on-base-ncs-5500-systems-s01e04/)
+- [{{site.url}}/ncs5500/tutorials/Understanding-ncs5500-jericho-plus-systems/]({{site.url}}/ncs5500/tutorials/Understanding-ncs5500-jericho-plus-systems/)
+- [{{site.url}}/ncs5500/tutorials/ncs5500-urpf/]({{site.url}}/ncs5500/tutorials/ncs5500-urpf/)
+- [{{site.url}}/ncs5500/tutorials/ncs5500-routing-resource-with-2020-internet/]({{site.url}}/ncs5500/tutorials/ncs5500-routing-resource-with-2020-internet/)
 - [https://www.youtube.com/watch?v=8Tq4nyP2wuA](https://www.youtube.com/watch?v=8Tq4nyP2wuA)
 - [https://www.youtube.com/watch?v=nT31rHqFm-o](https://www.youtube.com/watch?v=nT31rHqFm-o)

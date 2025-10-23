@@ -14,7 +14,7 @@ position: top
 ---
 {% include toc icon="table" title="Netflow, Sampling-Interval and the Mythical Internet Packet Size" %} 
 
-You can find more content related to NCS5500 including routing memory management, VRF, URPF, ACLs,  following this [link](https://xrdocs.io/ncs5500/tutorials/).
+You can find more content related to NCS5500 including routing memory management, VRF, URPF, ACLs,  following this [link]({{site.url}}/ncs5500/tutorials/).
 
 ## Introduction
 

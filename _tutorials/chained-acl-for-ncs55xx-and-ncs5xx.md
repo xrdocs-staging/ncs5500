@@ -18,7 +18,7 @@ position: top
 
 ## Introduction
 
-In our previous tech-notes, we introduced the ACL support ([ACL Introduction](https://xrdocs.io/ncs5500/tutorials/security-acl-on-ncs5500-part1/ "ACL Introduction")), discussed different matching criteria's ([Matching Fragments](https://xrdocs.io/ncs5500/tutorials/acl-ip-fragments-matching-ncs55xx-and-ncs5xx/ "Matching Fragments"), [Packet Length Matching](https://xrdocs.io/ncs5500/tutorials/acl-packet-length-matching-ncs55xx-and-ncs5xx/ "Packet Length Matching")), and explored the concepts of different TCAM keys ([UDK](https://xrdocs.io/ncs5500/tutorials/user-defined-key-udk-for-ncs55xx-and-ncs5xx/ "UDK"), [UDF](https://xrdocs.io/ncs5500/tutorials/user-defined-field-ncs55xx-and-ncs5xx/ "UDF"))for the NCS55xx and NCS5xx portfolio. In this tech-note, we will talk about Chained ACL and see its use cases.
+In our previous tech-notes, we introduced the ACL support ([ACL Introduction]({{site.url}}/ncs5500/tutorials/security-acl-on-ncs5500-part1/ "ACL Introduction")), discussed different matching criteria's ([Matching Fragments]({{site.url}}/ncs5500/tutorials/acl-ip-fragments-matching-ncs55xx-and-ncs5xx/ "Matching Fragments"), [Packet Length Matching]({{site.url}}/ncs5500/tutorials/acl-packet-length-matching-ncs55xx-and-ncs5xx/ "Packet Length Matching")), and explored the concepts of different TCAM keys ([UDK]({{site.url}}/ncs5500/tutorials/user-defined-key-udk-for-ncs55xx-and-ncs5xx/ "UDK"), [UDF]({{site.url}}/ncs5500/tutorials/user-defined-field-ncs55xx-and-ncs5xx/ "UDF"))for the NCS55xx and NCS5xx portfolio. In this tech-note, we will talk about Chained ACL and see its use cases.
 
 
 ## Overview

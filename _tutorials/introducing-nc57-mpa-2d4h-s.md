@@ -18,7 +18,7 @@ This article has been written and reviewed by (in alphabetical order):
 
 ## Introduction
 
-With IOS XR 7.4.1, we introduced [a lot of new features](https://xrdocs.io/ncs5500/tutorials/iosxr-741-innovations/) and new routers like [the Cisco NCS57C3-MOD](https://xrdocs.io/ncs5500/tutorials/introducing-ncs57c3-mod/), but that's not the only new hardware launched with this new release. We are very pleased to announce the availability of a new generation of Modular Port Adapter, with QSFP-DD support: the NC57-MPA-2D4H-S.
+With IOS XR 7.4.1, we introduced [a lot of new features]({{site.url}}/ncs5500/tutorials/iosxr-741-innovations/) and new routers like [the Cisco NCS57C3-MOD]({{site.url}}/ncs5500/tutorials/introducing-ncs57c3-mod/), but that's not the only new hardware launched with this new release. We are very pleased to announce the availability of a new generation of Modular Port Adapter, with QSFP-DD support: the NC57-MPA-2D4H-S.
 
 This new MPA will be supported in the different slots of the NCS57C3-MOD routers, but also in the very popular NCS55A2-MOD series and the modular line cards NC55-MOD-A-S and NC55-MOD-A-SE-S.  
 So it will be supported in the existing 400Gbps MPA slots, protecting your investment, but also in the new 800Gbps slots available in the NCS57C3-MOD routers, unleashing its fully capability.
@@ -52,7 +52,7 @@ This MPA is useable in multiple NCS5500 and NCS5700 products and line cards, we 
 
 ## In NCS57C3-MOD Routers
 
-Please check [this artcle dedicated to the NCS57C3-MOD routers first](https://xrdocs.io/ncs5500/tutorials/introducing-ncs57c3-mod/).
+Please check [this artcle dedicated to the NCS57C3-MOD routers first]({{site.url}}/ncs5500/tutorials/introducing-ncs57c3-mod/).
 
 This fixed/modular router is the first of its kind in the portfolio, and its flexibility comes primarily from the three MPA slots. One at 400Gbps (slot 1) and two at 800Gbps (slot 2 and 3).
 

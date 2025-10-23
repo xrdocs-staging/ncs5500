@@ -12,7 +12,7 @@ position: hidden
 
 NCS-5700 is the first platform in the NCS-5500 Series that supports 400G optics, which is introduced in a previous tutorial:
 
-[Introducing 400GE on NCS5500 Series](https://xrdocs.io/ncs5500/tutorials/introducing-400ge-on-ncs5500-series/)
+[Introducing 400GE on NCS5500 Series]({{site.url}}/ncs5500/tutorials/introducing-400ge-on-ncs5500-series/)
 
 This tutorial will discuss in more details the 400G optics technology and roadmap for the NCS-5700 series.
 

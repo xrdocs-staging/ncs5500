@@ -288,7 +288,7 @@ This line card variants can support industry standard class C timing on all the 
 
 ## Scalability & Use Cases
 
-The new dense low speed line card comes with high scalability and powered with the flexibility of [MDB Profiles](https://xrdocs.io/ncs5500/tutorials/mdb-ncs5700/). By default, in J2 Native the base line card runs L3MAX and the scale line card runs L3MAX-SE profile. Since we are talking about modular platform, -SE profile is usefull when all the line card in the system are eTCAM variants. The table below summarizes supported MDB profiles for the line card variants.
+The new dense low speed line card comes with high scalability and powered with the flexibility of [MDB Profiles]({{site.url}}/ncs5500/tutorials/mdb-ncs5700/). By default, in J2 Native the base line card runs L3MAX and the scale line card runs L3MAX-SE profile. Since we are talking about modular platform, -SE profile is usefull when all the line card in the system are eTCAM variants. The table below summarizes supported MDB profiles for the line card variants.
 
 | LC variant | L3MAX| L3MAX-SE| L2MAX | L2MAX-SE|
 |-----------|-------|---------|-------|---------|

@@ -69,7 +69,7 @@ With Jericho2 platforms, a series of limitations present in Jericho/Jericho+ hav
 - We support egress ACLv6 on BVI interfaces, something not supported on J/J+ platforms.
 
 Tejas also published another article here with plenty of details:  
-[https://xrdocs.io/ncs5500/tutorials/access-list-enhancements-on-ncs5500-j2-based-platforms/](https://xrdocs.io/ncs5500/tutorials/access-list-enhancements-on-ncs5500-j2-based-platforms/)
+[{{site.url}}/ncs5500/tutorials/access-list-enhancements-on-ncs5500-j2-based-platforms/]({{site.url}}/ncs5500/tutorials/access-list-enhancements-on-ncs5500-j2-based-platforms/)
 
 In IOS XR 7.4.1, we complete this list of improvements with more fields.
 
@@ -206,7 +206,7 @@ Tejas Lad presents the BoB-BLB co-existence benefits.
 .
 
 In IOS XR 7.4.1, we introduce the action of both BoB and BLB simultaneously on the same bundle for faster convergence. All technical details can be found in this dedicated article:  
-[https://xrdocs.io/ncs5500/tutorials/coexistence-between-bfd-over-bundle-and-bfd-over-logical-bundle/](https://xrdocs.io/ncs5500/tutorials/coexistence-between-bfd-over-bundle-and-bfd-over-logical-bundle/)
+[{{site.url}}/ncs5500/tutorials/coexistence-between-bfd-over-bundle-and-bfd-over-logical-bundle/]({{site.url}}/ncs5500/tutorials/coexistence-between-bfd-over-bundle-and-bfd-over-logical-bundle/)
 
 ### Scale improvements
 

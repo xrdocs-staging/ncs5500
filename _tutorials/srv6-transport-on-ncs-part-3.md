@@ -15,7 +15,7 @@ excerpt: >-
 
 <h2> Overview </h2>
 
-Until now we covered setting up, [SRv6 Transport](https://xrdocs.io/ncs5500/tutorials/srv6-transport-on-ncs-part-1/) and bringing up [Layer3 VPN](https://xrdocs.io/ncs5500/tutorials/srv6-transport-on-ncs-part-2/) using that on NCS 5500 and NCS 500 platforms. In this tutorial, we will cover the impelementaion of EVPN based point-to-point (E-Line) L2 service (EVPN-VPWS) over SRv6. 
+Until now we covered setting up, [SRv6 Transport]({{site.url}}/ncs5500/tutorials/srv6-transport-on-ncs-part-1/) and bringing up [Layer3 VPN]({{site.url}}/ncs5500/tutorials/srv6-transport-on-ncs-part-2/) using that on NCS 5500 and NCS 500 platforms. In this tutorial, we will cover the impelementaion of EVPN based point-to-point (E-Line) L2 service (EVPN-VPWS) over SRv6. 
 
 ## Topology
 
@@ -44,7 +44,7 @@ EVPN based P2P service over SRv6 transport will involve 3 steps, viz.
     
 ### BGP Control Plane
 
-Traditional L2 services uses LDP for signalling, which is simplified by EVPN with the use of BGP for control plane operation. In our [previous tutorial](https://xrdocs.io/ncs5500/tutorials/srv6-transport-on-ncs-part-2/), we established BGP neighborship between PE1 and PE4 with VPNv4 AFI. Now we need to enable EVPN AFI over BGP. Below snippet shows full BGP configuration needed for layer2 service over SRv6.
+Traditional L2 services uses LDP for signalling, which is simplified by EVPN with the use of BGP for control plane operation. In our [previous tutorial]({{site.url}}/ncs5500/tutorials/srv6-transport-on-ncs-part-2/), we established BGP neighborship between PE1 and PE4 with VPNv4 AFI. Now we need to enable EVPN AFI over BGP. Below snippet shows full BGP configuration needed for layer2 service over SRv6.
 
 _**PE1**_
 <div class="highlighter-rouge">

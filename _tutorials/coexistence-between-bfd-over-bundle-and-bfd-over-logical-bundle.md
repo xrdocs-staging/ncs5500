@@ -20,7 +20,7 @@ tags:
 
 ## Introduction
 
-In the previous articles, we introduced the concepts of [BFD over Bundle](https://xrdocs.io/ncs5500/tutorials/bfd-over-bundle-interfaces-on-ncs5500-and-ncs500/) and [BFD over Logical Bundle](https://xrdocs.io/ncs5500/tutorials/multipath-and-multihop-bfd-sessions-on-ncs5500-and-ncs500/). We saw the configurations and the use cases. In this article we will discuss their limitations, when they are used one-at-a-time and see the why we need their coexistence.
+In the previous articles, we introduced the concepts of [BFD over Bundle]({{site.url}}/ncs5500/tutorials/bfd-over-bundle-interfaces-on-ncs5500-and-ncs500/) and [BFD over Logical Bundle]({{site.url}}/ncs5500/tutorials/multipath-and-multihop-bfd-sessions-on-ncs5500-and-ncs500/). We saw the configurations and the use cases. In this article we will discuss their limitations, when they are used one-at-a-time and see the why we need their coexistence.
 
 ## Quick recap
 
@@ -643,7 +643,7 @@ While choosing between the coexistence mode, we need to understand how each mode
 
 ## Memory and Scale Impact
 
-There is no memory impact expected while configuring the BoB and BLB coexistence. When using inherit mode the scale will only be considered for the BoB sessions. With logical mode it would be a summation of BoB and BLB. The overall scale calculation will not change and remain as per the existing scale supported. For details on how the scale is calculated please [refer](https://xrdocs.io/ncs5500/tutorials/bfd-architecture-on-ncs5500-and-ncs500/).
+There is no memory impact expected while configuring the BoB and BLB coexistence. When using inherit mode the scale will only be considered for the BoB sessions. With logical mode it would be a summation of BoB and BLB. The overall scale calculation will not change and remain as per the existing scale supported. For details on how the scale is calculated please [refer]({{site.url}}/ncs5500/tutorials/bfd-architecture-on-ncs5500-and-ncs500/).
 
 
 ## Summary

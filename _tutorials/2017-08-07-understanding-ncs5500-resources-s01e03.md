@@ -16,9 +16,9 @@ tags:
 ---
 {% include toc icon="table" title="Understanding NCS5500 Resources" %} 
 
-You can find more content related to NCS5500 including routing in VRF, URPF, ACLs, Netflow following this [link](https://xrdocs.io/ncs5500/tutorials/).
+You can find more content related to NCS5500 including routing in VRF, URPF, ACLs, Netflow following this [link]({{site.url}}/ncs5500/tutorials/).
 
-Important update: in IOS XR 7.3.1, we will decommission the "internet-optimized" mode, please check this article: [https://xrdocs.io/ncs5500/tutorials/decommissioning-internet-optimized-mode/](https://xrdocs.io/ncs5500/tutorials/decommissioning-internet-optimized-mode/)
+Important update: in IOS XR 7.3.1, we will decommission the "internet-optimized" mode, please check this article: [{{site.url}}/ncs5500/tutorials/decommissioning-internet-optimized-mode/]({{site.url}}/ncs5500/tutorials/decommissioning-internet-optimized-mode/)
 {: .notice--danger}
 
 ## S01E03 IPv6 Prefixes
@@ -55,7 +55,7 @@ To avoid any misunderstanding, let's review the IPv6 resource allocation / distr
 
 **Base systems** with **Internet-optimized** FIB profile:
 
-Note: in IOS XR 7.3.1, we will decommission the "internet-optimized" mode, please check this article: [https://xrdocs.io/ncs5500/tutorials/decommissioning-internet-optimized-mode/](https://xrdocs.io/ncs5500/tutorials/decommissioning-internet-optimized-mode/)
+Note: in IOS XR 7.3.1, we will decommission the "internet-optimized" mode, please check this article: [{{site.url}}/ncs5500/tutorials/decommissioning-internet-optimized-mode/]({{site.url}}/ncs5500/tutorials/decommissioning-internet-optimized-mode/)
 {: .notice--danger}
 
 ![IPv6-base-internet-distr.jpg]({{site.baseurl}}/images/IPv6-base-internet-distr.jpg){: .align-center}

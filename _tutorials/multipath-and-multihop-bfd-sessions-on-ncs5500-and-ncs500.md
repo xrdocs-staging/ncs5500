@@ -20,7 +20,7 @@ position: top
 
 ## Introduction
 
-In our previous article we discussed [BFD over Bundle Interface or BoB](https://xrdocs.io/ncs5500/tutorials/bfd-over-bundle-interfaces-on-ncs5500-and-ncs500/). In this article, we discuss one more concept for bundle: BFD over Logical Bundle or BLB. We will understand the difference between BLB and BoB and see its use cases. We will also see what are Multipath and Multihop Sessions with BFD over BVI interfaces.
+In our previous article we discussed [BFD over Bundle Interface or BoB]({{site.url}}/ncs5500/tutorials/bfd-over-bundle-interfaces-on-ncs5500-and-ncs500/). In this article, we discuss one more concept for bundle: BFD over Logical Bundle or BLB. We will understand the difference between BLB and BoB and see its use cases. We will also see what are Multipath and Multihop Sessions with BFD over BVI interfaces.
 
 ## BFD over Logical Bundle
 
@@ -79,7 +79,7 @@ BE24                192.6.17.17     0s(0s*0)         900ms(300ms*3)   UP
                                                              Yes   0/0/CPU0 
 ```
 
-From the above output we can see, it shows a single session over the bundle interface. If we compare it with [BoB](https://xrdocs.io/ncs5500/tutorials/bfd-over-bundle-interfaces-on-ncs5500-and-ncs500/), we can see there were individual member links in the session. Let us analyse the detailed output.
+From the above output we can see, it shows a single session over the bundle interface. If we compare it with [BoB]({{site.url}}/ncs5500/tutorials/bfd-over-bundle-interfaces-on-ncs5500-and-ncs500/), we can see there were individual member links in the session. Let us analyse the detailed output.
 
 <div class="highlighter-rouge">
 <pre class="highlight">
@@ -161,7 +161,7 @@ From the detailed output we can see that its a switched session with session typ
 
 From IOS-XR 7.1.1, BFD is supported over BVI Interface. Let us start with a quick background of [BVI Interface](https://www.cisco.com/c/en/us/td/docs/iosxr/ncs5500/routing/71x/b-routing-cg-ncs5500-71x/b-routing-cg-ncs5500-71x_chapter_0111.html#concept_hdq_sfm_gkb). In order for a VLAN to span a router, the router must be capable of forwarding frames from one interface to another, while maintaining the VLAN header. If the router is configured for routing a Layer 3 (network layer) protocol, it will terminate the VLAN and MAC layers at the interface on which a frame arrives. The MAC layer header can be maintained if the router bridges the network layer protocol. However, even regular bridging terminates the VLAN header. Using this feature, a router can be configured for routing and bridging the same network layer protocol, on the same interface. This allows the VLAN header to be maintained on a frame while it transits a router from one interface to another. The BVI is a virtual interface within the router that acts like a normal routed interface that does not support bridging, but represents the comparable bridge group to routed interfaces within the router. The interface number of the BVI is the number of the bridge group that the virtual interface represents. This number is the link between the BVI and the bridge group. Because the BVI represents a bridge group as a routed interface, it must be configured only with Layer 3 (L3) characteristics, such as network layer addresses. Similarly, the interfaces configured for bridging a protocol must not be configured with any L3 characteristics. 
 
-With IOS-XR 7.1.1 and beyond we can configure IPv4/IPv6 BFD over BVI  interface with OSFP/ISIS/Static/BGP clients. BFD over BVI is a single hop (SH) multipath (MP)session. The details are very similar to existing multipath-based. BFD Packet Reception on BVI interfaces is similar to MP session. In the first pass, routing occurs as destination mac in received packet matching with bvi interface mac and packet is considered as a for us packets if the destination IP address is matching with BVI interface IP address. In the second pass BFD processes a packet and sends it to OAMP/ARM block. This is same way how packet will be processed as packet received on physical interface. BFD over BVI will be supported on IPv4 address, IPv6 global address and IPv6 link-local addresses. For details on BFD architecture and packet flow please [visit](https://xrdocs.io/ncs5500/tutorials/bfd-architecture-on-ncs5500-and-ncs500/).
+With IOS-XR 7.1.1 and beyond we can configure IPv4/IPv6 BFD over BVI  interface with OSFP/ISIS/Static/BGP clients. BFD over BVI is a single hop (SH) multipath (MP)session. The details are very similar to existing multipath-based. BFD Packet Reception on BVI interfaces is similar to MP session. In the first pass, routing occurs as destination mac in received packet matching with bvi interface mac and packet is considered as a for us packets if the destination IP address is matching with BVI interface IP address. In the second pass BFD processes a packet and sends it to OAMP/ARM block. This is same way how packet will be processed as packet received on physical interface. BFD over BVI will be supported on IPv4 address, IPv6 global address and IPv6 link-local addresses. For details on BFD architecture and packet flow please [visit]({{site.url}}/ncs5500/tutorials/bfd-architecture-on-ncs5500-and-ncs500/).
 
 ### Configuring BFD over BVI 
 
@@ -384,7 +384,7 @@ From the flags we can see the client BGP is having a **multi-hop** session. MP d
 
 ## Timers and Scale
 
-For the minimum timers and scale support, please visit the [BFD Architecture Document](https://xrdocs.io/ncs5500/tutorials/bfd-architecture-on-ncs5500-and-ncs500/).
+For the minimum timers and scale support, please visit the [BFD Architecture Document]({{site.url}}/ncs5500/tutorials/bfd-architecture-on-ncs5500-and-ncs500/).
 
 ## Reference
 
@@ -393,4 +393,4 @@ For the minimum timers and scale support, please visit the [BFD Architecture Doc
 
 ## Summary
 
-Hope this tech-note helped understanding the concept of BLB and its difference between [BoB](https://xrdocs.io/ncs5500/tutorials/bfd-over-bundle-interfaces-on-ncs5500-and-ncs500/). We also touched upon the concept of Multi-Path and Multi-Hop sessions.
+Hope this tech-note helped understanding the concept of BLB and its difference between [BoB]({{site.url}}/ncs5500/tutorials/bfd-over-bundle-interfaces-on-ncs5500-and-ncs500/). We also touched upon the concept of Multi-Path and Multi-Hop sessions.

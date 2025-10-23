@@ -31,7 +31,7 @@ ACL’s can make permit/deny decisions based on source/destination address, sour
 
 ## Overview
 
-Security ACL's introduction, feature support and statistics is covered at high level in the [Link](https://xrdocs.io/ncs5500/tutorials/security-acl-on-ncs5500-part1/ "Link")
+Security ACL's introduction, feature support and statistics is covered at high level in the [Link]({{site.url}}/ncs5500/tutorials/security-acl-on-ncs5500-part1/ "Link")
 
 In this document, we will deepdive how the NCS55xx and NCS5xx program the packet length in the TCAM and use it to filter the packets. The main use case of this matching criteria is to identify malicious packet ranges entering the network and denying them.  
 
@@ -128,7 +128,7 @@ hw-module profile tcam format access-list ipv4 src-addr dst-addr src-port dst-po
 
 ![Screenshot 2020-08-05 at 2.23.29 PM.png]({{site.baseurl}}/images/Screenshot 2020-08-05 at 2.23.29 PM.png)
 
-Other show commands are extensively covered in the [Link](https://xrdocs.io/ncs5500/tutorials/security-acl-on-ncs5500-part1/ "Link")
+Other show commands are extensively covered in the [Link]({{site.url}}/ncs5500/tutorials/security-acl-on-ncs5500-part1/ "Link")
 
 ### Hardware or TCAM programming of the ACL
 
@@ -136,7 +136,7 @@ Other show commands are extensively covered in the [Link](https://xrdocs.io/ncs5
 
 ![Screenshot 2020-08-05 at 2.46.09 PM.png]({{site.baseurl}}/images/Screenshot 2020-08-05 at 2.46.09 PM.png)
 
-The above 2 output shows us that the IPv4 L3 ACL database is programmed and a Database ID is created for it. NPU details is extracted, dedicated to interface where the ACL is applied. We can see the bank_ID with the entry size as 320 bits. For more information on memory banks please [Refer](https://xrdocs.io/ncs5500/tutorials/security-acl-on-ncs5500-part1/ "Refer"). This data/values will help us in understanding the values configured in the hardware.
+The above 2 output shows us that the IPv4 L3 ACL database is programmed and a Database ID is created for it. NPU details is extracted, dedicated to interface where the ACL is applied. We can see the bank_ID with the entry size as 320 bits. For more information on memory banks please [Refer]({{site.url}}/ncs5500/tutorials/security-acl-on-ncs5500-part1/ "Refer"). This data/values will help us in understanding the values configured in the hardware.
   
 ![Screenshot 2020-08-04 at 12.24.17 PM.png]({{site.baseurl}}/images/Screenshot 2020-08-04 at 12.24.17 PM.png)
 
@@ -282,7 +282,7 @@ This will consume 13 entries in the TCAM
 
 ## References
 
-- [Security ACL's on NCS5500](https://xrdocs.io/ncs5500/tutorials/security-acl-on-ncs5500-part1/ "Security ACL's on NCS5500")
+- [Security ACL's on NCS5500]({{site.url}}/ncs5500/tutorials/security-acl-on-ncs5500-part1/ "Security ACL's on NCS5500")
 - [CCO documentation](https://www.cisco.com/c/en/us/td/docs/iosxr/ncs5500/ip-addresses/71x/b-ip-addresses-cg-ncs5500-71x/b-ip-addresses-cg-ncs5500-71x_chapter_0111.html "CCO documentation")
 
 ## Summary

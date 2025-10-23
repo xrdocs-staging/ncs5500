@@ -24,7 +24,7 @@ In this post we will cover the BGP-EVPN based Single-Active Multi-Homing of CE/H
 ## Reference Topology:
 ![](https://github.com/xrdocs/ncs5500/blob/gh-pages/images/evpn-config/reference-topology-evpn-single-active.png?raw=true)
 
-For this post, we will leverage EVPN control-plane and ISIS Segment Routing based forwarding that we configured in a previous [post.](https://xrdocs.io/ncs5500/tutorials/bgp-evpn-configuration-ncs-5500-part-1/)
+For this post, we will leverage EVPN control-plane and ISIS Segment Routing based forwarding that we configured in a previous [post.]({{site.url}}/ncs5500/tutorials/bgp-evpn-configuration-ncs-5500-part-1/)
 
 ![](https://github.com/xrdocs/ncs5500/blob/gh-pages/images/evpn-config/single-active-multi-homing.png?raw=true)
 
@@ -223,7 +223,7 @@ Above output shows that the bundle interfaces are up. Next, lets provision the E
 
 
 ### Task 3: Configure BGP EVPN based layer-2 multipoint service
-Configure the EVPN layer-2 service between Leaf-1, Leaf-2 and Leaf-5 and then check the status of ethernet segment. For detailed explanation of configuring BGP EVPN based layer-2 service, refer to this [post.](https://xrdocs.io/ncs5500/tutorials/bgp-evpn-configuration-ncs-5500-part-3/)  
+Configure the EVPN layer-2 service between Leaf-1, Leaf-2 and Leaf-5 and then check the status of ethernet segment. For detailed explanation of configuring BGP EVPN based layer-2 service, refer to this [post.]({{site.url}}/ncs5500/tutorials/bgp-evpn-configuration-ncs-5500-part-3/)  
   
 ![](https://github.com/xrdocs/ncs5500/blob/gh-pages/images/evpn-config/single-active-layer2-stretch.png?raw=true)
 
@@ -541,7 +541,7 @@ As we observe Leaf-5’s output, we see that the Leaf-5 has programmed Leaf-1 as
 ### Task 5: Configure the BGP-EVPN Distributed Anycast Gateway for inter-subnet routing
 For Layer-3 inter-subnet routing use case; similar to Host-1’s layer-2 reachability, Host-1’s IP will also only be reachable via Leaf-1 as next-hop. After we configure BGP-EVPN distributed anycast gateway for inter-subnet routing, we will observe the routing table of Leaf-5.
 
-Configure the BGP-EVPN Distributed Anycast Gateway on Leaf-1, Leaf-2 and Leaf-5. For detailed explanation of distributed anycast gateway, refer to this [post.]( https://xrdocs.io/ncs5500/tutorials/bgp-evpn-irb-configuration/)  
+Configure the BGP-EVPN Distributed Anycast Gateway on Leaf-1, Leaf-2 and Leaf-5. For detailed explanation of distributed anycast gateway, refer to this [post.]( {{site.url}}/ncs5500/tutorials/bgp-evpn-irb-configuration/)  
 
 ![](https://github.com/xrdocs/ncs5500/blob/gh-pages/images/evpn-config/single-active-layer3-irb.png?raw=true)
 

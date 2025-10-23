@@ -19,7 +19,7 @@ position: top
 {% include toc icon="table" title="Latest ACL Enhancements on NCS5500 - IOS-XR 7.6.1" %} 
 ## Introduction
 
-In our [previous article](https://xrdocs.io/ncs5500/tutorials/access-list-enhancements-on-ncs5500-j2-based-platforms/), we discussed the ACL enhancements on the newer generation NCS5500 plaforms. In this article we will discuss some more enhancements w.r.t ACLs, which we have done in IOS-XR 7.6.1
+In our [previous article]({{site.url}}/ncs5500/tutorials/access-list-enhancements-on-ncs5500-j2-based-platforms/), we discussed the ACL enhancements on the newer generation NCS5500 plaforms. In this article we will discuss some more enhancements w.r.t ACLs, which we have done in IOS-XR 7.6.1
 
 ## IOS-XR 7.6.1 Enhancements
 
@@ -53,7 +53,7 @@ Increased ACLs provide you with enhanced traffic filtering capabilities to contr
 
 ## ACL Chaining with ACL Based Forwarding (ABF)
 
-Prior to IOS-XR 7.6.1, ABF and ACL chaining with Common ACL were mutually exclusive features. From 7.6.1 onwards, we can enable ABF in conjunction with ACL chaining in Common ACL. With this feature, the router can inspect and forward the packets based on the ABF rule in Common ACL. For further deepdive, please follow the links for [Chained ACL](https://xrdocs.io/ncs5500/tutorials/chained-acl-for-ncs55xx-and-ncs5xx/) and [ABF](https://xrdocs.io/ncs5500/tutorials/acl-based-forwarding-and-object-tracking-for-ncs5xx-and-ncs55xx/).
+Prior to IOS-XR 7.6.1, ABF and ACL chaining with Common ACL were mutually exclusive features. From 7.6.1 onwards, we can enable ABF in conjunction with ACL chaining in Common ACL. With this feature, the router can inspect and forward the packets based on the ABF rule in Common ACL. For further deepdive, please follow the links for [Chained ACL]({{site.url}}/ncs5500/tutorials/chained-acl-for-ncs55xx-and-ncs5xx/) and [ABF]({{site.url}}/ncs5500/tutorials/acl-based-forwarding-and-object-tracking-for-ncs5xx-and-ncs55xx/).
 
 ### Support Matrix
 

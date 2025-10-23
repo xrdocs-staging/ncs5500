@@ -16,13 +16,13 @@ position: top
 
 ![LabSeries-banner-thin.png]({{site.baseurl}}/images/LabSeries-banner-thin.png){: .align-center}
 
-You can find more content related to NCS5500 including routing memory management, VRF, URPF, Netflow, QoS, EVPN, Flowspec implementation following this [link](https://xrdocs.io/ncs5500/tutorials/).
+You can find more content related to NCS5500 including routing memory management, VRF, URPF, Netflow, QoS, EVPN, Flowspec implementation following this [link]({{site.url}}/ncs5500/tutorials/).
 
 ## Introduction
 
 Third episode of the lab series, today, we will talk about NCS5500 fabric. More specifically, we will try to qualify the impact of losing a fabric card in a chassis.  
 The goal of these blog posts is to describe tests performed in lab, detail the methodology and the results, and finally provide additional information on the internals of the NCS5500 platforms.  
-All the former tests are listed here: [https://xrdocs.io/ncs5500/tutorials/ncs5500-lab-series/](https://xrdocs.io/ncs5500/tutorials/ncs5500-lab-series/)
+All the former tests are listed here: [{{site.url}}/ncs5500/tutorials/ncs5500-lab-series/]({{site.url}}/ncs5500/tutorials/ncs5500-lab-series/)
 
 ## Video
 
@@ -399,7 +399,7 @@ We measure 12% to 16% loss.
 **How can we explain this deviation from the theory?**
 
 It's actually exactly the same behavior than what we explain in the previous blog about NDR.  
-[https://xrdocs.io/ncs5500/tutorials/testing-ndr-on-ncs5500/](https://xrdocs.io/ncs5500/tutorials/testing-ndr-on-ncs5500/)  
+[{{site.url}}/ncs5500/tutorials/testing-ndr-on-ncs5500/]({{site.url}}/ncs5500/tutorials/testing-ndr-on-ncs5500/)  
 In this blog post, we described a case of fabric saturation, generating a backpressure message for the particular VOQ, triggering the eviction of the queue to the DRAM and eventually saturating the DRAM bandwidth (because the saturation was maintained along multiple seconds).  
 In the lab, we verify that indeed we have counters pointing in this direction.
 

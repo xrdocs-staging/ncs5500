@@ -19,7 +19,7 @@ position: top
 
 ## Introduction
 
-In the previous technotes, ([ACL Packet Length Match](https://xrdocs.io/ncs5500/tutorials/acl-packet-length-matching-ncs55xx-and-ncs5xx/ "ACL Packet Length Match"), [ACL Fragment Match](https://xrdocs.io/ncs5500/tutorials/acl-ip-fragments-matching-ncs55xx-and-ncs5xx/ "ACL Fragment Match")) we have used the term User Defined Key - UDK many times and also saw it was compulsory to configure it for certain match criteria. In this technote, we will deep dive into the UDK concept and explore in details regarding the feature support.
+In the previous technotes, ([ACL Packet Length Match]({{site.url}}/ncs5500/tutorials/acl-packet-length-matching-ncs55xx-and-ncs5xx/ "ACL Packet Length Match"), [ACL Fragment Match]({{site.url}}/ncs5500/tutorials/acl-ip-fragments-matching-ncs55xx-and-ncs5xx/ "ACL Fragment Match")) we have used the term User Defined Key - UDK many times and also saw it was compulsory to configure it for certain match criteria. In this technote, we will deep dive into the UDK concept and explore in details regarding the feature support.
 
 ## User-Defined Key - UDK
 

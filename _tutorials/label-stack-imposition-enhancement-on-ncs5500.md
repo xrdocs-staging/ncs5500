@@ -10,7 +10,7 @@ position: hidden
 ---
 {% include toc icon="table" title="Label Stack Imposition Enhancement on NCS5500" %}
 
-You can find more content related to NCS5500 including routing memory management, URPF, ACLs, Netflow following this [link](https://xrdocs.io/ncs5500/tutorials/).
+You can find more content related to NCS5500 including routing memory management, URPF, ACLs, Netflow following this [link]({{site.url}}/ncs5500/tutorials/).
 
 ## Introduction
 

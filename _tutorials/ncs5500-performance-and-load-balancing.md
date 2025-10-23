@@ -23,12 +23,12 @@ position: top
 
 ![LabSeries-banner-thin.png]({{site.baseurl}}/images/LabSeries-banner-thin.png){: .align-center}
 
-You can find more content related to NCS5500 including routing memory management, VRF, URPF, Netflow, QoS, EVPN, Flowspec implementation following this [link](https://xrdocs.io/ncs5500/tutorials/).
+You can find more content related to NCS5500 including routing memory management, VRF, URPF, Netflow, QoS, EVPN, Flowspec implementation following this [link]({{site.url}}/ncs5500/tutorials/).
 
 ## Introduction
 
 This test is the first episode coming with a video on our new Lab Series.  
-You can find a detailed explanation on the purpose and also a link to all other tests in this xrdocs.io post:  [https://xrdocs.io/ncs5500/tutorials/ncs5500-lab-series/](https://xrdocs.io/ncs5500/tutorials/ncs5500-lab-series/)  
+You can find a detailed explanation on the purpose and also a link to all other tests in this xrdocs.io post:  [{{site.url}}/ncs5500/tutorials/ncs5500-lab-series/]({{site.url}}/ncs5500/tutorials/ncs5500-lab-series/)  
 
 We see regular requests from customer to demonstrate the scale we claim and particularly regarding the port density.  
 The NCS5500 chassis exist in 4-slot, 8-slot and 16-slot version and it's fairly complicated to create a setup large enough in a lab when we talk about 36x 100GE interfaces per slot.

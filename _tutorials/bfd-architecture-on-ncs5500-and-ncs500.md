@@ -17,7 +17,7 @@ position: top
 
 ## Introduction
 
-After successfully introducing the [LPTS](https://xrdocs.io/ncs5500/tutorials/introduction-to-ncs55xx-and-ncs5xx-lpts/) for control plane protection and the [ACL's](https://xrdocs.io/ncs5500/tutorials/security-acl-on-ncs5500-part1/) for data-plane protection on the NCS55xx and NCS5xx portfolio, we will start this new series on faster convergence. All of us are already aware of the concept Bidirectional Forwarding Detection - BFD. BFD is fairly old technology and is widely deployed across the industry for faster network convergence. In this tech-note, we will discuss the implementation of BFD w.r.t NCS55xx and NCS5xx platforms.
+After successfully introducing the [LPTS]({{site.url}}/ncs5500/tutorials/introduction-to-ncs55xx-and-ncs5xx-lpts/) for control plane protection and the [ACL's]({{site.url}}/ncs5500/tutorials/security-acl-on-ncs5500-part1/) for data-plane protection on the NCS55xx and NCS5xx portfolio, we will start this new series on faster convergence. All of us are already aware of the concept Bidirectional Forwarding Detection - BFD. BFD is fairly old technology and is widely deployed across the industry for faster network convergence. In this tech-note, we will discuss the implementation of BFD w.r.t NCS55xx and NCS5xx platforms.
 
 ## Quick Refresh
 
@@ -66,7 +66,7 @@ Note2: BFD Multi-Path (v6) over BVI is not supported on NCS560. It will be suppo
 
 ## BFD Hardware Implementation 
 
-BFD on the NCS55xx and NCS5xx is hardware offloaded. The hardware offload feature enables the offload of a BFD session to the network processing unit - NPU of the line cards on modular chassis or a standalone fixed chassis, in an IPv4 or IPv6 network. BFD hardware offload improves scale and reduces the overall network convergence time by sending rapid failure detection packets to the routing protocols for recalculating the routing table. NCS55xx and NCS5xx uses Pipeline architecture for packet processing. For details on the Pipeline Architecture please visit this excellent [article](https://xrdocs.io/ncs5500/tutorials/ncs5500-qos-part-1-understanding-packet-buffering/). For further details on BFD hardware offload please [visit](https://www.cisco.com/c/en/us/td/docs/iosxr/ncs5500/routing/66x/b-routing-cg-ncs5500-66x/b-routing-cg-ncs5500-66x_chapter_0111.html#id_103405). Let us understand the packet processing in the pipeline architecture w.r.t BFD.
+BFD on the NCS55xx and NCS5xx is hardware offloaded. The hardware offload feature enables the offload of a BFD session to the network processing unit - NPU of the line cards on modular chassis or a standalone fixed chassis, in an IPv4 or IPv6 network. BFD hardware offload improves scale and reduces the overall network convergence time by sending rapid failure detection packets to the routing protocols for recalculating the routing table. NCS55xx and NCS5xx uses Pipeline architecture for packet processing. For details on the Pipeline Architecture please visit this excellent [article]({{site.url}}/ncs5500/tutorials/ncs5500-qos-part-1-understanding-packet-buffering/). For further details on BFD hardware offload please [visit](https://www.cisco.com/c/en/us/td/docs/iosxr/ncs5500/routing/66x/b-routing-cg-ncs5500-66x/b-routing-cg-ncs5500-66x_chapter_0111.html#id_103405). Let us understand the packet processing in the pipeline architecture w.r.t BFD.
 
 
 ### RX Path 

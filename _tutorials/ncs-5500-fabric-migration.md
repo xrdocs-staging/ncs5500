@@ -8,7 +8,7 @@ position: top
 ---
 {% include toc icon="table" title="NCS-5500 v1 to v2 Fabric Migration" %} 
 
-You can find more content related to NCS-5500 and NCS-5700 following this [link](https://xrdocs.io/ncs5500/tutorials/).
+You can find more content related to NCS-5500 and NCS-5700 following this [link]({{site.url}}/ncs5500/tutorials/).
 
 ## Introduction
 

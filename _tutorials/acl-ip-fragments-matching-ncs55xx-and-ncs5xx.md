@@ -21,7 +21,7 @@ position: top
 
 ## Introduction
 
-In the previous [TechNote](https://xrdocs.io/ncs5500/tutorials/acl-packet-length-matching-ncs55xx-and-ncs5xx/ "TechNote"), we covered the matching criteria on the basis of Packet Length. In this note, we will discuss how customers can protect the data-plane from Fragmented Packets. On many occasions,fragmented packets are not expected in the network. It becomes very important for network administrators to add that extra layer of filtering. Hardware should be capable of filtering incoming packets on the basis of fragment flags and offset values. In this document, we will explore yet another filtering capability of NCS55xx and NCS5xx.
+In the previous [TechNote]({{site.url}}/ncs5500/tutorials/acl-packet-length-matching-ncs55xx-and-ncs5xx/ "TechNote"), we covered the matching criteria on the basis of Packet Length. In this note, we will discuss how customers can protect the data-plane from Fragmented Packets. On many occasions,fragmented packets are not expected in the network. It becomes very important for network administrators to add that extra layer of filtering. Hardware should be capable of filtering incoming packets on the basis of fragment flags and offset values. In this document, we will explore yet another filtering capability of NCS55xx and NCS5xx.
 
 ## Fragmentation
 
@@ -327,7 +327,7 @@ The above 2 profiles are only applicable for systems having Jericho and Q-MX wit
 | NC55-36X100G-A (-SE) | J+   | OP    |
 | NCS55A2-MOD-SE-S     | J+   | OP    |
 
-To understand in detail regarding the profile and compression support, please refer couple of excellent articles ([Hybrid ACL's](https://xrdocs.io/ncs5500/tutorials/security-acl-on-ncs5500-part2-hybrid-acl/ "Hybrid ACL's"), [HW-Module Profiles](https://xrdocs.io/ncs5500/tutorials/ncs5500-hw-module-profiles/ "HW-Module Profiles"))
+To understand in detail regarding the profile and compression support, please refer couple of excellent articles ([Hybrid ACL's]({{site.url}}/ncs5500/tutorials/security-acl-on-ncs5500-part2-hybrid-acl/ "Hybrid ACL's"), [HW-Module Profiles]({{site.url}}/ncs5500/tutorials/ncs5500-hw-module-profiles/ "HW-Module Profiles"))
 
 ### ACL Verification
 
@@ -441,8 +441,8 @@ You can use the available options for fragment-type, to filter the fragments as 
 
 - [CCO Config Guide](https://www.cisco.com/c/en/us/td/docs/iosxr/ncs5500/ip-addresses/71x/b-ip-addresses-cg-ncs5500-71x/b-ip-addresses-cg-ncs5500-71x_chapter_0111.html "CCO Config Guide")
 - [Fragmentation White Paper](https://www.cisco.com/c/en/us/support/docs/ip/generic-routing-encapsulation-gre/8014-acl-wp.html "Fragmentation White Paper")
-- [Security ACL Part 2](https://xrdocs.io/ncs5500/tutorials/security-acl-on-ncs5500-part2-hybrid-acl/ "Security ACL Part 2")
-- [NCS5500 HW-Module Profiles](https://xrdocs.io/ncs5500/tutorials/ncs5500-hw-module-profiles/ "NCS5500 HW-Module Profiles")
+- [Security ACL Part 2]({{site.url}}/ncs5500/tutorials/security-acl-on-ncs5500-part2-hybrid-acl/ "Security ACL Part 2")
+- [NCS5500 HW-Module Profiles]({{site.url}}/ncs5500/tutorials/ncs5500-hw-module-profiles/ "NCS5500 HW-Module Profiles")
 
 
 ## Summary

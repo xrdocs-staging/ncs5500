@@ -29,16 +29,16 @@ The configuration setup is based on single BGP AS 65001. There are two separate 
 
 Though EVPN and L3VPN interworking is going to be configured on DCI routers only, yet in this post we will go over the configuration of overall setup including EVPN fabric and L3VPN domain.  To achieve end-to-end connectivity, below is the list of tasks we will implement. Some of these tasks are already covered in previous posts, their details will not be covered here. Click on the links below to visit previous posts. The remaining items from the list that don't have links to previous write-ups are covered in this post.
    
-- [Configure BGP-EVPN control-plane & Segment Routing based MPLS forwarding](https://xrdocs.io/ncs5500/tutorials/bgp-evpn-configuration-ncs-5500-part-1/)
-- [Configure BGP EVPN based Layer-2 VPN Service](https://xrdocs.io/ncs5500/tutorials/bgp-evpn-configuration-ncs-5500-part-3/)
-- [Configure BGP EVPN IRB for Inter-subnet Routing](https://xrdocs.io/ncs5500/tutorials/bgp-evpn-irb-configuration/)
+- [Configure BGP-EVPN control-plane & Segment Routing based MPLS forwarding]({{site.url}}/ncs5500/tutorials/bgp-evpn-configuration-ncs-5500-part-1/)
+- [Configure BGP EVPN based Layer-2 VPN Service]({{site.url}}/ncs5500/tutorials/bgp-evpn-configuration-ncs-5500-part-3/)
+- [Configure BGP EVPN IRB for Inter-subnet Routing]({{site.url}}/ncs5500/tutorials/bgp-evpn-irb-configuration/)
 - Configure Segment Routing on DCI routers
 - Configure BGP L3VPN domain
 - Configure DCI routers to perform EVPN and L3VPN interworking 
 
 
 ### Task 1: Configuration of Segment Routing on DCI routers
-Segment routing configuration for EVPN fabric is covered in earlier [post](https://xrdocs.io/ncs5500/tutorials/bgp-evpn-configuration-ncs-5500-part-1/) but DCI routers were not part of that post. That is why we will only cover segment routing configuration for DCI and show it participating in two MPLS forwarding domains. One for providing forwarding to EVPN fabric and other to the L3VPN domain.
+Segment routing configuration for EVPN fabric is covered in earlier [post]({{site.url}}/ncs5500/tutorials/bgp-evpn-configuration-ncs-5500-part-1/) but DCI routers were not part of that post. That is why we will only cover segment routing configuration for DCI and show it participating in two MPLS forwarding domains. One for providing forwarding to EVPN fabric and other to the L3VPN domain.
 
 ![](https://github.com/xrdocs/ncs5500/blob/gh-pages/images/evpn-config/evpn-l3vpn-interworking-transport.png?raw=true)
 
@@ -420,7 +420,7 @@ Based on above output we can see the prefix from PE-1 learnt and programmed in t
   
    
 ### Task 3: Configuration of BGP-EVPN on Leafs, Spines and DCIs
-The EVPN fabric configuration was done in [another post](https://xrdocs.io/ncs5500/tutorials/bgp-evpn-configuration-ncs-5500-part-3/) but that did not include DCI router's configuration. We will configure DCI routers now and form BGP EVPN neighborship with Spines serving as Route-Reflectors.
+The EVPN fabric configuration was done in [another post]({{site.url}}/ncs5500/tutorials/bgp-evpn-configuration-ncs-5500-part-3/) but that did not include DCI router's configuration. We will configure DCI routers now and form BGP EVPN neighborship with Spines serving as Route-Reflectors.
 
 Configure BGP-EVPN neighborship with Route Reflectors.
 
@@ -505,7 +505,7 @@ router bgp 65001
   </tr>
 </table>
 
-As BGP-EVPN Layer-2 VPN service and EVPN-IRB on Leafs is already configured in earlier posts (refer to [EVPN Layer-2 Service](https://xrdocs.io/ncs5500/tutorials/bgp-evpn-configuration-ncs-5500-part-3/) and [EVPN-IRB](https://xrdocs.io/ncs5500/tutorials/bgp-evpn-irb-configuration/)); in next task lets configure route-target for VRF 10 to import and export EVPN routes. 
+As BGP-EVPN Layer-2 VPN service and EVPN-IRB on Leafs is already configured in earlier posts (refer to [EVPN Layer-2 Service]({{site.url}}/ncs5500/tutorials/bgp-evpn-configuration-ncs-5500-part-3/) and [EVPN-IRB]({{site.url}}/ncs5500/tutorials/bgp-evpn-irb-configuration/)); in next task lets configure route-target for VRF 10 to import and export EVPN routes. 
 
 
 ### Task 4: Configure BGP EVPN and L3VPN interworking on DCI routers

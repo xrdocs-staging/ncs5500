@@ -16,7 +16,7 @@ tags:
 ---
 {% include toc icon="table" title="Understanding NCS5500 Resources" %}  
 
-You can find more content related to NCS5500 including routing memory management, VRF, ACLs, Netflow following this [link](https://xrdocs.io/ncs5500/tutorials/).
+You can find more content related to NCS5500 including routing memory management, VRF, ACLs, Netflow following this [link]({{site.url}}/ncs5500/tutorials/).
 
 ### Change Log
 
@@ -25,7 +25,7 @@ You can find more content related to NCS5500 including routing memory management
 | August 2018 | note added on the lack of support of S-RTBH, and to fix an error pointed by Muffadal Presswala (thanks :) related to the behavior with eTCAM systems |
 | November 2020 | S-RTBH support has been added in IOSXR 7.2.1 but only for line cards and platforms powered by Jericho2 and eTCAM (NC57-18DD-SE for example) |
 | November 2020 | Change of configuration in 7.x |
-| December 2020 | decommission the "internet-optimized" mode, please check this [article](https://xrdocs.io/ncs5500/tutorials/decommissioning-internet-optimized-mode/)  |
+| December 2020 | decommission the "internet-optimized" mode, please check this [article]({{site.url}}/ncs5500/tutorials/decommissioning-internet-optimized-mode/)  |
 | June 2024 | Added section about S-RTBH support |
 
 ## S01E07 NCS5500 URPF Configuration and Impact on Scale
@@ -137,7 +137,7 @@ hw-module fib ipv6 scale internet-optimized-disable
 Note: depending on the IOS XR version, the options could be different and actually could be the opposite of "disable", be attentive at what is availabe in the CLI.
 {: .notice--info}
 
-Note: in IOS XR 7.3.1, we will decommission the "internet-optimized" mode, please check this article: [https://xrdocs.io/ncs5500/tutorials/decommissioning-internet-optimized-mode/](https://xrdocs.io/ncs5500/tutorials/decommissioning-internet-optimized-mode/)
+Note: in IOS XR 7.3.1, we will decommission the "internet-optimized" mode, please check this article: [{{site.url}}/ncs5500/tutorials/decommissioning-internet-optimized-mode/]({{site.url}}/ncs5500/tutorials/decommissioning-internet-optimized-mode/)
 {: .notice--danger}
 
 With the optimization disabled and after the line cards / system reload, we have now:

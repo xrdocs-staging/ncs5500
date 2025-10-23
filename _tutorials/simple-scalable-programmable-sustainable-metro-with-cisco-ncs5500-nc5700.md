@@ -99,7 +99,7 @@ Powered by Cisco IOS-XR, NCS5500/5700 has all the capabilities to design the nex
 | Network Security with Trustworth Platforms                        | Built-in [hardware security](https://www.cisco.com/c/en/us/about/trust-center/technology-built-in-security.html) along with software security in IOS-XR <br>Secure-boot with Cisco TAM chip<br>DDoS protection<br>Malware protection<br>Anti-Theft protection<br>Secure app-hosting environment          |
 | IP-SLA                                  | <br>Network performance monitoring with rich set of [IP-SLA features](https://www.cisco.com/c/en/us/td/docs/iosxr/ncs5500/system-monitoring/76x/b-system-monitoring-cg-ncs5500-76x/m-ipsla-twamp-ncs5500.html) <br>TWAMP/TWAMP-Lite<br>                                                                                                                       |
 | Ability to terminate non-Ethernet ports | Transparently transfer ODU/SONET/SDH/Eth/FC packets over PSN using [PLE](https://www.cisco.com/c/en/us/products/collateral/routers/network-convergence-system-5500-series/network-con-5500-series-ds.pdf)                                                                                                                                                 |
-| Flexible Resource Carving               | Support for different [MDB profiles](https://xrdocs.io/ncs5500/tutorials/mdb-ncs5700/) to cater multiple use cases                                                                                                                                                         |
+| Flexible Resource Carving               | Support for different [MDB profiles]({{site.url}}/ncs5500/tutorials/mdb-ncs5700/) to cater multiple use cases                                                                                                                                                         |
 | Quality of Service                      | Rich ingress and egress QoS features <br>Support for Policing/Shaping/WFQ/WRED etc <br>Enhance QoS scale with [Egress Traffic Manager](https://www.cisco.com/c/en/us/td/docs/iosxr/ncs5500/qos/74x/b-qos-cg-ncs5500-74x/m-configure-egress-traffic-management.html#Cisco_Concept.dita_e0ac2096-7453-4a18-a2a7-3a9c00cc46d6) implementation                                                            
 | MACsec | Layer 2 security with full [MACsec](https://www.cisco.com/c/en/us/td/docs/iosxr/ncs5500/security/76x/b-system-security-cg-ncs5500-76x/implementing-macsec-encryption.html) support |
 | Timing                                  | <br>Class C timing support for low latency applications                                                                                                                                                                |
@@ -115,7 +115,7 @@ Going forward the challenge for CSPs will not just be to deliver services, but a
 
 ## References
 
-- [NCS5500/5700 Resources](https://xrdocs.io/ncs5500/)
-- [Metro Fabric High Level Design](https://xrdocs.io/design/blogs/2018-10-01-metro-fabric-hld/)
-- [Implementation Guide](https://xrdocs.io/design/blogs/latest-converged-sdn-transport-ig)
+- [NCS5500/5700 Resources]({{site.url}}/ncs5500/)
+- [Metro Fabric High Level Design]({{site.url}}/design/blogs/2018-10-01-metro-fabric-hld/)
+- [Implementation Guide]({{site.url}}/design/blogs/latest-converged-sdn-transport-ig)
 - [Inflection Points of a Converged Metro](https://blogs.cisco.com/sp/inflection-points-of-a-converged-metro)

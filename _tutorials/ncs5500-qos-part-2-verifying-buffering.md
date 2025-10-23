@@ -15,14 +15,14 @@ tags:
 ---
 {% include toc icon="table" title="NCS5500 Buffering Architecture Part 2" %}
 
-You can find more content related to NCS5500 including routing memory management, VRF, URPF, ACLs, Netflow following this [link](https://xrdocs.io/ncs5500/tutorials/).
+You can find more content related to NCS5500 including routing memory management, VRF, URPF, ACLs, Netflow following this [link]({{site.url}}/ncs5500/tutorials/).
 
 Also you can find the first part of this post here:  
-[https://xrdocs.io/ncs5500/tutorials/ncs5500-qos-part-1-understanding-packet-buffering/](https://xrdocs.io/ncs5500/tutorials/ncs5500-qos-part-1-understanding-packet-buffering/)  
+[{{site.url}}/ncs5500/tutorials/ncs5500-qos-part-1-understanding-packet-buffering/]({{site.url}}/ncs5500/tutorials/ncs5500-qos-part-1-understanding-packet-buffering/)  
 
 ## Checking Buffering in action
 
-This second blog post will take concrete examples to illustrate the concepts covered in the first [part](https://xrdocs.io/ncs5500/tutorials/ncs5500-qos-part-1-understanding-packet-buffering/).   
+This second blog post will take concrete examples to illustrate the concepts covered in the first [part]({{site.url}}/ncs5500/tutorials/ncs5500-qos-part-1-understanding-packet-buffering/).   
 The NCS5500 is based on a VOQ-only, single-lookup and ingress-buffering forwarding architecture.  
 We will use a lab example to illustrate how the system handles bursts, then we will present the monitoring tools / counters we can use to measure where packets are buffered, and finally we will present the data collected on 500+ NPUs in production.  
 This should answer frequently asked questions and clarify all potential doubts.

@@ -23,7 +23,7 @@ In our previous articles, we introduced the ACL features for NCS500 and NCS5500 
 
 ![Screenshot 2021-08-31 at 10.50.11 AM.png]({{site.baseurl}}/images/Screenshot 2021-08-31 at 10.50.11 AM.png)
 
-We discussed [ACL implementation](https://xrdocs.io/ncs5500/tutorials/security-acl-on-ncs5500-part1/), [Hybrid ACL](https://xrdocs.io/ncs5500/tutorials/security-acl-on-ncs5500-part2-hybrid-acl/), matching criterias like [Packet Length](https://xrdocs.io/ncs5500/tutorials/acl-packet-length-matching-ncs55xx-and-ncs5xx/), [IP Fragments](https://xrdocs.io/ncs5500/tutorials/acl-ip-fragments-matching-ncs55xx-and-ncs5xx/). We also discussed the other important features like [UDK](https://xrdocs.io/ncs5500/tutorials/user-defined-key-udk-for-ncs55xx-and-ncs5xx/) and [UDF](https://xrdocs.io/ncs5500/tutorials/user-defined-field-ncs55xx-and-ncs5xx/). Finally we touched upon the concepts of [ABF](https://xrdocs.io/ncs5500/tutorials/acl-based-forwarding-and-object-tracking-for-ncs5xx-and-ncs55xx/) and [Chained ACL](https://xrdocs.io/ncs5500/tutorials/chained-acl-for-ncs55xx-and-ncs5xx/). In this artcile and the ones to follow this, we will explore the ACL enhancements on Jericho2 based platforms. 
+We discussed [ACL implementation]({{site.url}}/ncs5500/tutorials/security-acl-on-ncs5500-part1/), [Hybrid ACL]({{site.url}}/ncs5500/tutorials/security-acl-on-ncs5500-part2-hybrid-acl/), matching criterias like [Packet Length]({{site.url}}/ncs5500/tutorials/acl-packet-length-matching-ncs55xx-and-ncs5xx/), [IP Fragments]({{site.url}}/ncs5500/tutorials/acl-ip-fragments-matching-ncs55xx-and-ncs5xx/). We also discussed the other important features like [UDK]({{site.url}}/ncs5500/tutorials/user-defined-key-udk-for-ncs55xx-and-ncs5xx/) and [UDF]({{site.url}}/ncs5500/tutorials/user-defined-field-ncs55xx-and-ncs5xx/). Finally we touched upon the concepts of [ABF]({{site.url}}/ncs5500/tutorials/acl-based-forwarding-and-object-tracking-for-ncs5xx-and-ncs55xx/) and [Chained ACL]({{site.url}}/ncs5500/tutorials/chained-acl-for-ncs55xx-and-ncs5xx/). In this artcile and the ones to follow this, we will explore the ACL enhancements on Jericho2 based platforms. 
 
 ![Screenshot 2021-08-31 at 10.54.58 AM.png]({{site.baseurl}}/images/Screenshot 2021-08-31 at 10.54.58 AM.png)
 
@@ -162,7 +162,7 @@ From the above table, we can see that when using a fixed system or Line card wit
 
 ## Ingress and Egress Default TCAM Keys
 
-In NCS5500 and NCS500, we have the concept of default TCAM keys and user-defined TCAM keys- UDK. For details on the two different key types please [refer](https://xrdocs.io/ncs5500/tutorials/user-defined-key-udk-for-ncs55xx-and-ncs5xx/). Due to enhance capabilities of J2 chipset we have made changes to the default TCAM key support for IPv4 and IPv6 both in ingress and egress directions. 
+In NCS5500 and NCS500, we have the concept of default TCAM keys and user-defined TCAM keys- UDK. For details on the two different key types please [refer]({{site.url}}/ncs5500/tutorials/user-defined-key-udk-for-ncs55xx-and-ncs5xx/). Due to enhance capabilities of J2 chipset we have made changes to the default TCAM key support for IPv4 and IPv6 both in ingress and egress directions. 
 
 ### IPV4 Ingress Default TCAM keys
 

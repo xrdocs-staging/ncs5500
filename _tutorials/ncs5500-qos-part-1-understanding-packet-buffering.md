@@ -13,7 +13,7 @@ position: top
 ---
 {% include toc icon="table" title="NCS5500 Buffering Architecture Part 1" %} 
 
-You can find more content related to NCS5500 including routing memory management, VRF, URPF, ACLs, Netflow following this [link](https://xrdocs.io/ncs5500/tutorials/).
+You can find more content related to NCS5500 including routing memory management, VRF, URPF, ACLs, Netflow following this [link]({{site.url}}/ncs5500/tutorials/).
 
 ## Introduction to Packet BUFFERING
 

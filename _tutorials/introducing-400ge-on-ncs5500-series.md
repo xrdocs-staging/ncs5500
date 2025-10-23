@@ -16,7 +16,7 @@ tags:
 ---
 {% include toc icon="table" title="Introducing 400GE on NCS5500" %} 
 
-You can find more content related to NCS5500 including routing memory management, VRF, URPF, Netflow, QoS, EVPN, Flowspec implementation following this [link](https://xrdocs.io/ncs5500/tutorials/).
+You can find more content related to NCS5500 including routing memory management, VRF, URPF, Netflow, QoS, EVPN, Flowspec implementation following this [link]({{site.url}}/ncs5500/tutorials/).
 
 ## Introduction
 
@@ -99,7 +99,7 @@ Since they are backward compatible with former line card generations, they are s
 The Jericho2 uses a High Bandwidth Memory (HBM) instead of a GDDR5. We have double the amount of packet buffers (8GB) and double the speed to access it (1.8Tbps). One of the benefits of this HBM is it does not consume "links" to connect to the NPU, offering more to the interfaces and fabric.  
 Keep in mind that this HBM is only used to store packets in case of congestion (micro-burst or longer-term link saturation). Most of the time, the packets will transit only through the on-chip buffer (OCB) which is now twice the size of former generation (32MB) and they will not be stored in the HBM.  
 You can check the studies done on J+ on this topic in other xrdocs.io articles:  
-[https://xrdocs.io/ncs5500/tutorials/ncs5500-qos-part-2-verifying-buffering/](https://xrdocs.io/ncs5500/tutorials/ncs5500-qos-part-2-verifying-buffering/)
+[{{site.url}}/ncs5500/tutorials/ncs5500-qos-part-2-verifying-buffering/]({{site.url}}/ncs5500/tutorials/ncs5500-qos-part-2-verifying-buffering/)
 
 ![J2-2.jpg]({{site.baseurl}}/images/J2-2.jpg){: .align-center}
 

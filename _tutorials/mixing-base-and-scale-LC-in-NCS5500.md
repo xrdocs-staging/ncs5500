@@ -18,7 +18,7 @@ Position: top
 ---
 {% include toc icon="table" title="Understanding NCS5500 Resources" %}  
 
-You can find more content related to NCS5500 including routing memory management, VRF, URPF, ACLs, Netflow following this [link](https://xrdocs.io/ncs5500/tutorials/).
+You can find more content related to NCS5500 including routing memory management, VRF, URPF, ACLs, Netflow following this [link]({{site.url}}/ncs5500/tutorials/).
 
 ## S01E09 Mixing Base and Scale Line Cards in the same Chassis
 

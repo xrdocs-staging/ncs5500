@@ -22,7 +22,7 @@ In this post we will cover the BGP-EVPN based Port-Active Multi-Homing of CE/Hos
 
 ![](https://github.com/xrdocs/ncs5500/blob/gh-pages/images/evpn-config/port_active_topo.png?raw=true)
 
-For this post, we will leverage EVPN control-plane and ISIS Segment Routing based forwarding that we configured in a [previous post](https://xrdocs.io/ncs5500/tutorials/bgp-evpn-configuration-ncs-5500-part-1/). However, the choice of transport is not mandatorily ISIS+SR and we can have OSPF as IGP and LDP instead of SR as well.  
+For this post, we will leverage EVPN control-plane and ISIS Segment Routing based forwarding that we configured in a [previous post]({{site.url}}/ncs5500/tutorials/bgp-evpn-configuration-ncs-5500-part-1/). However, the choice of transport is not mandatorily ISIS+SR and we can have OSPF as IGP and LDP instead of SR as well.  
 
 
 ![](https://github.com/xrdocs/ncs5500/blob/gh-pages/images/evpn-config/port_active_mh.png?raw=true)
@@ -446,7 +446,7 @@ Next, lets’ provision the EVPN layer-2 service over this redundancy.
 
 ### Task 3: Configure BGP EVPN based layer-2 multipoint service
 
-Here we will configure a EVPN layer-2 service between Leaf-1, Leaf-2 and Leaf-5 to provide a L2VPN between H1 and H5. Post configuration we will check  the status of ethernet segment. For detailed explanation of configuring BGP EVPN based layer-2 service, refer to this [post](https://xrdocs.io/ncs5500/tutorials/bgp-evpn-configuration-ncs-5500-part-3/).  
+Here we will configure a EVPN layer-2 service between Leaf-1, Leaf-2 and Leaf-5 to provide a L2VPN between H1 and H5. Post configuration we will check  the status of ethernet segment. For detailed explanation of configuring BGP EVPN based layer-2 service, refer to this [post]({{site.url}}/ncs5500/tutorials/bgp-evpn-configuration-ncs-5500-part-3/).  
 
 ![](https://github.com/xrdocs/ncs5500/blob/gh-pages/images/evpn-config/port_active_evpn.png?raw=true)
 
@@ -862,7 +862,7 @@ In this section we will demonstrate the Layer-3 inter-subnet routing use case ov
 
 ![](https://github.com/xrdocs/ncs5500/blob/gh-pages/images/evpn-config/port_active_irb.png?raw=true)
 
-Configure the BGP-EVPN Distributed Anycast Gateway on Leaf-1, Leaf-2 and Leaf-5. We will configure the IRB service over a different VLAN and show the coexistence of both service over the port active ESI. For detailed explanation of EVPN distributed anycast gateway, refer to this [post](https://xrdocs.io/ncs5500/tutorials/bgp-evpn-irb-configuration/).
+Configure the BGP-EVPN Distributed Anycast Gateway on Leaf-1, Leaf-2 and Leaf-5. We will configure the IRB service over a different VLAN and show the coexistence of both service over the port active ESI. For detailed explanation of EVPN distributed anycast gateway, refer to this [post]({{site.url}}/ncs5500/tutorials/bgp-evpn-irb-configuration/).
 
 <div class="highlighter-rouge">
 <pre class="highlight">

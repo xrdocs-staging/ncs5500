@@ -14,7 +14,7 @@ excerpt: >-
 
 ## Overview
 
-In our previous tutorials, we covered [SRv6 Transport with uSID](https://xrdocs.io/ncs5500/tutorials/srv6-transport-on-ncs-part-1/) on the NCS 500 and 5500 platforms, and [L3](https://xrdocs.io/ncs5500/tutorials/srv6-transport-on-ncs-part-2/)/[L2 P2P](https://xrdocs.io/ncs5500/tutorials/srv6-transport-on-ncs-part-3/) services on top of it. This tutorial will cover implementaion of ethernet VPN (EVPN) based multipoint layer 2 service (ELAN) over SRv6 uSID transport. As of today, only Single homed EVPN ELAN is supported on these platforms. EVPN ELAN is not supported on the NCS 5700 series platforms as of latest XR release.
+In our previous tutorials, we covered [SRv6 Transport with uSID]({{site.url}}/ncs5500/tutorials/srv6-transport-on-ncs-part-1/) on the NCS 500 and 5500 platforms, and [L3]({{site.url}}/ncs5500/tutorials/srv6-transport-on-ncs-part-2/)/[L2 P2P]({{site.url}}/ncs5500/tutorials/srv6-transport-on-ncs-part-3/) services on top of it. This tutorial will cover implementaion of ethernet VPN (EVPN) based multipoint layer 2 service (ELAN) over SRv6 uSID transport. As of today, only Single homed EVPN ELAN is supported on these platforms. EVPN ELAN is not supported on the NCS 5700 series platforms as of latest XR release.
 
 ## Topology
 ![elan-topo.png]({{site.baseurl}}/images/elan-topo.png)
@@ -34,7 +34,7 @@ The loopback0 IPs are chosen as per the SRv6 addressing best practice (check out
 In this tutorial, we will establish a multipoint L2VPN (EVPN-ELAN) connecting CE1, CE2 and CE3. The example will demonstrate VLAN based ELAN (EVPLAN) service and establish L2 stretch across CE1, CE2 and CE3 for VLAN 200.
 
 ## Configuration Steps
-We already covered the configuration steps for the transport in our previous [tutorial](https://xrdocs.io/ncs5500/tutorials/srv6-transport-on-ncs-part-1/). The below table summerizes the SRv6 uSID locator used (name POD0) on each node for reference. 
+We already covered the configuration steps for the transport in our previous [tutorial]({{site.url}}/ncs5500/tutorials/srv6-transport-on-ncs-part-1/). The below table summerizes the SRv6 uSID locator used (name POD0) on each node for reference. 
 
 | Nodes | SRv6 Locator         |
 |-------|----------------------|
@@ -51,7 +51,7 @@ Configuration steps included in this tutorial will focus only on  the service sp
 - Layer 2 UNI and L2VPN configuration
 
 ### BGP configuration for EVPN
-BGP configuration is similar to what we did in our previous [tutorial](https://xrdocs.io/ncs5500/tutorials/srv6-transport-on-ncs-part-3/). However, since we have multiple PE nodes here, we need to establish full mesh BGP with EVPN AFI. For simplicity, we are using P2 as a route-reflector (RR). In real time deployment, it is recommended to use dedicated route-reflectors in the network. The following config snippet shows the BGP configuration on all the PEs and the RR node.
+BGP configuration is similar to what we did in our previous [tutorial]({{site.url}}/ncs5500/tutorials/srv6-transport-on-ncs-part-3/). However, since we have multiple PE nodes here, we need to establish full mesh BGP with EVPN AFI. For simplicity, we are using P2 as a route-reflector (RR). In real time deployment, it is recommended to use dedicated route-reflectors in the network. The following config snippet shows the BGP configuration on all the PEs and the RR node.
 
 _**PE1**_
 

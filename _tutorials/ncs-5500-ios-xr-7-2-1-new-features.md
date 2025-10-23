@@ -8,7 +8,7 @@ position: hidden
 ---
 {% include toc icon="table" title="XR 7.2.1 New Features" %} 
 
-You can find more content related to NCS-5500 and NCS-5700 following this [link](https://xrdocs.io/ncs5500/tutorials/).
+You can find more content related to NCS-5500 and NCS-5700 following this [link]({{site.url}}/ncs5500/tutorials/).
 
 ## Introduction
 

@@ -26,7 +26,7 @@ position: hidden
 | 2024-Jun-20  | Add: fib urpf disable |
 
 
-You can find more content related to NCS5500 including routing memory management, URPF, ACLs, Netflow following this [link](https://xrdocs.io/ncs5500/tutorials/).
+You can find more content related to NCS5500 including routing memory management, URPF, ACLs, Netflow following this [link]({{site.url}}/ncs5500/tutorials/).
 
 This article is meant to be updated regularly, consider it a constant "work in progress".
 
@@ -231,10 +231,10 @@ They are mandatory if we need to store large routing tables (ie full internet vi
 Default mode is "host-optimized" for IPv4 and "internet-optimized" for IPv6. This hardware profile is only relevant for systems/LC with the no eTCAM ("base" systems) using Jericho and "Jericho+ with Jericho-scale" (with the 256k-350k large LPM). It's not recommended for NCS55A1-24H or NCS55A1-48Q-6H, based on a Jericho+ with large LPM (1M-1.5M v4 entries).
 
 _External documentation_:  
-- [https://xrdocs.io/ncs5500/tutorials/2017-08-03-understanding-ncs5500-resources-s01e02/](https://xrdocs.io/ncs5500/tutorials/2017-08-03-understanding-ncs5500-resources-s01e02/)
-- [https://xrdocs.io/ncs5500/tutorials/2017-08-07-understanding-ncs5500-resources-s01e03/](https://xrdocs.io/ncs5500/tutorials/2017-08-07-understanding-ncs5500-resources-s01e03/)
-- [https://xrdocs.io/ncs5500/tutorials/2017-12-30-full-internet-view-on-base-ncs-5500-systems-s01e04/](https://xrdocs.io/ncs5500/tutorials/2017-12-30-full-internet-view-on-base-ncs-5500-systems-s01e04/)
-- [https://xrdocs.io/ncs5500/tutorials/ncs5500-urpf/](https://xrdocs.io/ncs5500/tutorials/ncs5500-urpf/)
+- [{{site.url}}/ncs5500/tutorials/2017-08-03-understanding-ncs5500-resources-s01e02/]({{site.url}}/ncs5500/tutorials/2017-08-03-understanding-ncs5500-resources-s01e02/)
+- [{{site.url}}/ncs5500/tutorials/2017-08-07-understanding-ncs5500-resources-s01e03/]({{site.url}}/ncs5500/tutorials/2017-08-07-understanding-ncs5500-resources-s01e03/)
+- [{{site.url}}/ncs5500/tutorials/2017-12-30-full-internet-view-on-base-ncs-5500-systems-s01e04/]({{site.url}}/ncs5500/tutorials/2017-12-30-full-internet-view-on-base-ncs-5500-systems-s01e04/)
+- [{{site.url}}/ncs5500/tutorials/ncs5500-urpf/]({{site.url}}/ncs5500/tutorials/ncs5500-urpf/)
 - [https://www.cisco.com/c/en/us/td/docs/iosxr/ncs5500/security/62x/b-system-security-cg-ncs5500-62x/b-system-security-cg-ncs5500-62x_chapter_01001.html](https://www.cisco.com/c/en/us/td/docs/iosxr/ncs5500/security/62x/b-system-security-cg-ncs5500-62x/b-system-security-cg-ncs5500-62x_chapter_01001.html)
 
 Note1: Please pay attention to the form of the command since it could lead to confusions: for IPv4 it's internet-optimized while it's internet-optimized**-disable** for IPv6.
@@ -262,7 +262,7 @@ This command disable Jericho2 capability of doing Source IPv4/IPv6 lookup (which
 | :x: | :x: | :x: | :x: | :heavy_check_mark: | :heavy_check_mark: | :x: | :x: | **GLOBAL** |
 
 _External documentation_:  
-- [https://xrdocs.io/ncs5500/tutorials/ncs5500-urpf/](https://xrdocs.io/ncs5500/tutorials/ncs5500-urpf/)
+- [{{site.url}}/ncs5500/tutorials/ncs5500-urpf/]({{site.url}}/ncs5500/tutorials/ncs5500-urpf/)
 
 ### mpls
 
@@ -744,7 +744,7 @@ Once you enable this profile, due to the potentially very long key necessary to 
 
 _External documentation_:  
 - [https://community.cisco.com/t5/service-providers-blogs/bgp-flowspec-implementation-on-ncs5500-platforms/ba-p/3387443](https://community.cisco.com/t5/service-providers-blogs/bgp-flowspec-implementation-on-ncs5500-platforms/ba-p/3387443)
-- [https://xrdocs.io/ncs5500/tutorials/bgp-flowspec-on-ncs5500/](https://xrdocs.io/ncs5500/tutorials/bgp-flowspec-on-ncs5500/)
+- [{{site.url}}/ncs5500/tutorials/bgp-flowspec-on-ncs5500/]({{site.url}}/ncs5500/tutorials/bgp-flowspec-on-ncs5500/)
 
 ### load-balance algorithm
 
@@ -1617,7 +1617,7 @@ If acl-permit is configured, qos-enhanced or other options are disabled. To retu
 _External documentation_:  
 - [https://www.cisco.com/c/en/us/td/docs/iosxr/ncs5500/ip-addresses/b-ip-addresses-cr-ncs5500/b-ncs5500-ip-addresses-cli-reference_chapter_01.html#id_82511](https://www.cisco.com/c/en/us/td/docs/iosxr/ncs5500/ip-addresses/b-ip-addresses-cr-ncs5500/b-ncs5500-ip-addresses-cli-reference_chapter_01.html#id_82511)
 - [https://www.cisco.com/c/en/us/td/docs/iosxr/ncs5500/ip-addresses/63x/b-ip-addresses-configuration-guide-ncs5500-63x/b-ip-addresses-configuration-guide-ncs5500-63x_chapter_010.html](https://www.cisco.com/c/en/us/td/docs/iosxr/ncs5500/ip-addresses/63x/b-ip-addresses-configuration-guide-ncs5500-63x/b-ip-addresses-configuration-guide-ncs5500-63x_chapter_010.html)
-- [https://xrdocs.io/ncs5500/tutorials/security-acl-on-ncs5500-part1/](https://xrdocs.io/ncs5500/tutorials/security-acl-on-ncs5500-part1/)
+- [{{site.url}}/ncs5500/tutorials/security-acl-on-ncs5500-part1/]({{site.url}}/ncs5500/tutorials/security-acl-on-ncs5500-part1/)
 
 Note: This profiles is not needed for J2 based systems.
 {: .notice--info}
@@ -1814,7 +1814,7 @@ Note: if you don't configure space for ACL in eTCAM, the hybrid ACL configuratio
 
 _External documentation_:  
 These subtleties and many more details on Hybrid ACLs are covered in this external blog post:  
-[https://xrdocs.io/ncs5500/tutorials/security-acl-on-ncs5500-part2-hybrid-acl/](https://xrdocs.io/ncs5500/tutorials/security-acl-on-ncs5500-part2-hybrid-acl/)
+[{{site.url}}/ncs5500/tutorials/security-acl-on-ncs5500-part2-hybrid-acl/]({{site.url}}/ncs5500/tutorials/security-acl-on-ncs5500-part2-hybrid-acl/)
 
 ### tcam fib
 
@@ -1913,7 +1913,7 @@ Indeed, the default behavior of an ingress access-list is to be re-usable: that 
 This hardware profile when used with the keyword "interface-based" will disable the re-usability and move to the unique-ACL mode.
 
 Starting from 6.5.2, we don't support ACL match on packet-lenth (and ranges) by default, it's mandatory to use a specific UDK as described in this blog post:  
-[https://xrdocs.io/ncs5500/tutorials/acl-packet-length-matching-ncs55xx-and-ncs5xx/](https://xrdocs.io/ncs5500/tutorials/acl-packet-length-matching-ncs55xx-and-ncs5xx/)
+[{{site.url}}/ncs5500/tutorials/acl-packet-length-matching-ncs55xx-and-ncs5xx/]({{site.url}}/ncs5500/tutorials/acl-packet-length-matching-ncs55xx-and-ncs5xx/)
 
 An example for configuring unique ACL for both IPv4 and IPv6 with the following fields (SRC_IP, DST_IP, SRC_PORT, DST_PORT) available for ACE matching is:  
 
@@ -2064,7 +2064,7 @@ It will disable a mechanism named "double capacity" that allowed to double the s
 
 _External documentation_:  
 Details are available on the external blog post:  
-[https://xrdocs.io/ncs5500/tutorials/ncs5500-urpf/](https://xrdocs.io/ncs5500/tutorials/ncs5500-urpf/)  
+[{{site.url}}/ncs5500/tutorials/ncs5500-urpf/]({{site.url}}/ncs5500/tutorials/ncs5500-urpf/)  
 On CCO:  
 [https://www.cisco.com/c/en/us/td/docs/iosxr/ncs5500/security/62x/b-system-security-cg-ncs5500-62x/b-system-security-cg-ncs5500-62x_chapter_01001.html](https://www.cisco.com/c/en/us/td/docs/iosxr/ncs5500/security/62x/b-system-security-cg-ncs5500-62x/b-system-security-cg-ncs5500-62x_chapter_01001.html)
 

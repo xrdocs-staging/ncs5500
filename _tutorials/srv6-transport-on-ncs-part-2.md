@@ -21,7 +21,7 @@ tags:
 |Tejas Lad, Technical Marketing Engineer (telad@cisco.com)|
 
 ## Overview
-In [Previous Article](https://xrdocs.io/ncs5500/tutorials/srv6-transport-on-ncs-part-1/), we discussed how to set up segment routing v6 (SRv6) transport on the NCS 500 and NCS 5500 platforms. In this article, we will explore setting up Layer3 vpn services over SRv6 transport. 
+In [Previous Article]({{site.url}}/ncs5500/tutorials/srv6-transport-on-ncs-part-1/), we discussed how to set up segment routing v6 (SRv6) transport on the NCS 500 and NCS 5500 platforms. In this article, we will explore setting up Layer3 vpn services over SRv6 transport. 
 
 ## Topology
 

@@ -241,7 +241,7 @@ From the above outputs, we could successfully influence the traffic to take a pa
 
 ## Resource Utilization 
 
-As we already know the TCAM is very important resource in NCS55xx and NCS5xx. It needs to be optimized. The advantage of ABF, is that it is built within the same feature framework. ABF shares the same lookup field groups as ACL hereby saving the TCAM resources for additional lookups. Another advantage is ABF uses the CLI which is based on existing ACL infrastructure making it comfortable for the users to configure and implement. For further information on resource utilization please [refer](https://xrdocs.io/ncs5500/tutorials/security-acl-on-ncs5500-part1/ "refer")
+As we already know the TCAM is very important resource in NCS55xx and NCS5xx. It needs to be optimized. The advantage of ABF, is that it is built within the same feature framework. ABF shares the same lookup field groups as ACL hereby saving the TCAM resources for additional lookups. Another advantage is ABF uses the CLI which is based on existing ACL infrastructure making it comfortable for the users to configure and implement. For further information on resource utilization please [refer]({{site.url}}/ncs5500/tutorials/security-acl-on-ncs5500-part1/ "refer")
 
 ## Important considerations for ABF Next Hop
 

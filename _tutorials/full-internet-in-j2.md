@@ -14,11 +14,11 @@ excerpt: Understand the J2 memory utilization and the programming / convergence 
 Articles mentioned in the video:
 
 - Decommissionning the internet-optimized mode:  
-[https://xrdocs.io/ncs5500/tutorials/decommissioning-internet-optimized-mode/](https://xrdocs.io/ncs5500/tutorials/decommissioning-internet-optimized-mode/)  
+[{{site.url}}/ncs5500/tutorials/decommissioning-internet-optimized-mode/]({{site.url}}/ncs5500/tutorials/decommissioning-internet-optimized-mode/)  
 - NCS5500 Routing Resource with 2020 Internet (and Future)  
-[https://xrdocs.io/ncs5500/tutorials/ncs5500-routing-resource-with-2020-internet/](https://xrdocs.io/ncs5500/tutorials/ncs5500-routing-resource-with-2020-internet/)  
+[{{site.url}}/ncs5500/tutorials/ncs5500-routing-resource-with-2020-internet/]({{site.url}}/ncs5500/tutorials/ncs5500-routing-resource-with-2020-internet/)  
 - NCS5500 FIB Programming Speed  
-[https://xrdocs.io/ncs5500/tutorials/ncs5500-fib-programming-speed/](https://xrdocs.io/ncs5500/tutorials/ncs5500-fib-programming-speed/)  
+[{{site.url}}/ncs5500/tutorials/ncs5500-fib-programming-speed/]({{site.url}}/ncs5500/tutorials/ncs5500-fib-programming-speed/)  
 
 ## NCS5700 and the Jericho2 NPU
 
@@ -443,7 +443,7 @@ RP/0/RP1/CPU0:5508-1-731#</code>
 
 ## Projected Internet view (2027) in Jericho2 platforms / LCs
 
-We will reuse the projection done in this article last year to guesstimate the additional routes in year 2027: [https://xrdocs.io/ncs5500/tutorials/ncs5500-routing-resource-with-2020-internet/](https://xrdocs.io/ncs5500/tutorials/ncs5500-routing-resource-with-2020-internet/)
+We will reuse the projection done in this article last year to guesstimate the additional routes in year 2027: [{{site.url}}/ncs5500/tutorials/ncs5500-routing-resource-with-2020-internet/]({{site.url}}/ncs5500/tutorials/ncs5500-routing-resource-with-2020-internet/)
 
 ![IPv4-projection.png]({{site.baseurl}}/images/IPv4-projection.png){: .align-center}
 
@@ -709,7 +709,7 @@ Certainly this projection of internet growth is showing we have tons of space in
 
 ## Routes Programming Speed
 
-We performed these tests and documented them for J+ in this article: "NCS5500 FIB Programming Speed" - [https://xrdocs.io/ncs5500/tutorials/ncs5500-fib-programming-speed/](https://xrdocs.io/ncs5500/tutorials/ncs5500-fib-programming-speed/)  
+We performed these tests and documented them for J+ in this article: "NCS5500 FIB Programming Speed" - [{{site.url}}/ncs5500/tutorials/ncs5500-fib-programming-speed/]({{site.url}}/ncs5500/tutorials/ncs5500-fib-programming-speed/)  
 It's now time to do it again for Jericho2.
 
 ### Methodology

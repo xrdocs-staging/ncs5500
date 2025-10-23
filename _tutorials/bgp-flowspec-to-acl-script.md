@@ -13,12 +13,12 @@ tags:
 ---
 {% include toc icon="table" title="BGPFS2ACL" %} 
 
-You can find more content related to NCS5500 including routing memory management, VRF, URPF, Netflow, QoS, EVPN, Flowspec implementation following this [link](https://xrdocs.io/ncs5500/tutorials/).
+You can find more content related to NCS5500 including routing memory management, VRF, URPF, Netflow, QoS, EVPN, Flowspec implementation following this [link]({{site.url}}/ncs5500/tutorials/).
 
 ## Introduction
 
 BGP Flowspec is a technology we described in multiple posts and videos:  
-- [https://xrdocs.io/ncs5500/tutorials/bgp-flowspec-on-ncs5500/](https://xrdocs.io/ncs5500/tutorials/bgp-flowspec-on-ncs5500/)
+- [{{site.url}}/ncs5500/tutorials/bgp-flowspec-on-ncs5500/]({{site.url}}/ncs5500/tutorials/bgp-flowspec-on-ncs5500/)
 - [Cisco NCS5500 Flowspec (Principles and Configuration) Part1](https://www.youtube.com/watch?v=dTgh0p9Vyns)
 - [Cisco NCS5500 Flowspec (Auto-Mitigation of a Memcached Attack) Part2](https://www.youtube.com/watch?v=iRPob7Ws2v8)
 

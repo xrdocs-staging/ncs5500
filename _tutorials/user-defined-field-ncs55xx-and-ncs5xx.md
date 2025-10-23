@@ -16,7 +16,7 @@ tags:
 
 ## Introduction
 
-In the previous [tech-note](https://xrdocs.io/ncs5500/tutorials/user-defined-key-udk-for-ncs55xx-and-ncs5xx/ "tech-note"), we had discussed the concept of User Defined Keys - UDK. We also compared the UDK with Default TCAM keys and the ways to optimize the memory usage. In this tech-note, we will deep dive into advanced filtering capabilities of NCS5xx and NCS55xx with User Defined Fields - UDF. 
+In the previous [tech-note]({{site.url}}/ncs5500/tutorials/user-defined-key-udk-for-ncs55xx-and-ncs5xx/ "tech-note"), we had discussed the concept of User Defined Keys - UDK. We also compared the UDK with Default TCAM keys and the ways to optimize the memory usage. In this tech-note, we will deep dive into advanced filtering capabilities of NCS5xx and NCS55xx with User Defined Fields - UDF. 
 
 ## Overview
 
@@ -209,7 +209,7 @@ We can see the end to end traffic is getting dropped.
 ### Matching Fragments using UDF
 
 
-In previous technote for [Fragment Matching](https://xrdocs.io/ncs5500/tutorials/acl-ip-fragments-matching-ncs55xx-and-ncs5xx/ "Fragment Matching"), we saw there are 2 keywords: Fragments and Fragment-type. We saw that if we want to match initial fragments we need to use keyword Fragment-type, but this was supported on systems with external TCAM only. What if we have a system without external TCAM ? Thanks to UDF, we dont need to upgrade the whole system. Let us see, how we can achieve that. Consider the same topology as above.
+In previous technote for [Fragment Matching]({{site.url}}/ncs5500/tutorials/acl-ip-fragments-matching-ncs55xx-and-ncs5xx/ "Fragment Matching"), we saw there are 2 keywords: Fragments and Fragment-type. We saw that if we want to match initial fragments we need to use keyword Fragment-type, but this was supported on systems with external TCAM only. What if we have a system without external TCAM ? Thanks to UDF, we dont need to upgrade the whole system. Let us see, how we can achieve that. Consider the same topology as above.
 
 We send the below fragmented packet with FO=0.
 

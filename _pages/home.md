@@ -24,7 +24,7 @@ date: null
              </p>
             </div>
           <a href="https://youtu.be/sb8vOnOlZTY" target="_blank"  class="btn btn--large">Watch on Youtube</a>
-          <a href="https://xrdocs.io/ncs5500/tutorials/introducing-nc57-48q2d-lc/" target="_blank"  class="btn btn--large">Read Introductory Blog</a>
+          <a href="{{site.url}}/ncs5500/tutorials/introducing-nc57-48q2d-lc/" target="_blank"  class="btn btn--large">Read Introductory Blog</a>
         </div>
       </div>
     </div>

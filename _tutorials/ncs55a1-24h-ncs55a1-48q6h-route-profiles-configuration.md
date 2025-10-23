@@ -14,7 +14,7 @@ position: hidden
 ---
 {% include toc icon="table" title="NCS5500 Route Profiles for -24H and -48Q6H" %} 
 
-You can find more content related to NCS5500 including routing memory management, URPF, ACLs, Netflow, eVPN, scale and other features following this [link](https://xrdocs.io/ncs5500/tutorials/).
+You can find more content related to NCS5500 including routing memory management, URPF, ACLs, Netflow, eVPN, scale and other features following this [link]({{site.url}}/ncs5500/tutorials/).
 
 ## Introduction
 
@@ -39,9 +39,9 @@ The platforms based on 88680 are the specific focus of this blog post:
 ## hw-module profiles
 
 We created a specific blog post on the many hardware profiles used to carve all the resources: 
-[https://xrdocs.io/ncs5500/tutorials/ncs5500-hw-module-profiles/](https://xrdocs.io/ncs5500/tutorials/ncs5500-hw-module-profiles/)
+[{{site.url}}/ncs5500/tutorials/ncs5500-hw-module-profiles/]({{site.url}}/ncs5500/tutorials/ncs5500-hw-module-profiles/)
 
-And we already mentioned in another one ([https://xrdocs.io/ncs5500/tutorials/ncs5500-things-to-know/](https://xrdocs.io/ncs5500/tutorials/ncs5500-things-to-know/)) that we don't recommend to use the internet-optimized profile for the platforms based on Jericho+ with large LPM.
+And we already mentioned in another one ([{{site.url}}/ncs5500/tutorials/ncs5500-things-to-know/]({{site.url}}/ncs5500/tutorials/ncs5500-things-to-know/)) that we don't recommend to use the internet-optimized profile for the platforms based on Jericho+ with large LPM.
 
 Now the question we want to address with this blog post is the following: should we keep the default "host-optimized" profile enabled, or will it be recommended in the longer run to disable this default mode via configuration to address the internet growth.
 
